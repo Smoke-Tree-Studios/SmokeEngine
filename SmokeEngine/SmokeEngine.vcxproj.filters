@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="lib.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Header\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Source.h">
+      <Filter>Header\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Header\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneNode.h">
+      <Filter>Header\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderObject.h">
+      <Filter>Header\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Header\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Quanterion.h">
+      <Filter>Header\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectNode.h">
+      <Filter>Header\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewStorage.h">
+      <Filter>Header\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="SmokeEngine.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Header\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexObject.h">
+      <Filter>Header\VertexObject</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexArrayObject.h">
+      <Filter>Header\VertexObject</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexBufferObjectWithSubData.h">
+      <Filter>Header\VertexObject</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureStorage.h">
+      <Filter>Header\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>Header\Utility\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector4.h">
+      <Filter>Header\Utility\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>Header\Utility\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="S_Rectangle.h">
+      <Filter>Header\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix4x4.h">
+      <Filter>Header\Utility\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="MatrixStack.h">
+      <Filter>Header\Utility\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="BoundedBox.h">
+      <Filter>Header\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectWavefrontLoader.h">
+      <Filter>Header\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexBufferStorage.h">
+      <Filter>Header\Storage</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix4x4.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="MatrixStack.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectNode.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Quanterion.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderObject.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneNode.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector4.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewStorage.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SmokeEngine.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexObject.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexArrayObject.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexBufferObjectWithSubData.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureStorage.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="S_Rectangle.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="BoundedBox.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectWavefrontLoader.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexBufferStorage.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{579f39c2-192f-4b4e-867d-2e7ef3f5c682}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{47fbd4c8-b8f6-42c8-8733-a022b1089828}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Node">
+      <UniqueIdentifier>{8da05f3b-f6d0-4784-a25c-8e2f4f440b0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Utility">
+      <UniqueIdentifier>{21a53f5b-ffcc-410f-86ac-cc09fcb82360}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Render">
+      <UniqueIdentifier>{5d16bee5-f4be-4cfd-be45-a7cbd5065f59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Storage">
+      <UniqueIdentifier>{520c7f27-dd36-4f80-b0dd-decda83cbdb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\VertexObject">
+      <UniqueIdentifier>{363f15c6-ec35-4981-aed2-ecbd918759aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Utility\Vector">
+      <UniqueIdentifier>{92b4fa5d-14ec-4a32-a051-8a6619fbea37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Utility\Matrix">
+      <UniqueIdentifier>{764d1195-6a6b-4403-8eb9-e29b1dc1f71b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

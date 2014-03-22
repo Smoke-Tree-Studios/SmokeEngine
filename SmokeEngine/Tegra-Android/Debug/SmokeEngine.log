@@ -1,0 +1,18 @@
+﻿Build started 3/21/2014 9:16:49 PM.
+     1>Project "C:\SmokeEngine\SmokeEngine\SmokeEngine.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Tegra-Android\Debug\SmokeEngine.unsuccessfulbuild".
+       ClCompile:
+         C:\NVPACK\android-ndk-r9b\toolchains\arm-linux-androideabi-4.8\prebuilt\windows\bin\arm-linux-androideabi-g++.exe 
+         ObjectWavefrontLoader.cpp
+       Lib:
+         C:\NVPACK\android-ndk-r9b\toolchains\arm-linux-androideabi-4.8\prebuilt\windows\bin\arm-linux-androideabi-ar.exe rcs C:/SmokeEngine/Tegra-Android/Debug/libSmokeEngine.a Tegra-Android/Debug/BoundedBox.o Tegra-Android/Debug/Camera.o Tegra-Android/Debug/Model.o Tegra-Android/Debug/ObjectWavefrontLoader.o Tegra-Android/Debug/SmokeEngine.o Tegra-Android/Debug/Matrix4x4.o Tegra-Android/Debug/MatrixStack.o Tegra-Android/Debug/Node.o Tegra-Android/Debug/ObjectNode.o Tegra-Android/Debug/Quanterion.o Tegra-Android/Debug/Renderer.o Tegra-Android/Debug/RenderObject.o Tegra-Android/Debug/SceneManager.o Tegra-Android/Debug/SceneNode.o Tegra-Android/Debug/Shader.o Tegra-Android/Debug/Source.o Tegra-Android/Debug/S_Rectangle.o Tegra-Android/Debug/Texture.o Tegra-Android/Debug/TextureStorage.o Tegra-Android/Debug/Vector2.o Tegra-Android/Debug/Vector3.o Tegra-Android/Debug/Vector4.o Tegra-Android/Debug/VertexArrayObject.o Tegra-Android/Debug/VertexBufferObjectWithSubData.o Tegra-Android/Debug/VertexObject.o Tegra-Android/Debug/ViewStorage.o
+         SmokeEngine.vcxproj -> C:\SmokeEngine\Tegra-Android\Debug\libSmokeEngine.a
+       FinalizeBuildStatus:
+         Deleting file "Tegra-Android\Debug\SmokeEngine.unsuccessfulbuild".
+         Touching "Tegra-Android\Debug\SmokeEngine.lastbuildstate".
+     1>Done Building Project "C:\SmokeEngine\SmokeEngine\SmokeEngine.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.16

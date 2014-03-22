@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="jni">
+      <UniqueIdentifier>9a43cb8a-186f-4799-86a2-e5bff9c5713a</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res">
+      <UniqueIdentifier>14478825-b4a6-4c1a-9a24-1a2d71268084</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res\values">
+      <UniqueIdentifier>fb747331-8c85-41a3-9f5a-252356302c43</UniqueIdentifier>
+    </Filter>
+    <Filter Include="JavaSource">
+      <UniqueIdentifier>{44070d58-a5eb-489b-943a-6e84f7ea3f41}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AndroidManifest.xml" />
+    <None Include="build.xml" />
+    <None Include="project.properties" />
+    <None Include="proguard.cfg" />
+    <None Include="res\values\strings.xml">
+      <Filter>res\values</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <JCompile Include="src\com\example\Engine\GLRenderer.java" />
+    <JCompile Include="src\com\example\Engine\Lib.java" />
+    <JCompile Include="src\com\example\Engine\View.java" />
+    <JCompile Include="src\com\android\Engine\View.java">
+      <Filter>JavaSource</Filter>
+    </JCompile>
+    <JCompile Include="src\com\android\Engine\MainActivity.java">
+      <Filter>JavaSource</Filter>
+    </JCompile>
+    <JCompile Include="src\com\android\Engine\Lib.java">
+      <Filter>JavaSource</Filter>
+    </JCompile>
+    <JCompile Include="src\com\android\Engine\GLRenderer.java">
+      <Filter>JavaSource</Filter>
+    </JCompile>
+    <JCompile Include="src\com\android\Engine\CopyOfView.java">
+      <Filter>JavaSource</Filter>
+    </JCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="jni\HelloJni.cpp">
+      <Filter>jni</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

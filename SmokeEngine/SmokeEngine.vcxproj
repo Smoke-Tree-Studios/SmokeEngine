@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="NsightTegraProject">
+    <NsightTegraProjectRevisionNumber>5</NsightTegraProjectRevisionNumber>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Tegra-Android">
+      <Configuration>Debug</Configuration>
+      <Platform>Tegra-Android</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Tegra-Android">
+      <Configuration>Release</Configuration>
+      <Platform>Tegra-Android</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profile|Tegra-Android">
+      <Configuration>Profile</Configuration>
+      <Platform>Tegra-Android</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BoundedBox.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="ObjectWavefrontLoader.h" />
+    <ClInclude Include="SmokeEngine.h" />
+    <ClInclude Include="lib.h" />
+    <ClInclude Include="Matrix4x4.h" />
+    <ClInclude Include="MatrixStack.h" />
+    <ClInclude Include="Node.h" />
+    <ClInclude Include="ObjectNode.h" />
+    <ClInclude Include="Quanterion.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="RenderObject.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="SceneNode.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="Source.h" />
+    <ClInclude Include="S_Rectangle.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="TextureStorage.h" />
+    <ClInclude Include="Vector2.h" />
+    <ClInclude Include="Vector3.h" />
+    <ClInclude Include="Vector4.h" />
+    <ClInclude Include="VertexArrayObject.h" />
+    <ClInclude Include="VertexBufferObjectWithSubData.h" />
+    <ClInclude Include="VertexBufferStorage.h" />
+    <ClInclude Include="VertexObject.h" />
+    <ClInclude Include="ViewStorage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BoundedBox.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="ObjectWavefrontLoader.cpp" />
+    <ClCompile Include="SmokeEngine.cpp" />
+    <ClCompile Include="Matrix4x4.cpp" />
+    <ClCompile Include="MatrixStack.cpp" />
+    <ClCompile Include="Node.cpp" />
+    <ClCompile Include="ObjectNode.cpp" />
+    <ClCompile Include="Quanterion.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="RenderObject.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="SceneNode.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="S_Rectangle.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TextureStorage.cpp" />
+    <ClCompile Include="Vector2.cpp" />
+    <ClCompile Include="Vector3.cpp" />
+    <ClCompile Include="Vector4.cpp" />
+    <ClCompile Include="VertexArrayObject.cpp" />
+    <ClCompile Include="VertexBufferObjectWithSubData.cpp" />
+    <ClCompile Include="VertexBufferStorage.cpp" />
+    <ClCompile Include="VertexObject.cpp" />
+    <ClCompile Include="ViewStorage.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{293D3ECB-3EA2-400C-9D37-EDF3FD59D4AA}</ProjectGuid>
+    <RootNamespace>SmokeEngine</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <AndroidTargetAPI>android-15</AndroidTargetAPI>
+    <AndroidArch>armv7-a</AndroidArch>
+    <AndroidStlType>gnustl_static</AndroidStlType>
+    <AndroidMinAPI>android-12</AndroidMinAPI>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|Tegra-Android'">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <AndroidTargetAPI>android-15</AndroidTargetAPI>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Profile|Tegra-Android'">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <AndroidTargetAPI>android-15</AndroidTargetAPI>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
+    <IncludePath>C:\NVPACK\OpenCV-2.4.5-Tegra-sdk-r2\sdk\native\jni\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\NVPACK\OpenCV-2.4.5-Tegra-sdk-r2\sdk\native\libs\armeabi-v7a;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
+    <ClCompile>
+      <PreprocessorDefinitions>
+      </PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+      <AdditionalDependencies>android;stdc++;c;m;log;dl;GLESv2;EGL;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Tegra-Android'">
+    <ClCompile>
+      <PreprocessorDefinitions>DISABLE_IMPORTGL</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>-lGLESv1_CM %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Tegra-Android'">
+    <ClCompile>
+      <PreprocessorDefinitions>DISABLE_IMPORTGL</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>-lGLESv1_CM %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
