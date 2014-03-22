@@ -1,171 +1,174 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="lib.h">
+    <ClInclude Include="Include\SceneManager.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="SceneManager.h">
+    <ClInclude Include="Include\SmokeEngine.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Node.h">
-      <Filter>Header\Node</Filter>
-    </ClInclude>
-    <ClInclude Include="Texture.h">
+    <ClInclude Include="Include\Utility\S_Rectangle.h">
       <Filter>Header\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="Source.h">
+    <ClInclude Include="Include\Utility\Source.h">
       <Filter>Header\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="Shader.h">
+    <ClInclude Include="Include\Utility\Texture.h">
       <Filter>Header\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="SceneNode.h">
-      <Filter>Header\Node</Filter>
-    </ClInclude>
-    <ClInclude Include="RenderObject.h">
-      <Filter>Header\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="Renderer.h">
-      <Filter>Header\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="Quanterion.h">
+    <ClInclude Include="Include\Utility\Shader.h">
       <Filter>Header\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="ObjectNode.h">
-      <Filter>Header\Node</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>Header\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="ViewStorage.h">
-      <Filter>Header\Storage</Filter>
-    </ClInclude>
-    <ClInclude Include="SmokeEngine.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Model.h">
-      <Filter>Header\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="VertexObject.h">
-      <Filter>Header\VertexObject</Filter>
-    </ClInclude>
-    <ClInclude Include="VertexArrayObject.h">
-      <Filter>Header\VertexObject</Filter>
-    </ClInclude>
-    <ClInclude Include="VertexBufferObjectWithSubData.h">
-      <Filter>Header\VertexObject</Filter>
-    </ClInclude>
-    <ClInclude Include="TextureStorage.h">
-      <Filter>Header\Storage</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector2.h">
+    <ClInclude Include="Include\Utility\Vector\Vector2.h">
       <Filter>Header\Utility\Vector</Filter>
     </ClInclude>
-    <ClInclude Include="Vector4.h">
+    <ClInclude Include="Include\Utility\Vector\Vector4.h">
       <Filter>Header\Utility\Vector</Filter>
     </ClInclude>
-    <ClInclude Include="Vector3.h">
+    <ClInclude Include="Include\Utility\Vector\Vector3.h">
       <Filter>Header\Utility\Vector</Filter>
     </ClInclude>
-    <ClInclude Include="S_Rectangle.h">
-      <Filter>Header\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="Matrix4x4.h">
+    <ClInclude Include="Include\Utility\Matrix\Matrix4x4.h">
       <Filter>Header\Utility\Matrix</Filter>
     </ClInclude>
-    <ClInclude Include="MatrixStack.h">
+    <ClInclude Include="Include\Utility\Matrix\MatrixStack.h">
       <Filter>Header\Utility\Matrix</Filter>
     </ClInclude>
-    <ClInclude Include="BoundedBox.h">
-      <Filter>Header\Utility</Filter>
+    <ClInclude Include="Include\Node\Node.h">
+      <Filter>Header\Node</Filter>
     </ClInclude>
-    <ClInclude Include="ObjectWavefrontLoader.h">
-      <Filter>Header\Utility</Filter>
+    <ClInclude Include="Include\Node\ObjectNode.h">
+      <Filter>Header\Node</Filter>
     </ClInclude>
-    <ClInclude Include="VertexBufferStorage.h">
+    <ClInclude Include="Include\Storage\ViewStorage.h">
       <Filter>Header\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Storage\ShaderSourceStorage.h">
+      <Filter>Header\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Storage\VertexBufferStorage.h">
+      <Filter>Header\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Storage\TextureStorage.h">
+      <Filter>Header\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\Model.h">
+      <Filter>Header\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\Camera.h">
+      <Filter>Header\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\BoundedBox.h">
+      <Filter>Header\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\Quanterion.h">
+      <Filter>Header\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\ObjectWavefrontLoader.h">
+      <Filter>Header\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Node\SceneNode.h">
+      <Filter>Header\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Renderer\Renderer.h">
+      <Filter>Header\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Renderer\RenderObject.h">
+      <Filter>Header\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\VertexObject\VertexArrayObject.h">
+      <Filter>Header\VertexObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\VertexObject\VertexBufferObjectWithSubData.h">
+      <Filter>Header\VertexObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\VertexObject\VertexObject.h">
+      <Filter>Header\VertexObject</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Camera.cpp">
+    <ClCompile Include="Source\BoundedBox.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Matrix4x4.cpp">
+    <ClCompile Include="Source\ViewStorage.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="MatrixStack.cpp">
+    <ClCompile Include="Source\Camera.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Node.cpp">
+    <ClCompile Include="Source\Matrix4x4.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="ObjectNode.cpp">
+    <ClCompile Include="Source\MatrixStack.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Quanterion.cpp">
+    <ClCompile Include="Source\Model.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="RenderObject.cpp">
+    <ClCompile Include="Source\Node.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Renderer.cpp">
+    <ClCompile Include="Source\ObjectNode.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="SceneManager.cpp">
+    <ClCompile Include="Source\ObjectWavefrontLoader.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="SceneNode.cpp">
+    <ClCompile Include="Source\Quanterion.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Shader.cpp">
+    <ClCompile Include="Source\Renderer.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Source.cpp">
+    <ClCompile Include="Source\RenderObject.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Texture.cpp">
+    <ClCompile Include="Source\S_Rectangle.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Vector2.cpp">
+    <ClCompile Include="Source\SceneManager.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Vector3.cpp">
+    <ClCompile Include="Source\SceneNode.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Vector4.cpp">
+    <ClCompile Include="Source\Shader.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="ViewStorage.cpp">
+    <ClCompile Include="Source\ShaderSourceStorage.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="SmokeEngine.cpp">
+    <ClCompile Include="Source\SmokeEngine.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Model.cpp">
+    <ClCompile Include="Source\Source.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="VertexObject.cpp">
+    <ClCompile Include="Source\Texture.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="VertexArrayObject.cpp">
+    <ClCompile Include="Source\TextureStorage.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="VertexBufferObjectWithSubData.cpp">
+    <ClCompile Include="Source\Vector2.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="TextureStorage.cpp">
+    <ClCompile Include="Source\Vector3.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="S_Rectangle.cpp">
+    <ClCompile Include="Source\Vector4.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="BoundedBox.cpp">
+    <ClCompile Include="Source\VertexArrayObject.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="ObjectWavefrontLoader.cpp">
+    <ClCompile Include="Source\VertexBufferObjectWithSubData.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="VertexBufferStorage.cpp">
+    <ClCompile Include="Source\VertexBufferStorage.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\VertexObject.cpp">
       <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>

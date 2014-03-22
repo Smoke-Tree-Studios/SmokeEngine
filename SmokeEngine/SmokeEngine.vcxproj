@@ -18,63 +18,64 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BoundedBox.h" />
-    <ClInclude Include="Camera.h" />
-    <ClInclude Include="Model.h" />
-    <ClInclude Include="ObjectWavefrontLoader.h" />
-    <ClInclude Include="SmokeEngine.h" />
-    <ClInclude Include="lib.h" />
-    <ClInclude Include="Matrix4x4.h" />
-    <ClInclude Include="MatrixStack.h" />
-    <ClInclude Include="Node.h" />
-    <ClInclude Include="ObjectNode.h" />
-    <ClInclude Include="Quanterion.h" />
-    <ClInclude Include="Renderer.h" />
-    <ClInclude Include="RenderObject.h" />
-    <ClInclude Include="SceneManager.h" />
-    <ClInclude Include="SceneNode.h" />
-    <ClInclude Include="Shader.h" />
-    <ClInclude Include="Source.h" />
-    <ClInclude Include="S_Rectangle.h" />
-    <ClInclude Include="Texture.h" />
-    <ClInclude Include="TextureStorage.h" />
-    <ClInclude Include="Vector2.h" />
-    <ClInclude Include="Vector3.h" />
-    <ClInclude Include="Vector4.h" />
-    <ClInclude Include="VertexArrayObject.h" />
-    <ClInclude Include="VertexBufferObjectWithSubData.h" />
-    <ClInclude Include="VertexBufferStorage.h" />
-    <ClInclude Include="VertexObject.h" />
-    <ClInclude Include="ViewStorage.h" />
+    <ClInclude Include="Include\Utility\BoundedBox.h" />
+    <ClInclude Include="Include\Utility\Camera.h" />
+    <ClInclude Include="Include\Utility\Model.h" />
+    <ClInclude Include="Include\Utility\ObjectWavefrontLoader.h" />
+    <ClInclude Include="Include\Storage\ShaderSourceStorage.h" />
+    <ClInclude Include="Include\SmokeEngine.h" />
+    <ClInclude Include="Include\Utility\Matrix\Matrix4x4.h" />
+    <ClInclude Include="Include\Utility\Matrix\MatrixStack.h" />
+    <ClInclude Include="Include\Node\Node.h" />
+    <ClInclude Include="Include\Node\ObjectNode.h" />
+    <ClInclude Include="Include\Utility\Quanterion.h" />
+    <ClInclude Include="Include\Renderer\Renderer.h" />
+    <ClInclude Include="Include\Renderer\RenderObject.h" />
+    <ClInclude Include="Include\SceneManager.h" />
+    <ClInclude Include="Include\Node\SceneNode.h" />
+    <ClInclude Include="Include\Utility\Shader.h" />
+    <ClInclude Include="Include\Utility\Source.h" />
+    <ClInclude Include="Include\Utility\S_Rectangle.h" />
+    <ClInclude Include="Include\Utility\Texture.h" />
+    <ClInclude Include="Include\Storage\TextureStorage.h" />
+    <ClInclude Include="Include\Utility\Vector\Vector2.h" />
+    <ClInclude Include="Include\Utility\Vector\Vector3.h" />
+    <ClInclude Include="Include\Utility\Vector\Vector4.h" />
+    <ClInclude Include="Include\VertexObject\VertexArrayObject.h" />
+    <ClInclude Include="Include\VertexObject\VertexBufferObjectWithSubData.h" />
+    <ClInclude Include="Include\Storage\VertexBufferStorage.h" />
+    <ClInclude Include="Include\VertexObject\VertexObject.h" />
+    <ClInclude Include="Include\Storage\ViewStorage.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BoundedBox.cpp" />
-    <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="Model.cpp" />
-    <ClCompile Include="ObjectWavefrontLoader.cpp" />
-    <ClCompile Include="SmokeEngine.cpp" />
-    <ClCompile Include="Matrix4x4.cpp" />
-    <ClCompile Include="MatrixStack.cpp" />
-    <ClCompile Include="Node.cpp" />
-    <ClCompile Include="ObjectNode.cpp" />
-    <ClCompile Include="Quanterion.cpp" />
-    <ClCompile Include="Renderer.cpp" />
-    <ClCompile Include="RenderObject.cpp" />
-    <ClCompile Include="SceneManager.cpp" />
-    <ClCompile Include="SceneNode.cpp" />
-    <ClCompile Include="Shader.cpp" />
-    <ClCompile Include="Source.cpp" />
-    <ClCompile Include="S_Rectangle.cpp" />
-    <ClCompile Include="Texture.cpp" />
-    <ClCompile Include="TextureStorage.cpp" />
-    <ClCompile Include="Vector2.cpp" />
-    <ClCompile Include="Vector3.cpp" />
-    <ClCompile Include="Vector4.cpp" />
-    <ClCompile Include="VertexArrayObject.cpp" />
-    <ClCompile Include="VertexBufferObjectWithSubData.cpp" />
-    <ClCompile Include="VertexBufferStorage.cpp" />
-    <ClCompile Include="VertexObject.cpp" />
-    <ClCompile Include="ViewStorage.cpp" />
+    <ClCompile Include="Source\BoundedBox.cpp" />
+    <ClCompile Include="Source\Camera.cpp" />
+    <ClCompile Include="Source\Model.cpp" />
+    <ClCompile Include="Source\ObjectWavefrontLoader.cpp" />
+    <ClCompile Include="Source\ShaderSourceStorage.cpp" />
+    <ClCompile Include="Source\SmokeEngine.cpp" />
+    <ClCompile Include="Source\Matrix4x4.cpp" />
+    <ClCompile Include="Source\MatrixStack.cpp" />
+    <ClCompile Include="Source\Node.cpp" />
+    <ClCompile Include="Source\ObjectNode.cpp" />
+    <ClCompile Include="Source\Quanterion.cpp" />
+    <ClCompile Include="Source\Renderer.cpp" />
+    <ClCompile Include="Source\RenderObject.cpp" />
+    <ClCompile Include="Source\SceneManager.cpp" />
+    <ClCompile Include="Source\SceneNode.cpp" />
+    <ClCompile Include="Source\Shader.cpp" />
+    <ClCompile Include="Source\Source.cpp" />
+    <ClCompile Include="Source\S_Rectangle.cpp" />
+    <ClCompile Include="Source\Texture.cpp" />
+    <ClCompile Include="Source\TextureStorage.cpp" />
+    <ClCompile Include="Source\Vector2.cpp" />
+    <ClCompile Include="Source\Vector3.cpp" />
+    <ClCompile Include="Source\Vector4.cpp" />
+    <ClCompile Include="Source\VertexArrayObject.cpp" />
+    <ClCompile Include="Source\VertexBufferObjectWithSubData.cpp" />
+    <ClCompile Include="Source\VertexBufferStorage.cpp" />
+    <ClCompile Include="Source\VertexObject.cpp" />
+    <ClCompile Include="Source\ViewStorage.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{293D3ECB-3EA2-400C-9D37-EDF3FD59D4AA}</ProjectGuid>
@@ -101,7 +102,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
-    <IncludePath>C:\NVPACK\OpenCV-2.4.5-Tegra-sdk-r2\sdk\native\jni\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\NVPACK\OpenCV-2.4.5-Tegra-sdk-r2\sdk\native\jni\include;$(ProjectDir)/Include/;$(IncludePath)</IncludePath>
     <LibraryPath>C:\NVPACK\OpenCV-2.4.5-Tegra-sdk-r2\sdk\native\libs\armeabi-v7a;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
