@@ -18,8 +18,10 @@ public class View extends GLSurfaceView {
 	 public View(Context context) 
 	 {	 
         super(context);
-        this.setRenderer(new GLRenderer());
-       
-        Lib.Initate(context.getAssets());
+
+		// Create an OpenGL ES 2.0 context.
+        setEGLContextClientVersion(2);
+
+        this.setRenderer(new GLRenderer());  
 	 }
 }

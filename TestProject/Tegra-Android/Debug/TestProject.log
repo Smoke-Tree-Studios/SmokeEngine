@@ -1,0 +1,148 @@
+﻿Build started 3/23/2014 7:05:16 PM.
+     1>Project "C:\SmokeEngine\TestProject\TestProject.vcxproj" on node 3 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "Tegra-Android\Debug\TestProject.lastbuildstate".
+       AntClean:
+         Performing clean...
+         C:\NVPACK\apache-ant-1.8.2\bin\ant.bat clean -f C:\SmokeEngine\TestProject\Tegra-Android\Debug\nsight_tegra_build.xml 
+         Picked up _JAVA_OPTIONS: -Xms256m -Xmx512m
+         Deleting file "C:\SmokeEngine\Tegra-Android\Debug\\TestProject.apk".
+       InitializeBuildStatus:
+         Creating "Tegra-Android\Debug\TestProject.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\NVPACK\android-ndk-r9b\toolchains\arm-linux-androideabi-4.8\prebuilt\windows\bin\arm-linux-androideabi-g++.exe 
+         HelloJni.c
+       Link:
+         C:\NVPACK\android-ndk-r9b\toolchains\arm-linux-androideabi-4.8\prebuilt\windows\bin\arm-linux-androideabi-g++.exe Tegra-Android/Debug/HelloJni.o  -oC:/SmokeEngine/Tegra-Android/Debug/libTestProject.so -lc -lm -llog -lgcc -Wl,-soname,libTestProject.so -Wl,--no-undefined -fuse-ld=bfd -L"C:/NVPACK/android-ndk-r9b/platforms/android-15/arch-arm/usr/lib" -L"C:/NVPACK/android-ndk-r9b/sources/cxx-stl/gnu-libstdc++/4.8/libs/armeabi-v7a" -L"C:/NVPACK/android-ndk-r9b/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/lib/gcc/arm-linux-androideabi/4.8/armv7-a" -L"C:/NVPACK/android-ndk-r9b/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/lib/gcc/arm-linux-androideabi/4.8/armv7-a" -shared -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -Wl,-rpath-link=C:/NVPACK/android-ndk-r9b/platforms/android-15/arch-arm/usr/lib --sysroot=C:/NVPACK/android-ndk-r9b/platforms/android-15/arch-arm "-lsupc++" "-lgnustl_static" "-lgcc" -lGLESv1_CM 
+         TestProject.vcxproj -> C:\SmokeEngine\Tegra-Android\Debug\libTestProject.so
+       StripLibrary:
+         C:\NVPACK\android-ndk-r9b\toolchains\arm-linux-androideabi-4.8\prebuilt\windows\bin\arm-linux-androideabi-strip.exe --strip-unneeded -o"C:\SmokeEngine\Tegra-Android\Debug\stripped_libTestProject.so" "C:\SmokeEngine\Tegra-Android\Debug\libTestProject.so"
+         Stripping C:\SmokeEngine\Tegra-Android\Debug\libTestProject.so to C:\SmokeEngine\Tegra-Android\Debug\stripped_libTestProject.so
+       AntBuild:
+         C:\NVPACK\apache-ant-1.8.2\bin\ant.bat debug -f C:\SmokeEngine\TestProject\Tegra-Android\Debug\nsight_tegra_build.xml  
+         Copying C:\SmokeEngine\Tegra-Android\Debug\libTestProject.so to C:\SmokeEngine\TestProject\Tegra-Android\Debug\libs\armeabi-v7a\libTestProject.so
+         Building using the JDK located here: 'C:\NVPACK\jdk1.6.0_45 (Native32Bit)'...
+         Building using _JAVA_OPTIONS: '-Xmx512m'...
+         Building using ANT_OPTS: '-Dtarget=android-15 -Xmx512m'...
+         Executing "C:\NVPACK\apache-ant-1.8.2\bin\ant.bat debug -f C:\SmokeEngine\TestProject\Tegra-Android\Debug\nsight_tegra_build.xml "
+         Buildfile: C:\SmokeEngine\TestProject\Tegra-Android\Debug\nsight_tegra_build.xml
+         Duplicated project name in import. Project HelloJni defined first in C:\SmokeEngine\TestProject\Tegra-Android\Debug\nsight_tegra_build.xml and again in C:\SmokeEngine\TestProject\build.xml
+         
+         -set-mode-check:
+         
+         -set-debug-files:
+         
+         -check-env:
+          [checkenv] Android SDK Tools Revision 22.3.0
+          [checkenv] Installed at C:\NVPACK\android-sdk-windows
+         
+         -setup:
+              [echo] Project Name: HelloJni
+           [gettype] Project Type: Application
+         
+         -set-debug-mode:
+         
+         -debug-obfuscation-check:
+         
+         -pre-build:
+         
+         -build-setup:
+         [getbuildtools] Using latest Build Tools: 18.0.1
+              [echo] Resolving Build Target for HelloJni...
+         [gettarget] Project Target:   Android 4.0.3
+         [gettarget] API level:        15
+              [echo] ----------
+              [echo] Creating output directories if needed...
+             [mkdir] Created dir: C:\SmokeEngine\TestProject\Tegra-Android\Debug\bin
+             [mkdir] Created dir: C:\SmokeEngine\TestProject\Tegra-Android\Debug\bin\res
+             [mkdir] Created dir: C:\SmokeEngine\TestProject\Tegra-Android\Debug\bin\rsObj
+             [mkdir] Created dir: C:\SmokeEngine\TestProject\Tegra-Android\Debug\bin\rsLibs
+             [mkdir] Created dir: C:\SmokeEngine\TestProject\Tegra-Android\Debug\gen
+             [mkdir] Created dir: C:\SmokeEngine\TestProject\Tegra-Android\Debug\bin\classes
+             [mkdir] Created dir: C:\SmokeEngine\TestProject\Tegra-Android\Debug\bin\dexedLibs
+              [echo] ----------
+              [echo] Resolving Dependencies for HelloJni...
+         [dependency] Library dependencies:
+         [dependency] No Libraries
+         [dependency] 
+         [dependency] ------------------
+         [dependency] API<=15: Adding annotations.jar to the classpath.
+         [dependency] WARNING: unable to write jarlist cache file C:\SmokeEngine\TestProject\C:\SmokeEngine\TestProject\Tegra-Android\Debug\bin\jarlist.cache
+              [echo] ----------
+              [echo] Building Libraries with 'debug'...
+            [subant] No sub-builds to iterate on
+         
+         -code-gen:
+         [mergemanifest] Merging AndroidManifest files into one.
+         [mergemanifest] Manifest merger disabled. Using project manifest only.
+              [echo] Handling aidl files...
+              [aidl] No AIDL files to compile.
+              [echo] ----------
+              [echo] Handling RenderScript files...
+              [echo] ----------
+              [echo] Handling Resources...
+              [aapt] Generating resource IDs...
+              [echo] ----------
+              [echo] Handling BuildConfig class...
+         [buildconfig] Generating BuildConfig class.
+         
+         -pre-compile:
+         
+         -compile:
+             [javac] Compiling 3 source files to C:\SmokeEngine\TestProject\Tegra-Android\Debug\bin\classes
+             [javac] Picked up _JAVA_OPTIONS: -Xms256m -Xmx512m
+         
+         -post-compile:
+         
+         -obfuscate:
+         
+         -dex:
+               [dex] input: C:\SmokeEngine\TestProject\Tegra-Android\Debug\bin\classes
+               [dex] input: C:\NVPACK\android-sdk-windows\tools\support\annotations.jar
+               [dex] Pre-Dexing C:\NVPACK\android-sdk-windows\tools\support\annotations.jar -> annotations-6865d278797e29f45d2d74a7ff3c20f6.jar
+                [dx] Picked up _JAVA_OPTIONS: -Xms256m -Xmx512m
+               [dex] Converting compiled files and external libraries into C:\SmokeEngine\TestProject\Tegra-Android\Debug\bin\classes.dex...
+                [dx] Picked up _JAVA_OPTIONS: -Xms256m -Xmx512m
+                [dx] Merged dex A (8 defs/3.4KiB) with dex B (2 defs/1.1KiB). Result is 10 defs/4.6KiB. Took 0.0s
+         
+         -crunch:
+            [crunch] Crunching PNG Files in source dir: C:\SmokeEngine\TestProject\res
+            [crunch] To destination dir: C:\SmokeEngine\TestProject\Tegra-Android\Debug\bin\res
+            [crunch] Crunched 0 PNG files to update cache
+         
+         -package-resources:
+              [aapt] Creating full resource package...
+              [aapt] Warning: AndroidManifest.xml already defines debuggable (in http://schemas.android.com/apk/res/android); using existing value in manifest.
+         
+         -package:
+         [apkbuilder] Current build type is different than previous build: forced apkbuilder run.
+         [apkbuilder] Creating HelloJni-debug-unaligned.apk and signing it with a debug key...
+         
+         -post-package:
+         
+         -do-debug:
+          [zipalign] Running zip align on final apk...
+              [echo] Debug Package: C:\SmokeEngine\TestProject\Tegra-Android\Debug\bin\HelloJni-debug.apk
+         [propertyfile] Creating new property file: C:\SmokeEngine\TestProject\Tegra-Android\Debug\bin\build.prop
+         [propertyfile] Updating property file: C:\SmokeEngine\TestProject\Tegra-Android\Debug\bin\build.prop
+         [propertyfile] Updating property file: C:\SmokeEngine\TestProject\Tegra-Android\Debug\bin\build.prop
+         [propertyfile] Updating property file: C:\SmokeEngine\TestProject\Tegra-Android\Debug\bin\build.prop
+         
+         -post-build:
+         
+         debug:
+         
+         BUILD SUCCESSFUL
+         Total time: 5 seconds
+         Picked up _JAVA_OPTIONS: -Xms256m -Xmx512m
+         Copying file from "C:\SmokeEngine\TestProject\Tegra-Android\Debug\bin\HelloJni-debug.apk" to "C:\SmokeEngine\Tegra-Android\Debug\\TestProject.apk".
+       DeployAfterBuild:
+         None
+       FinalizeBuildStatus:
+         Deleting file "Tegra-Android\Debug\TestProject.unsuccessfulbuild".
+         Touching "Tegra-Android\Debug\TestProject.lastbuildstate".
+     1>Done Building Project "C:\SmokeEngine\TestProject\TestProject.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:07.87

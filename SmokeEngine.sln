@@ -8,7 +8,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestWorld", "TestWorld\Test
 		{293D3ECB-3EA2-400C-9D37-EDF3FD59D4AA} = {293D3ECB-3EA2-400C-9D37-EDF3FD59D4AA}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Android1", "Android1\Android1.vcxproj", "{DCED26D5-09D8-4DED-BCAD-02E377F7B2FA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestProject", "TestProject\TestProject.vcxproj", "{6C0B6FAC-0767-4051-AD90-84AB12457D5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,12 +29,12 @@ Global
 		{B99564E7-7EDE-4E73-851F-B89AD4B0F7CE}.Profile|Tegra-Android.Build.0 = Profile|Tegra-Android
 		{B99564E7-7EDE-4E73-851F-B89AD4B0F7CE}.Release|Tegra-Android.ActiveCfg = Release|Tegra-Android
 		{B99564E7-7EDE-4E73-851F-B89AD4B0F7CE}.Release|Tegra-Android.Build.0 = Release|Tegra-Android
-		{DCED26D5-09D8-4DED-BCAD-02E377F7B2FA}.Debug|Tegra-Android.ActiveCfg = Debug|Tegra-Android
-		{DCED26D5-09D8-4DED-BCAD-02E377F7B2FA}.Debug|Tegra-Android.Build.0 = Debug|Tegra-Android
-		{DCED26D5-09D8-4DED-BCAD-02E377F7B2FA}.Profile|Tegra-Android.ActiveCfg = Profile|Tegra-Android
-		{DCED26D5-09D8-4DED-BCAD-02E377F7B2FA}.Profile|Tegra-Android.Build.0 = Profile|Tegra-Android
-		{DCED26D5-09D8-4DED-BCAD-02E377F7B2FA}.Release|Tegra-Android.ActiveCfg = Release|Tegra-Android
-		{DCED26D5-09D8-4DED-BCAD-02E377F7B2FA}.Release|Tegra-Android.Build.0 = Release|Tegra-Android
+		{6C0B6FAC-0767-4051-AD90-84AB12457D5A}.Debug|Tegra-Android.ActiveCfg = Debug|Tegra-Android
+		{6C0B6FAC-0767-4051-AD90-84AB12457D5A}.Debug|Tegra-Android.Build.0 = Debug|Tegra-Android
+		{6C0B6FAC-0767-4051-AD90-84AB12457D5A}.Profile|Tegra-Android.ActiveCfg = Profile|Tegra-Android
+		{6C0B6FAC-0767-4051-AD90-84AB12457D5A}.Profile|Tegra-Android.Build.0 = Profile|Tegra-Android
+		{6C0B6FAC-0767-4051-AD90-84AB12457D5A}.Release|Tegra-Android.ActiveCfg = Release|Tegra-Android
+		{6C0B6FAC-0767-4051-AD90-84AB12457D5A}.Release|Tegra-Android.Build.0 = Release|Tegra-Android
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

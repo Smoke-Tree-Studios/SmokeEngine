@@ -4,20 +4,30 @@ SceneNode::RootNode::RootNode(SceneNode * sceneNode,std::map< std::string, Node*
 {
 	_sceneNode = sceneNode;
 	_nodes = nodes;
+
 	
 }
 
-SceneNode::SceneNode(void)
+SceneNode::SceneNode(SceneManager* sceneManager, SmokeEngine* smokeEngine)
 {
+	mSceneManager = sceneManager;
+	mSmokeEngine = smokeEngine;
+
 	_nodes = new std::map< std::string, Node* >();
-	RootSceneNode = new RootNode(this,_nodes,"ROOT_SCENE");
+	mRootSceneNode = new RootNode(this,_nodes,"ROOT_SCENE");
 	RootOverlayNode  = new RootNode(this,_nodes,"ROOT_OVERLAY");
+
+	mShaderSourceStorage = new ShaderSourceStorage();
+	mTextureStorage = new TextureStorage();
+	mVertexBufferStorage = new VertexBufferStorage();
+	mStorageView = new ViewStorage();
+
 }
 
 
 SceneNode::~SceneNode(void)
 {
-	delete(RootSceneNode);
+	delete(mRootSceneNode);
 	delete(RootOverlayNode);
 
 }

@@ -2,6 +2,8 @@
 #include "Renderer\Renderer.h"
 #include "SceneManager.h"
 #include "android\asset_manager.h"
+
+class SceneManager;
 class SmokeEngine
 {
 private:
@@ -13,9 +15,8 @@ public:
 
 	SceneManager * SceneMgr;
 	Renderer* renderMgr;
-	AAssetManager * assetManager;
 
-	SmokeEngine(int* Width, int* Height,AAssetManager * AAsetmanager);
+	SmokeEngine(int* Width, int* Height);
 	~SmokeEngine(void);
 };
 

@@ -1,5 +1,5 @@
 #include "Utility\Source.h"
-#include "android\log.h"
+
 Source::Source(const char* source,GLenum Type)
 {
 	_type = Type;
@@ -19,6 +19,29 @@ Source::Source(const char* file)
 		_type = GL_FRAGMENT_SHADER;
 		_source = glCreateShader(GL_FRAGMENT_SHADER);
 	}
+
+	cv::FileStorage lfileStorage;
+	lfileStorage.open(file, cv::FileStorage::READ);
+	if(!lfileStorage.isOpened())
+	{
+		 __android_log_print(ANDROID_LOG_INFO,"SMOKE_ENGINE",(char*)("Failed to open: " + std::string(file)).c_str());
+	}
+
+	cv::FileNode lnode = lfileStorage["strings"];     
+    if (lnode.type() != cv::FileNode::SEQ)
+    {
+
+    }
+
+	std::string loutput = "test";
+	cv::FileNodeIterator lit = lnode.begin(), lit_end = lnode.end(); 
+	for (; lit != lit_end; ++lit)
+	{
+		 loutput += (std::string)*lit + "\n";
+		
+	}
+	 __android_log_print(ANDROID_LOG_INFO,"SMOKE_ENGINE",(char*)loutput.c_str());
+	_compile((char*)loutput.c_str());
 }
 
 GLuint Source::GetSourceID()

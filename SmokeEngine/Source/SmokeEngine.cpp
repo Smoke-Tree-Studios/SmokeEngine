@@ -1,13 +1,12 @@
 #include "SmokeEngine.h"
 
 
-SmokeEngine::SmokeEngine(int* Width, int* Height,AAssetManager * AAsetmanager)
+SmokeEngine::SmokeEngine(int* Width, int* Height)
 {
 	Width = SmokeEngine::Width;
 	Height = SmokeEngine::Height;
-	assetManager = AAsetmanager;
 
-	SceneMgr = new SceneManager();
+	SceneMgr = new SceneManager(this);
 	renderMgr = new Renderer();
 }
 

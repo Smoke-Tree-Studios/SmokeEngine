@@ -2,6 +2,9 @@
 #include <GLES2/gl2.h>
 #include <GLES2/gl2ext.h>
 #include <string>
+#include <android\log.h>
+#include <opencv2\core\core.hpp>
+
 
 class Source
 {

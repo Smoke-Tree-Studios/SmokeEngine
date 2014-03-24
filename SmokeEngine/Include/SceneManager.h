@@ -3,8 +3,11 @@
 #include <string>
 #include "Node\SceneNode.h"
 #include "Storage\ViewStorage.h"
+#include "SmokeEngine.h"
 #include <map>
 
+class SceneNode;
+class SmokeEngine;
 class SceneManager
 {
 	private:
@@ -13,6 +16,7 @@ class SceneManager
 	protected:
 
 	public:
+		SmokeEngine* mSmokeEngineEngine;
 
 		void AppendScene(std::string id, SceneNode * node);
 		void SetActiveScene(std::string id);
@@ -21,7 +25,7 @@ class SceneManager
 
 		SceneNode* GetSceneNode(std::string id);
 
-		SceneManager(void);
+		SceneManager(SmokeEngine* smokeEngine);
 		~SceneManager(void);
 };
 

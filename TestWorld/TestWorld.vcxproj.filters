@@ -22,6 +22,7 @@
     <None Include="res\values\strings.xml">
       <Filter>res\values</Filter>
     </None>
+    <None Include="assets\test.vs" />
   </ItemGroup>
   <ItemGroup>
     <JCompile Include="src\com\example\Engine\GLRenderer.java" />
@@ -39,12 +40,9 @@
     <JCompile Include="src\com\android\Engine\GLRenderer.java">
       <Filter>JavaSource</Filter>
     </JCompile>
-    <JCompile Include="src\com\android\Engine\CopyOfView.java">
-      <Filter>JavaSource</Filter>
-    </JCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="jni\HelloJni.cpp">
+    <ClCompile Include="jni\Main.cpp">
       <Filter>jni</Filter>
     </ClCompile>
   </ItemGroup>
