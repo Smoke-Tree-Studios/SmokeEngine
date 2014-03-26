@@ -7,41 +7,33 @@ Source::Source(const char* source,GLenum Type)
 	_compile(source);
 
 }
-Source::Source(const char* file)
+Source::Source(const char* file,AAssetManager* assetManager)
 {
-	if(file[sizeof(file) -1] == 's' && file[sizeof(file) -2] == 'v')
+
+	if(file[ strlen(file) -1] == 's' && file[ strlen(file) -2] == 'v')
 	{
 		_type = GL_VERTEX_SHADER;
 		_source = glCreateShader(GL_VERTEX_SHADER);
 	}
-	else if(file[sizeof(file) -1] == 'f' && file[sizeof(file) -2] == 's')
+	else if(file[ strlen(file) -1] == 'f' && file[ strlen(file) -2] == 's')
 	{
 		_type = GL_FRAGMENT_SHADER;
 		_source = glCreateShader(GL_FRAGMENT_SHADER);
 	}
 
-	cv::FileStorage lfileStorage;
-	lfileStorage.open(file, cv::FileStorage::READ);
-	if(!lfileStorage.isOpened())
+	AAsset* lasset = AAssetManager_open(assetManager,file,AASSET_MODE_UNKNOWN);
+
+	if(NULL == lasset)
 	{
 		 __android_log_print(ANDROID_LOG_INFO,"SMOKE_ENGINE",(char*)("Failed to open: " + std::string(file)).c_str());
 	}
 
-	cv::FileNode lnode = lfileStorage["strings"];     
-    if (lnode.type() != cv::FileNode::SEQ)
-    {
+	long lsize = AAsset_getLength(lasset);
 
-    }
+	char* lbuffer = (char*) malloc(sizeof(char)*lsize);
+	AAsset_read(lasset,lbuffer,lsize);
 
-	std::string loutput = "test";
-	cv::FileNodeIterator lit = lnode.begin(), lit_end = lnode.end(); 
-	for (; lit != lit_end; ++lit)
-	{
-		 loutput += (std::string)*lit + "\n";
-		
-	}
-	 __android_log_print(ANDROID_LOG_INFO,"SMOKE_ENGINE",(char*)loutput.c_str());
-	_compile((char*)loutput.c_str());
+	_compile(lbuffer);
 }
 
 GLuint Source::GetSourceID()

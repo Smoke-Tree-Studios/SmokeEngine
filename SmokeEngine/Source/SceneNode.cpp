@@ -15,7 +15,7 @@ SceneNode::SceneNode(SceneManager* sceneManager, SmokeEngine* smokeEngine)
 
 	_nodes = new std::map< std::string, Node* >();
 	mRootSceneNode = new RootNode(this,_nodes,"ROOT_SCENE");
-	RootOverlayNode  = new RootNode(this,_nodes,"ROOT_OVERLAY");
+	mRootOverlayNode  = new RootNode(this,_nodes,"ROOT_OVERLAY");
 
 	mShaderSourceStorage = new ShaderSourceStorage();
 	mTextureStorage = new TextureStorage();
@@ -28,6 +28,6 @@ SceneNode::SceneNode(SceneManager* sceneManager, SmokeEngine* smokeEngine)
 SceneNode::~SceneNode(void)
 {
 	delete(mRootSceneNode);
-	delete(RootOverlayNode);
+	delete(mRootOverlayNode);
 
 }

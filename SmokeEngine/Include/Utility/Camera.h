@@ -1,7 +1,7 @@
 #pragma once
 #include "Utility/Matrix/Matrix4x4.h"
 #include "Utility/Vector/Vector3.h"
-#include "Utility/Quanterion.h"
+#include "Utility/Quaternion.h"
 #include "Node/Node.h"
 
 class Camera
@@ -11,7 +11,7 @@ private:
 
 public:
 	Vector3 Position;
-	Quanterion Rotation;
+	Quaternion Rotation;
 
 
 	Camera(Matrix4x4 ViewMatrix);

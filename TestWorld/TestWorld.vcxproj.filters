@@ -23,6 +23,7 @@
       <Filter>res\values</Filter>
     </None>
     <None Include="assets\test.vs" />
+    <None Include="assets\lice1.png" />
   </ItemGroup>
   <ItemGroup>
     <JCompile Include="src\com\example\Engine\GLRenderer.java" />

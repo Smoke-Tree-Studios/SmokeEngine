@@ -1,4 +1,4 @@
-﻿Build started 3/23/2014 7:05:16 PM.
+﻿Build started 3/25/2014 8:13:51 PM.
      1>Project "C:\SmokeEngine\TestProject\TestProject.vcxproj" on node 3 (rebuild target(s)).
      1>_PrepareForClean:
          Deleting file "Tegra-Android\Debug\TestProject.lastbuildstate".
@@ -145,4 +145,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:07.87
+Time Elapsed 00:00:07.74

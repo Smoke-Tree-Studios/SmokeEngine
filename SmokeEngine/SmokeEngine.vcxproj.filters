@@ -61,20 +61,11 @@
     <ClInclude Include="Include\Utility\BoundedBox.h">
       <Filter>Header\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Utility\Quanterion.h">
-      <Filter>Header\Utility</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Utility\ObjectWavefrontLoader.h">
       <Filter>Header\Utility</Filter>
     </ClInclude>
     <ClInclude Include="Include\Node\SceneNode.h">
       <Filter>Header\Node</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Renderer\Renderer.h">
-      <Filter>Header\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\Renderer\RenderObject.h">
-      <Filter>Header\Render</Filter>
     </ClInclude>
     <ClInclude Include="Include\VertexObject\VertexArrayObject.h">
       <Filter>Header\VertexObject</Filter>
@@ -84,6 +75,16 @@
     </ClInclude>
     <ClInclude Include="Include\VertexObject\VertexObject.h">
       <Filter>Header\VertexObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\LodePNG.h" />
+    <ClInclude Include="Include\Utility\Quaternion.h">
+      <Filter>Header\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Render\Renderer.h">
+      <Filter>Header\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Render\RenderObject.h">
+      <Filter>Header\Render</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -112,9 +113,6 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Source\ObjectWavefrontLoader.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Quanterion.cpp">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Source\Renderer.cpp">
@@ -169,6 +167,10 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Source\VertexObject.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\LodePNG.cpp" />
+    <ClCompile Include="Source\Quaternion.cpp">
       <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>

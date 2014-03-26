@@ -4,6 +4,7 @@
 #include "Utility\Vector\Vector2.h"
 #include <gles2\gl2.h>
 #include <stdlib.h>
+#include <android\asset_manager.h>
 
 class Texture
 {
@@ -18,7 +19,7 @@ private:
 	std::string _textureName;
 
 public:
-	Texture(const char * filename);
+	Texture(const char * filename,AAssetManager* assetManager);
 	~Texture(void);
 
 	/** returns the file name of the asset */

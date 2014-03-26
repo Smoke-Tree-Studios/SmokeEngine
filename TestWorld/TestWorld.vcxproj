@@ -31,6 +31,7 @@
       <FileType>Document</FileType>
     </JCompile>
     <None Include="AndroidManifest.xml" />
+    <None Include="assets\lice1.png" />
     <None Include="assets\test.vs" />
     <None Include="build.xml" />
     <JCompile Include="src\com\android\Engine\GLRenderer.java">

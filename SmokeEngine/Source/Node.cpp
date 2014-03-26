@@ -5,7 +5,7 @@ Node::Node(std::string ID)
 {
 	Position = Vector3();
 	Scale = Vector3(1,1,1);
-	Rotation = Quanterion();
+	Rotation = Quaternion();
 
 	_children = std::list<Node*>();
 	_id = ID;

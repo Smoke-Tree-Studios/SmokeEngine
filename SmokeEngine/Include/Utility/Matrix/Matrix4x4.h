@@ -1,5 +1,5 @@
 #pragma once
-#include "Utility\Quanterion.h"
+#include "Utility\Quaternion.h"
 #include "Utility\Vector\Vector3.h"
 #include <GLES2\gl2.h>
 
@@ -33,7 +33,7 @@ class Matrix4x4
 		static Matrix4x4 RotationX(float amount);
 		static Matrix4x4 RotationY(float amount);
 		static Matrix4x4 RotationZ(float amount);
-		static Matrix4x4 Rotation(Quanterion quanterion);
+		static Matrix4x4 Rotation(Quaternion quanterion);
 
 		static Matrix4x4 Scale(float x, float y,float z);
 		static Matrix4x4 Scale(Vector3 scale);

@@ -1,8 +1,9 @@
 #pragma once
-#include "Renderer\Renderer.h"
+#include "Render\Renderer.h"
 #include "SceneManager.h"
 #include "android\asset_manager.h"
 
+class Renderer;
 class SceneManager;
 class SmokeEngine
 {
@@ -13,10 +14,10 @@ public:
 	int * Width;
 	int * Height;
 
-	SceneManager * SceneMgr;
-	Renderer* renderMgr;
+	SceneManager * mSceneManager;
+	Renderer* mRenderer;
 
-	SmokeEngine(int* Width, int* Height);
+	SmokeEngine();
 	~SmokeEngine(void);
 };
 

@@ -28,9 +28,9 @@
     <ClInclude Include="Include\Utility\Matrix\MatrixStack.h" />
     <ClInclude Include="Include\Node\Node.h" />
     <ClInclude Include="Include\Node\ObjectNode.h" />
-    <ClInclude Include="Include\Utility\Quanterion.h" />
-    <ClInclude Include="Include\Renderer\Renderer.h" />
-    <ClInclude Include="Include\Renderer\RenderObject.h" />
+    <ClInclude Include="Include\Utility\Quaternion.h" />
+    <ClInclude Include="Include\Render\Renderer.h" />
+    <ClInclude Include="Include\Render\RenderObject.h" />
     <ClInclude Include="Include\SceneManager.h" />
     <ClInclude Include="Include\Node\SceneNode.h" />
     <ClInclude Include="Include\Utility\Shader.h" />
@@ -46,8 +46,10 @@
     <ClInclude Include="Include\Storage\VertexBufferStorage.h" />
     <ClInclude Include="Include\VertexObject\VertexObject.h" />
     <ClInclude Include="Include\Storage\ViewStorage.h" />
+    <ClInclude Include="Include\Utility\LodePNG.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\LodePNG.cpp" />
     <ClCompile Include="Source\BoundedBox.cpp" />
     <ClCompile Include="Source\Camera.cpp" />
     <ClCompile Include="Source\Model.cpp" />
@@ -58,7 +60,7 @@
     <ClCompile Include="Source\MatrixStack.cpp" />
     <ClCompile Include="Source\Node.cpp" />
     <ClCompile Include="Source\ObjectNode.cpp" />
-    <ClCompile Include="Source\Quanterion.cpp" />
+    <ClCompile Include="Source\Quaternion.cpp" />
     <ClCompile Include="Source\Renderer.cpp" />
     <ClCompile Include="Source\RenderObject.cpp" />
     <ClCompile Include="Source\SceneManager.cpp" />

@@ -38,8 +38,6 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 
 	@Override
 	public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-		 Lib.Initate();
-		 
 	}
 
 }

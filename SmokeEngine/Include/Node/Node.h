@@ -3,7 +3,7 @@
 #include <map>
 #include <string>
 #include "Utility\Vector\Vector3.h"
-#include "Utility\Quanterion.h"
+#include "Utility\Quaternion.h"
 #include "Utility\Matrix\Matrix4x4.h"
 
 class SceneNode;
@@ -25,7 +25,7 @@ class Node
 	public:
 		Vector3 Position;
 		Vector3 Scale;
-		Quanterion Rotation;
+		Quaternion Rotation;
 
 		Node(std::string ID);
 		virtual ~Node(void);

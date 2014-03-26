@@ -1,4 +1,4 @@
-#include "Renderer\Renderer.h"
+#include "Render\Renderer.h"
 
 Renderer::Renderer(void)
 {
@@ -10,7 +10,7 @@ Renderer::~Renderer(void)
 
 }
 
-void Renderer::Draw()
+void Renderer::Draw(SceneNode* scene)
 {
 }
 

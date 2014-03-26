@@ -4,7 +4,7 @@
 #include <string>
 #include <android\log.h>
 #include <opencv2\core\core.hpp>
-
+#include <android\asset_manager.h>
 
 class Source
 {
@@ -14,7 +14,7 @@ private:
 	void _compile(const char* source);
 public:
 	Source(const char* source,GLenum Type);
-	Source(const char* file);
+	Source(const char* file,AAssetManager* assetManager);
 
 	GLenum GetType();
 	GLuint GetSourceID();

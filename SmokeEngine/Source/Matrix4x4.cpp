@@ -164,7 +164,7 @@ Matrix4x4 Matrix4x4::RotationZ(float amount)
 		0,0,0,1);
 }
 
-Matrix4x4 Matrix4x4::Rotation(Quanterion quanterion)
+Matrix4x4 Matrix4x4::Rotation(Quaternion quanterion)
 {
 	return Matrix4x4();
 }
