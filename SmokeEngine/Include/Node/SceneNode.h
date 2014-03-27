@@ -6,6 +6,7 @@
 #include "Storage\TextureStorage.h"
 #include "Storage\VertexBufferStorage.h"
 #include "Storage\ViewStorage.h"
+#include "Utility\Camera.h"
 
 class SmokeEngine;
 class SceneManager;
@@ -21,10 +22,12 @@ protected:
 			RootNode(SceneNode * sceneNode,std::map<std::string, Node* >* nodes, std::string ID);
 	};
 public:
+	Camera * mMainCamera;
+
 	ShaderSourceStorage * mShaderSourceStorage;
 	TextureStorage * mTextureStorage;
 	VertexBufferStorage * mVertexBufferStorage;
-	ViewStorage * mStorageView;
+	ViewStorage * mViewStorage;
 
 	SceneManager * mSceneManager;
 
@@ -35,7 +38,7 @@ public:
 
 	virtual void Update(float deltaT) =0;
 
-	SceneNode(SceneManager* sceneManager, SmokeEngine* smokeEngine);
+	SceneNode( SmokeEngine* smokeEngine,Camera * camera);
 	~SceneNode(void);
 };
 

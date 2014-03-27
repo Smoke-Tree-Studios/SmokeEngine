@@ -1,53 +1,18 @@
-﻿Build started 3/25/2014 8:13:51 PM.
-     1>Project "C:\SmokeEngine\SmokeEngine\SmokeEngine.vcxproj" on node 2 (rebuild target(s)).
-     1>_PrepareForClean:
-         Deleting file "Tegra-Android\Debug\SmokeEngine.lastbuildstate".
-       AntClean:
-         Performing clean...
-       InitializeBuildStatus:
+﻿Build started 3/26/2014 9:40:20 PM.
+     1>Project "C:\SmokeEngine\SmokeEngine\SmokeEngine.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
          Creating "Tegra-Android\Debug\SmokeEngine.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          C:\NVPACK\android-ndk-r9b\toolchains\arm-linux-androideabi-4.8\prebuilt\windows\bin\arm-linux-androideabi-g++.exe 
-         LodePNG.cpp
-         Matrix4x4.cpp
-         SceneManager.cpp
-         Vector2.cpp
-         Vector3.cpp
-         MatrixStack.cpp
-         Vector4.cpp
-         Node.cpp
-         VertexArrayObject.cpp
-         SceneNode.cpp
-         VertexBufferObjectWithSubData.cpp
-         ObjectNode.cpp
-         VertexBufferStorage.cpp
-         Quaternion.cpp
-         BoundedBox.cpp
          Renderer.cpp
-         Camera.cpp
-         VertexObject.cpp
-         Shader.cpp
-         Model.cpp
-         ViewStorage.cpp
-         ObjectWavefrontLoader.cpp
-         RenderObject.cpp
-         Source.cpp
-         S_Rectangle.cpp
-         Texture.cpp
-         ShaderSourceStorage.cpp
-     1>C:\SmokeEngine\SmokeEngine\Source\Texture.cpp(7,34): warning : 'POWER_TWO' initialized and declared 'extern' [enabled by default]
-          extern unsigned int POWER_TWO [26] = {1,2,4,8,16,32,64,128,256,512,1024,2048,4096,8192,16384,32768,65536,131072,262144,524288,1048576,2097152,4194304,8388608,16777216,33554432};
-                                           ^
-         TextureStorage.cpp
-         SmokeEngine.cpp
        Lib:
          C:\NVPACK\android-ndk-r9b\toolchains\arm-linux-androideabi-4.8\prebuilt\windows\bin\arm-linux-androideabi-ar.exe rcs C:/SmokeEngine/Tegra-Android/Debug/libSmokeEngine.a Tegra-Android/Debug/LodePNG.o Tegra-Android/Debug/BoundedBox.o Tegra-Android/Debug/Camera.o Tegra-Android/Debug/Model.o Tegra-Android/Debug/ObjectWavefrontLoader.o Tegra-Android/Debug/ShaderSourceStorage.o Tegra-Android/Debug/SmokeEngine.o Tegra-Android/Debug/Matrix4x4.o Tegra-Android/Debug/MatrixStack.o Tegra-Android/Debug/Node.o Tegra-Android/Debug/ObjectNode.o Tegra-Android/Debug/Quaternion.o Tegra-Android/Debug/Renderer.o Tegra-Android/Debug/RenderObject.o Tegra-Android/Debug/SceneManager.o Tegra-Android/Debug/SceneNode.o Tegra-Android/Debug/Shader.o Tegra-Android/Debug/Source.o Tegra-Android/Debug/S_Rectangle.o Tegra-Android/Debug/Texture.o Tegra-Android/Debug/TextureStorage.o Tegra-Android/Debug/Vector2.o Tegra-Android/Debug/Vector3.o Tegra-Android/Debug/Vector4.o Tegra-Android/Debug/VertexArrayObject.o Tegra-Android/Debug/VertexBufferObjectWithSubData.o Tegra-Android/Debug/VertexBufferStorage.o Tegra-Android/Debug/VertexObject.o Tegra-Android/Debug/ViewStorage.o
          SmokeEngine.vcxproj -> C:\SmokeEngine\Tegra-Android\Debug\libSmokeEngine.a
        FinalizeBuildStatus:
          Deleting file "Tegra-Android\Debug\SmokeEngine.unsuccessfulbuild".
          Touching "Tegra-Android\Debug\SmokeEngine.lastbuildstate".
-     1>Done Building Project "C:\SmokeEngine\SmokeEngine\SmokeEngine.vcxproj" (rebuild target(s)).
+     1>Done Building Project "C:\SmokeEngine\SmokeEngine\SmokeEngine.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:05.60
+Time Elapsed 00:00:01.20

@@ -15,7 +15,7 @@ class Node
 		std::string _id;
 
 		//the children nodes related to the set
-		std::list<Node*> _children;
+		std::list<Node*>* _children;
 
 		//list of all the nodes in a scene. used for the scenemanager
 		std::map<std::string, Node*>* _nodes;
@@ -38,7 +38,7 @@ class Node
 		//appends a node to the set
 		void AppendNode(Node * n);
 
-		std::list<Node*> GetChildren();
+		std::list<Node*>* GetChildren();
 		Node* GetParent();
 		Node* GetNode(std::string id);
 

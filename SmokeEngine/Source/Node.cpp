@@ -7,7 +7,7 @@ Node::Node(std::string ID)
 	Scale = Vector3(1,1,1);
 	Rotation = Quaternion();
 
-	_children = std::list<Node*>();
+	_children =new std::list<Node*>();
 	_id = ID;
 }
 
@@ -23,10 +23,12 @@ std::string Node::GetID()
 
 void Node::DeleteAllChildren()
 {
-	for(std::list<Node*>::iterator literator =  _children.begin(); literator != _children.end(); ++literator)
+	
+	for(std::list<Node*>::iterator literator =  _children->begin(); literator != _children->end(); ++literator)
 	{
 		delete((*literator));
 	}
+	delete(_children);
 }
 
 Matrix4x4 Node::GetMatrix()
@@ -45,7 +47,7 @@ void Node::AppendNode(Node * n)
 
 	(*_nodes)[n->_id] = n;
 
-	_children.push_back(n);
+	_children->push_back(n);
 }
 
 Node* Node::GetParent()
@@ -55,7 +57,8 @@ Node* Node::GetParent()
 
 Node* Node::GetNode(std::string id)
 {
-	for (std::list<Node*>::iterator it=_children.begin(); it != _children.end(); ++it)
+
+	for (std::list<Node*>::iterator it=_children->begin(); it != _children->end(); ++it)
 	{
 		if((*it)->GetID() == id)
 		{
@@ -65,7 +68,7 @@ Node* Node::GetNode(std::string id)
 
 }
 
-std::list<Node*>  Node::GetChildren()
+std::list<Node*>*  Node::GetChildren()
 {
 	return _children;
 }

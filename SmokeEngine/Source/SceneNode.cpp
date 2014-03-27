@@ -8,9 +8,9 @@ SceneNode::RootNode::RootNode(SceneNode * sceneNode,std::map< std::string, Node*
 	
 }
 
-SceneNode::SceneNode(SceneManager* sceneManager, SmokeEngine* smokeEngine)
+SceneNode::SceneNode(SmokeEngine* smokeEngine,Camera * camera)
 {
-	mSceneManager = sceneManager;
+	mSceneManager = smokeEngine->mSceneManager;
 	mSmokeEngine = smokeEngine;
 
 	_nodes = new std::map< std::string, Node* >();
@@ -20,7 +20,11 @@ SceneNode::SceneNode(SceneManager* sceneManager, SmokeEngine* smokeEngine)
 	mShaderSourceStorage = new ShaderSourceStorage();
 	mTextureStorage = new TextureStorage();
 	mVertexBufferStorage = new VertexBufferStorage();
-	mStorageView = new ViewStorage();
+	mViewStorage = new ViewStorage();
+
+	mMainCamera = camera;
+
+	mViewStorage->AddCamera("MAIN_CAMERA",mMainCamera);
 
 }
 

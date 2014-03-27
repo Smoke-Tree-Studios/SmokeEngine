@@ -1,6 +1,7 @@
 #pragma once
 #include "Utility\Matrix\MatrixStack.h"
 #include "Node\SceneNode.h"
+#include "Node\Node.h"
 
 class SceneNode;
 class Renderer
@@ -8,7 +9,7 @@ class Renderer
 private:
 	MatrixStack _matrixStack;
 	
-	void DrawNode();
+	void DrawNode(Node * n);
 public:
 	void Draw(SceneNode *scene);
 
