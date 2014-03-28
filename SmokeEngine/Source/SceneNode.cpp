@@ -8,6 +8,7 @@ SceneNode::RootNode::RootNode(SceneNode * sceneNode,std::map< std::string, Node*
 	
 }
 
+
 SceneNode::SceneNode(SmokeEngine* smokeEngine,Camera * camera)
 {
 	mSceneManager = smokeEngine->mSceneManager;

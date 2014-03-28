@@ -14,7 +14,9 @@ public:
 	virtual ~ObjectNode(void);
 
 	virtual Matrix4x4 GetMatrix();
-	void Draw();
+	
+	virtual void Update();
+	virtual void Draw();
 
 };
 

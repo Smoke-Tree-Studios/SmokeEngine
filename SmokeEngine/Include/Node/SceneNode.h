@@ -19,7 +19,7 @@ protected:
 	class RootNode : public Node
 	{
 		public:
-			RootNode(SceneNode * sceneNode,std::map<std::string, Node* >* nodes, std::string ID);
+			RootNode(SceneNode * sceneNode,std::map<std::string, Node*>* nodes, std::string ID);
 	};
 public:
 	Camera * mMainCamera;

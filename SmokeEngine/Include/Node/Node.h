@@ -44,5 +44,8 @@ class Node
 
 		//delete's all the children nodes
 		void DeleteAllChildren();
+
+		virtual void Update();
+		virtual void Draw();
 };
 

@@ -10,6 +10,8 @@ Renderer::~Renderer(void)
 
 }
 
+
+
 void Renderer::Draw(SceneNode* scene)
 {
 	_matrixStack.Push(scene->mMainCamera->GetMatrix());
@@ -23,7 +25,9 @@ void Renderer::DrawNode(Node * n)
 {
 	for(std::list<Node*>::iterator iter = n->GetChildren()->begin(); iter !=  n->GetChildren()->end();++iter)
 	{
-		(*iter)->GetMatrix();
-		DrawNode((*iter));
+		_matrixStack.Push((*iter)->GetMatrix());
+			(*iter)->Draw();
+			DrawNode((*iter));
+		_matrixStack.Pop();
 	}
 }

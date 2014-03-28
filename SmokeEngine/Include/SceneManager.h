@@ -6,6 +6,7 @@
 #include "SmokeEngine.h"
 #include <map>
 
+
 class SceneNode;
 class SmokeEngine;
 class SceneManager
@@ -19,7 +20,9 @@ class SceneManager
 		SmokeEngine* mSmokeEngineEngine;
 
 		void AppendScene(std::string id, SceneNode * node);
+
 		void SetActiveScene(std::string id);
+		SceneNode* GetActiveSceneNode();
 
 		void Update(float DeltaT);
 

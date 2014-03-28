@@ -30,5 +30,11 @@ SceneNode* SceneManager::GetSceneNode(std::string id)
 
 void SceneManager::Update(float DeltaT)
 {
+	_activeScene->Update(DeltaT);
 
+}
+
+SceneNode* SceneManager::GetActiveSceneNode()
+{
+	return _activeScene;
 }

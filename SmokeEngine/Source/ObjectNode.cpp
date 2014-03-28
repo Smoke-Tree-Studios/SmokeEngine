@@ -12,3 +12,12 @@ Matrix4x4 ObjectNode::GetMatrix()
 ObjectNode::~ObjectNode(void)
 {
 }
+
+void ObjectNode::Update()
+{
+}
+
+
+void ObjectNode::Draw()
+{
+}
