@@ -46,6 +46,6 @@ class Node
 		void DeleteAllChildren();
 
 		virtual void Update();
-		virtual void Draw();
+		virtual void Draw(Matrix4x4 transform, Matrix4x4 view);
 };
 

@@ -1,12 +1,8 @@
 #pragma once
-#include <functional>
 #include <string>
-#include "Node\SceneNode.h"
-#include "Storage\ViewStorage.h"
-#include "SmokeEngine.h"
 #include <map>
 
-
+class SmokeEngine;
 class SceneNode;
 class SmokeEngine;
 class SceneManager
@@ -17,7 +13,7 @@ class SceneManager
 	protected:
 
 	public:
-		SmokeEngine* mSmokeEngineEngine;
+		SmokeEngine* mSmokeEngine;
 
 		void AppendScene(std::string id, SceneNode * node);
 

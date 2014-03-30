@@ -20,7 +20,7 @@
   <ItemGroup>
     <ClInclude Include="Include\Utility\BoundedBox.h" />
     <ClInclude Include="Include\Utility\Camera.h" />
-    <ClInclude Include="Include\Utility\Model.h" />
+    <ClInclude Include="Include\Render\Model.h" />
     <ClInclude Include="Include\Utility\ObjectWavefrontLoader.h" />
     <ClInclude Include="Include\Storage\ShaderSourceStorage.h" />
     <ClInclude Include="Include\SmokeEngine.h" />
@@ -47,6 +47,7 @@
     <ClInclude Include="Include\VertexObject\VertexObject.h" />
     <ClInclude Include="Include\Storage\ViewStorage.h" />
     <ClInclude Include="Include\Utility\LodePNG.h" />
+    <ClInclude Include="Include\VertexObject\WaveFrontLoader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\LodePNG.cpp" />
@@ -78,6 +79,7 @@
     <ClCompile Include="Source\VertexBufferStorage.cpp" />
     <ClCompile Include="Source\VertexObject.cpp" />
     <ClCompile Include="Source\ViewStorage.cpp" />
+    <ClCompile Include="Source\WaveFrontLoader.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{293D3ECB-3EA2-400C-9D37-EDF3FD59D4AA}</ProjectGuid>

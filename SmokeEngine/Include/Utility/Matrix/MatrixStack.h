@@ -1,8 +1,7 @@
-#include "stack"
-#include "Matrix4x4.h"
+#pragma once
 #include <list>
 
-
+class Matrix4x4;
 class MatrixStack
 {
 private:

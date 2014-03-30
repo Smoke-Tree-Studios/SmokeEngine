@@ -20,7 +20,6 @@ void SmokeEngine::Step()
 	float ldiff = (((float)( clock() - _time))/CLOCKS_PER_SEC) * 1000.0;
 	mSceneManager->Update(ldiff);
 	mRenderer->Draw(mSceneManager->GetActiveSceneNode());
-
 	_time = clock();
 
 }

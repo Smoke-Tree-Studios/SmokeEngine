@@ -1,9 +1,10 @@
 #include "SceneManager.h"
-
+#include "Node\SceneNode.h"
+#include "SmokeEngine.h"
 
 SceneManager::SceneManager(SmokeEngine* smokeEngine)
 {
-	mSmokeEngineEngine = smokeEngine;
+	mSmokeEngine = smokeEngine;
 	_sceneNodes = std::map<std::string,SceneNode*>();
 }
 

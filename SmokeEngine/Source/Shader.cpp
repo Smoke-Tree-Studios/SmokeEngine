@@ -1,8 +1,16 @@
 #include "Utility\Shader.h"
+#include "Utility\Source.h"
+#include "Utility\Texture.h"
+#include "Utility\Vector\Vector2.h"
+#include "Utility\Vector\Vector3.h"
+#include "Utility\Vector\Vector4.h"
+#include "Utility\Matrix\Matrix4x4.h"
 
 Shader::Shader(void)
 {
 	_shaderProgram = glCreateProgram();
+
+	_textures = std::map<int,GLuint>();
 }
 
 void Shader::_useShader()
@@ -18,9 +26,10 @@ Shader::~Shader(void)
 	glDeleteProgram(_shaderProgram);
 }
 
-void Shader::AttachShader(Source source)
+void Shader::AttachSource(Source* source)
 {
-	glAttachShader(_shaderProgram,source.GetSourceID());
+	
+	glAttachShader(_shaderProgram,source->GetSourceID());
 }
 
 void Shader::IntalizeShader()
@@ -122,6 +131,20 @@ void Shader::SetUniform4(const GLchar* UniformID, Vector4 value[])
 
 }
 
+void Shader::SetTexture(const GLchar* UniformID,Texture* texture,int index)
+{
+	_useShader();
+	if(_textures.count(index))
+	{
+		_textures[index] = texture->GetResourceID();
+	}
+	else
+	{
+		_textures.insert(std::pair<int,GLuint>(index,texture->GetResourceID()) );
+	}
+	glUniform1i(glGetUniformLocation(_shaderProgram,UniformID),index);
+}
+
 void Shader::SetMatrix4x4(const GLchar* UniformID, Matrix4x4 m)
 {
 	GLfloat lvalue[16] ;
@@ -177,5 +200,22 @@ void Shader::SetMatrix4x4(const GLchar* UniformID,Matrix4x4 m[])
 	_useShader();
 	glUniform4fv(glGetUniformLocation(_shaderProgram,UniformID),sizeof(m),lvalue);
 
+
+}
+
+void Shader::BindShader()
+{
+	_useShader();
+	for(std::map<int,GLuint>::iterator iter = _textures.begin(); iter != _textures.end(); iter++)
+	{
+		glActiveTexture(GL_TEXTURE0 + iter->first);
+		glBindTexture(GL_TEXTURE_2D,iter->second);
+	}
+}
+
+void Shader::Unbind()
+{
+	glUseProgram(0);
+	Shader::ActiveProgram = 0;
 
 }

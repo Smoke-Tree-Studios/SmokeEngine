@@ -3,7 +3,6 @@
 #include <GLES2/gl2ext.h>
 #include <string>
 #include <android\log.h>
-#include <opencv2\core\core.hpp>
 #include <android\asset_manager.h>
 
 class Source

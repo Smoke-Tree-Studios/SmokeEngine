@@ -15,7 +15,9 @@
 
 				Vector3 operator+(const Vector3& other);
 				Vector3 operator*(const Vector3& other);
+				Vector3 operator*(const float& other);
 				Vector3 operator/(const Vector3& other);
+
 
 				Vector3 GetUnitVector();
 				float GetLength();

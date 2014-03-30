@@ -9,13 +9,21 @@ private:
 
 public:
 
+	/**
+	*declares a vertex array of indecies
+	*
+	**/
 	VertexArrayObject(GLushort data[]);
-	VertexArrayObject(GLuint data[]);
 	~VertexArrayObject(void);
 
-	//binders the vertex array Object
-	 virtual void Bind();
-	 //returns the number of indecies
-	 int GetNumberOfIndecies();
+	/**
+	*binders the vertex array Object
+	**/
+	virtual void Bind();
+
+	/**
+	*returns the number of indecies
+	**/
+	int GetNumberOfIndecies();
 };
 

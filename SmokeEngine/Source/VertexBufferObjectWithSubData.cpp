@@ -1,5 +1,7 @@
 #include "VertexObject\VertexBufferObjectWithSubData.h"
 
+
+
 VertexBufferObjectWithSubData::SubData::SubData(GLfloat data[])
 {
 		 GLfloat ldata[sizeof(data)];
@@ -104,6 +106,7 @@ void VertexBufferObjectWithSubData::IntalizeBuffer()
 
 void VertexBufferObjectWithSubData::AddSubData(SubData subData)
 {
+	
 	_data.push_back(subData);
 
 }

@@ -36,3 +36,26 @@ Source* ShaderSourceStorage::GetSource(std::string id, GLenum Type)
 	}
 	return NULL;
 }
+
+bool ShaderSourceStorage::IsSourceUsed(std::string id,GLenum Type)
+{
+	std::string lid = "";
+
+	if(Type == GL_FRAGMENT_SHADER)
+	{
+		lid = id + FRAMGENT_SOURCE;
+	}
+	else if (Type == GL_VERTEX_SHADER)
+	{
+		lid =  id + VERTEX_SOURCE;
+	}
+	
+	if(_shaderSource.count(lid))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}

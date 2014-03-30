@@ -212,6 +212,15 @@ Matrix4x4 Matrix4x4::Scale(Vector3 scale)
 		0,0,0,1);
 }
 
+ Matrix4x4 Matrix4x4::Idenity()
+ {
+	 return Matrix4x4(
+	1,0,0,0,
+	0,1,0,0,
+	0,0,1,0,
+	0,0,0,1);
+ }
+
 Matrix4x4::~Matrix4x4(void)
 {
 }

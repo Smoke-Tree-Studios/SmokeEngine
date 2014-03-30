@@ -30,6 +30,10 @@ Vector3 Vector3::operator*(const Vector3& other)
 {
 	return Vector3(other.X * Vector3::X,Vector3::Y * other.Y,  Vector3::Z * other.Z);
 }
+Vector3 Vector3::operator*(const float& other)
+{
+	return Vector3(other * Vector3::X,Vector3::Y * other,  Vector3::Z * other);
+}
 
 Vector3 Vector3::operator/(const Vector3& other)
 {

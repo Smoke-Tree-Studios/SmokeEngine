@@ -52,9 +52,6 @@
     <ClInclude Include="Include\Storage\TextureStorage.h">
       <Filter>Header\Storage</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Utility\Model.h">
-      <Filter>Header\Render</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Utility\Camera.h">
       <Filter>Header\Utility</Filter>
     </ClInclude>
@@ -80,12 +77,16 @@
     <ClInclude Include="Include\Utility\Quaternion.h">
       <Filter>Header\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Render\Renderer.h">
-      <Filter>Header\Render</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Render\RenderObject.h">
       <Filter>Header\Render</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Render\Model.h">
+      <Filter>Header\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Render\Renderer.h">
+      <Filter>Header\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\VertexObject\WaveFrontLoader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\BoundedBox.cpp">
@@ -173,6 +174,7 @@
     <ClCompile Include="Source\Quaternion.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="Source\WaveFrontLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source">

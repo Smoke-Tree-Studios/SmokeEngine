@@ -1,17 +1,19 @@
 #pragma once
 #include <GLES2\gl2.h>
-#include "Source.h"
-#include "Utility\Vector\Vector2.h"
-#include "Utility\Vector\Vector3.h"
-#include "Utility\Vector\Vector4.h"
-#include "Utility\Matrix\Matrix4x4.h"
+#include <map>
+#include <string>
 
-#include <opencv2\photo\photo.hpp>
+class Matrix4x4;
+class Vector4;
+class Vector3;
+class Vector2;
+class Source;
+class Texture;
 class Shader
 {
 private:
 	GLuint _shaderProgram;
-
+	std::map<int,GLuint> _textures;
 	void _useShader();
 
 public:
@@ -20,8 +22,11 @@ public:
 	Shader(void);
 	~Shader(void);
 
-	void AttachShader(Source source);
+	void AttachSource(Source* source);
 	void IntalizeShader();
+
+	void BindShader();
+	static void Unbind();
 
 	void SetAttrib(int index, const GLchar* attrib);
 
@@ -42,6 +47,8 @@ public:
 
 	void SetMatrix4x4(const GLchar* UniformID,Matrix4x4 m);
 	void SetMatrix4x4(const GLchar* UniformID,Matrix4x4 m[]);
+
+	void SetTexture(const GLchar* UniformID,Texture* texture,int index);
 };
 
 int Shader::ActiveProgram = 0;

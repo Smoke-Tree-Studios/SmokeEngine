@@ -5,7 +5,6 @@
 
 #include <time.h>
 
-class Renderer;
 class SceneManager;
 class SmokeEngine
 {

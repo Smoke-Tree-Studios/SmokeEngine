@@ -41,6 +41,8 @@ class Matrix4x4
 		static Matrix4x4 Orthographic(float left, float right, float top, float bottom,float far, float near);
 		static Matrix4x4 Perspective(float fov, float aspect, float znear, float zfar);
 
+		static Matrix4x4 Idenity();
+
 		Matrix4x4 operator+(const Matrix4x4& other);
 		Matrix4x4 operator-(const Matrix4x4& other);
 		Matrix4x4 operator*(const Matrix4x4& other);

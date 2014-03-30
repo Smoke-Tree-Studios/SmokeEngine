@@ -36,7 +36,7 @@ Matrix4x4 Node::GetMatrix()
 	Matrix4x4 lscale = Matrix4x4::Scale(Scale);
 	Matrix4x4 lposition = Matrix4x4::Translation(Position);
 	Matrix4x4 lrotation = Matrix4x4::Rotation(Rotation);
-	return lscale * lrotation * lposition;
+	return (lscale *( lrotation * lposition));
 }
 
 void Node::AppendNode(Node * n)

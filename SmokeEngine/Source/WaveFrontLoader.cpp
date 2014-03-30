@@ -1,0 +1,2 @@
+#include "VertexObject\WaveFrontLoader.h"
+

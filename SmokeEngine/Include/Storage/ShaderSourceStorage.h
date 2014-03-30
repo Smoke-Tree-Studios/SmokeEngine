@@ -22,10 +22,11 @@ public:
 	*/
 	void AppendSource(std::string id, Source* source);
 	
+	bool IsSourceUsed(std::string id,GLenum Type);
 	/** 
 	 * retrives the source with the id 
 	 *
-	 * Type has to be GL_FRAGMENT_SHADER or GL_FRAGMENT_SHADER
+	 * Type has to be GL_FRAGMENT_SHADER or GL_VERTEX_SHADER
 	 *
 	 *@return NULL if the Type is wrong
 	*/
