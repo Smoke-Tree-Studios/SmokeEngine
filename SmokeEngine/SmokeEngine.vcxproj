@@ -21,7 +21,6 @@
     <ClInclude Include="Include\Utility\BoundedBox.h" />
     <ClInclude Include="Include\Utility\Camera.h" />
     <ClInclude Include="Include\Render\Model.h" />
-    <ClInclude Include="Include\Utility\ObjectWavefrontLoader.h" />
     <ClInclude Include="Include\Storage\ShaderSourceStorage.h" />
     <ClInclude Include="Include\SmokeEngine.h" />
     <ClInclude Include="Include\Utility\Matrix\Matrix4x4.h" />
@@ -47,14 +46,13 @@
     <ClInclude Include="Include\VertexObject\VertexObject.h" />
     <ClInclude Include="Include\Storage\ViewStorage.h" />
     <ClInclude Include="Include\Utility\LodePNG.h" />
-    <ClInclude Include="Include\VertexObject\WaveFrontLoader.h" />
+    <ClInclude Include="Include\VertexObject\WaveFrontLoad.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\LodePNG.cpp" />
     <ClCompile Include="Source\BoundedBox.cpp" />
     <ClCompile Include="Source\Camera.cpp" />
     <ClCompile Include="Source\Model.cpp" />
-    <ClCompile Include="Source\ObjectWavefrontLoader.cpp" />
     <ClCompile Include="Source\ShaderSourceStorage.cpp" />
     <ClCompile Include="Source\SmokeEngine.cpp" />
     <ClCompile Include="Source\Matrix4x4.cpp" />
@@ -79,7 +77,7 @@
     <ClCompile Include="Source\VertexBufferStorage.cpp" />
     <ClCompile Include="Source\VertexObject.cpp" />
     <ClCompile Include="Source\ViewStorage.cpp" />
-    <ClCompile Include="Source\WaveFrontLoader.cpp" />
+    <ClCompile Include="Source\WaveFrontLoad.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{293D3ECB-3EA2-400C-9D37-EDF3FD59D4AA}</ProjectGuid>

@@ -24,6 +24,9 @@
     </None>
     <None Include="assets\test.vs" />
     <None Include="assets\lice1.png" />
+    <None Include="assets\bunny.wobj" />
+    <None Include="assets\drag.wobj" />
+    <None Include="assets\Teapot.wobj" />
   </ItemGroup>
   <ItemGroup>
     <JCompile Include="src\com\example\Engine\GLRenderer.java" />

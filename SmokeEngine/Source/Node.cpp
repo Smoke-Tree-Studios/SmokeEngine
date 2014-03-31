@@ -73,5 +73,10 @@ std::list<Node*>*  Node::GetChildren()
 	return _children;
 }
 
+void Node::Update()
+{
+}
 
-
+void Node::Draw(Matrix4x4 transform, Matrix4x4 view)
+{
+}

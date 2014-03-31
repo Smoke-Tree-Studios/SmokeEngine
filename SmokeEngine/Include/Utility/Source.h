@@ -1,10 +1,10 @@
 #pragma once
+#include <string>
 #include <GLES2/gl2.h>
 #include <GLES2/gl2ext.h>
-#include <string>
-#include <android\log.h>
-#include <android\asset_manager.h>
 
+
+class AAssetManager;
 class Source
 {
 private:

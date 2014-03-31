@@ -1,4 +1,7 @@
 #include "Utility\Source.h"
+#include <android\asset_manager.h>
+#include <android\log.h>
+
 
 Source::Source(const char* source,GLenum Type)
 {
@@ -34,6 +37,7 @@ Source::Source(const char* file,AAssetManager* assetManager)
 	AAsset_read(lasset,lbuffer,lsize);
 
 	_compile(lbuffer);
+	free(lbuffer);
 }
 
 GLuint Source::GetSourceID()

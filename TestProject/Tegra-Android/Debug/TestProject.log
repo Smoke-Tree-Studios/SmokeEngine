@@ -1,4 +1,4 @@
-﻿Build started 3/29/2014 12:22:17 PM.
+﻿Build started 3/30/2014 4:50:08 PM.
      1>Project "C:\SmokeEngine\TestProject\TestProject.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Tegra-Android\Debug\TestProject.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -88,8 +88,9 @@
                [dex] Using Pre-Dexed annotations-6865d278797e29f45d2d74a7ff3c20f6.jar <- C:\NVPACK\android-sdk-windows\tools\support\annotations.jar
                [dex] Found Deleted Target File
                [dex] Converting compiled files and external libraries into C:\SmokeEngine\TestProject\Tegra-Android\Debug\bin\classes.dex...
+                [dx] Merged dex A (8 defs/
                 [dx] Picked up _JAVA_OPTIONS: -Xms256m -Xmx512m
-                [dx] Merged dex A (8 defs/3.4KiB) with dex B (2 defs/1.1KiB). Result is 10 defs/4.6KiB. Took 0.0s
+                [dx] 3.4KiB) with dex B (2 defs/1.1KiB). Result is 10 defs/4.6KiB. Took 0.0s
          
          -crunch:
             [crunch] Crunching PNG Files in source dir: C:\SmokeEngine\TestProject\res
@@ -120,7 +121,7 @@
          debug:
          
          BUILD SUCCESSFUL
-         Total time: 14 seconds
+         Total time: 9 seconds
          Picked up _JAVA_OPTIONS: -Xms256m -Xmx512m
          Copying file from "C:\SmokeEngine\TestProject\Tegra-Android\Debug\bin\HelloJni-debug.apk" to "C:\SmokeEngine\Tegra-Android\Debug\\TestProject.apk".
        DeployAfterBuild:
@@ -132,4 +133,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:18.01
+Time Elapsed 00:00:12.07
