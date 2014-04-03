@@ -7,7 +7,8 @@
 #include "Utility\Vector\Vector2.h"
 #include <stdlib.h>
 #include <vector>
-
+#include "VertexObject\VertexArrayObject.h"
+#include "VertexObject\VertexBufferObjectWithSubData.h"
 std::vector<float> WaveFrontLoad::_splitFloat(std::string str,char character)
 {
 	int lindex  = 0;
@@ -64,7 +65,7 @@ std::vector<int> WaveFrontLoad::_splitInt(std::string str,char first, char secon
 
 VertexArrayObject* WaveFrontLoad::Load(const char* file,AAssetManager* assetManager, VertexBufferObjectWithSubData * vertexBufferObjectWithSubData)
 {
-	std::vector<GLuint> lindecies = std::vector<GLuint>();
+	std::vector<GLushort> lindecies = std::vector<GLushort>();
 	std::vector<Vector3> lverticies = std::vector<Vector3>();
 	std::vector<Vector2> ltexCoords = std::vector<Vector2>();
 	std::vector<Vector3> lvertexNormals = std::vector<Vector3>();
@@ -169,16 +170,16 @@ VertexArrayObject* WaveFrontLoad::Load(const char* file,AAssetManager* assetMana
 				
 				//pass in vertex normals
 				lfinalNormals[f[2]*3+0] = lvertexNormals[f[2]].X;
-				lfinalNormals[f[2]*3+1] = lvertexNormals[f[2]].X;
-				lfinalNormals[f[2]*3+2] = lvertexNormals[f[2]].X;
+				lfinalNormals[f[2]*3+1] = lvertexNormals[f[2]].Y;
+				lfinalNormals[f[2]*3+2] = lvertexNormals[f[2]].Z;
 
 				lfinalNormals[f[5]*3+0] = lvertexNormals[f[5]].X;
-				lfinalNormals[f[5]*3+1] = lvertexNormals[f[5]].X;
-				lfinalNormals[f[5]*3+2] = lvertexNormals[f[5]].X;
+				lfinalNormals[f[5]*3+1] = lvertexNormals[f[5]].Y;
+				lfinalNormals[f[5]*3+2] = lvertexNormals[f[5]].Z;
 
 				lfinalNormals[f[8]*3+0] = lvertexNormals[f[8]].X;
-				lfinalNormals[f[8]*3+1] = lvertexNormals[f[8]].X;
-				lfinalNormals[f[8]*3+2] = lvertexNormals[f[8]].X;
+				lfinalNormals[f[8]*3+1] = lvertexNormals[f[8]].Y;
+				lfinalNormals[f[8]*3+2] = lvertexNormals[f[8]].Z;
 
 				lindecies.push_back(f[0]);
 				lindecies.push_back(f[3]);
@@ -201,44 +202,51 @@ VertexArrayObject* WaveFrontLoad::Load(const char* file,AAssetManager* assetMana
 				
 				//pass in vertex normals
 				lfinalNormals[f[2]*3+0] = lvertexNormals[f[2]].X;
-				lfinalNormals[f[2]*3+1] = lvertexNormals[f[2]].X;
-				lfinalNormals[f[2]*3+2] = lvertexNormals[f[2]].X;
+				lfinalNormals[f[2]*3+1] = lvertexNormals[f[2]].Y;
+				lfinalNormals[f[2]*3+2] = lvertexNormals[f[2]].Z;
 
 				lfinalNormals[f[5]*3+0] = lvertexNormals[f[5]].X;
-				lfinalNormals[f[5]*3+1] = lvertexNormals[f[5]].X;
-				lfinalNormals[f[5]*3+2] = lvertexNormals[f[5]].X;
+				lfinalNormals[f[5]*3+1] = lvertexNormals[f[5]].Y;
+				lfinalNormals[f[5]*3+2] = lvertexNormals[f[5]].Z;
 
 				lfinalNormals[f[8]*3+0] = lvertexNormals[f[8]].X;
-				lfinalNormals[f[8]*3+1] = lvertexNormals[f[8]].X;
-				lfinalNormals[f[8]*3+2] = lvertexNormals[f[8]].X;
+				lfinalNormals[f[8]*3+1] = lvertexNormals[f[8]].Y;
+				lfinalNormals[f[8]*3+2] = lvertexNormals[f[8]].Z;
 
 				//pass in texCoords
 				lfinalTexCoords[f[1]*3+0] = lvertexNormals[f[1]].X;
-				lfinalTexCoords[f[1]*3+1] = lvertexNormals[f[1]].X;
-				lfinalTexCoords[f[1]*3+2] = lvertexNormals[f[1]].X;
+				lfinalTexCoords[f[1]*3+1] = lvertexNormals[f[1]].Y;
+				lfinalTexCoords[f[1]*3+2] = lvertexNormals[f[1]].Z;
 
 				lfinalTexCoords[f[4]*3+0] = lvertexNormals[f[4]].X;
-				lfinalTexCoords[f[4]*3+1] = lvertexNormals[f[4]].X;
-				lfinalTexCoords[f[4]*3+2] = lvertexNormals[f[4]].X;
+				lfinalTexCoords[f[4]*3+1] = lvertexNormals[f[4]].Y;
+				lfinalTexCoords[f[4]*3+2] = lvertexNormals[f[4]].Z;
 
 				lfinalTexCoords[f[7]*3+0] = lvertexNormals[f[7]].X;
-				lfinalTexCoords[f[7]*3+1] = lvertexNormals[f[7]].X;
-				lfinalTexCoords[f[7]*3+2] = lvertexNormals[f[7]].X;
+				lfinalTexCoords[f[7]*3+1] = lvertexNormals[f[7]].Y;
+				lfinalTexCoords[f[7]*3+2] = lvertexNormals[f[7]].Z;
 
 				lindecies.push_back(f[0]);
 				lindecies.push_back(f[3]);
 				lindecies.push_back(f[6]);
 			}
 		}
+		
+		vertexBufferObjectWithSubData->AddSubData(VertexBufferObjectWithSubData::SubData(lfinalVerts));
+		if(lfinalNormals != NULL)
+		vertexBufferObjectWithSubData->AddSubData(VertexBufferObjectWithSubData::SubData(lfinalNormals));
+		if(lfinalTexCoords != NULL)
+		vertexBufferObjectWithSubData->AddSubData(VertexBufferObjectWithSubData::SubData(lfinalTexCoords));
 
-		 __android_log_print(ANDROID_LOG_INFO,"SMOKE_ENGINE",(char*)(std::string(lfinal)).c_str());
 	}
 
 	free(lbuffer);
 	free(lfinalVerts);
 	free(lfinalTexCoords);
 	free(lfinalNormals);
-	return NULL;
+
+	GLushort* lind = &lindecies[0];
+	return new VertexArrayObject(lind);
 
 
 }

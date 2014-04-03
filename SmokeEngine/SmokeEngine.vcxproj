@@ -105,7 +105,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
-    <IncludePath>C:\NVPACK\OpenCV-2.4.5-Tegra-sdk-r2\sdk\native\jni\include;$(ProjectDir)/Include/;$(IncludePath)</IncludePath>
+    <IncludePath>C:\NVPACK\OpenCV-2.4.5-Tegra-sdk-r2\sdk\native\jni\include;$(ProjectDir)/Include/;$(ProjectDir)/Library/;$(IncludePath)</IncludePath>
     <LibraryPath>C:\NVPACK\OpenCV-2.4.5-Tegra-sdk-r2\sdk\native\libs\armeabi-v7a;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
