@@ -10,6 +10,15 @@
 #include "VertexObject\VertexArrayObject.h"
 #include "VertexObject\VertexBufferObjectWithSubData.h"
 
+#include "TestScene.h"
+
+namespace boost
+{
+	void throw_exception(std::exception const&)
+	{
+	}
+};
+
 extern "C" {
 	JNIEXPORT void JNICALL Java_com_android_Engine_Lib_OnSurfaceChange(  JNIEnv* env, jobject obj,  jint width, jint height);
 	JNIEXPORT void JNICALL Java_com_android_Engine_Lib_Step(  JNIEnv* env, jobject obj);
@@ -24,17 +33,19 @@ JNIEXPORT void JNICALL Java_com_android_Engine_Lib_Initate(JNIEnv* env, jobject 
 	mAssetManager = AAssetManager_fromJava(env,assetmanager);
 	// __android_log_print(ANDROID_LOG_INFO,"SMOKE_ENGINE","testing source");
 	//Texture* t = new Texture("lice1.png",mAssetManager);
-	WaveFrontLoad::Load("drag.wobj",mAssetManager,new VertexBufferObjectWithSubData());
+	VertexBufferObjectWithSubData * v = new VertexBufferObjectWithSubData();
+	WaveFrontLoad::Load("drag.wobj",mAssetManager,v);
+	int x = 0;
 	 
 }
 
 JNIEXPORT void JNICALL Java_com_android_Engine_Lib_Step(JNIEnv* env, jobject obj)
 {
-	 
+	s->Step(); 
 }
 
 JNIEXPORT void JNICALL Java_com_android_Engine_Lib_OnSurfaceChange(JNIEnv* env, jobject obj,  jint width, jint height)
 {
-
+	
 }
 

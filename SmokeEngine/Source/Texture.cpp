@@ -1,6 +1,4 @@
 #include "Utility\Texture.h"
-#include <opencv2\core\core.hpp>
-#include <opencv2\highgui\highgui.hpp>
 #include <android\log.h>
 #include "Utility\LodePNG.h"
 

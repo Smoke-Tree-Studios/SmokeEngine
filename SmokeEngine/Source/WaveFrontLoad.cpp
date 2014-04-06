@@ -9,57 +9,50 @@
 #include <vector>
 #include "VertexObject\VertexArrayObject.h"
 #include "VertexObject\VertexBufferObjectWithSubData.h"
-std::vector<float> WaveFrontLoad::_splitFloat(std::string str,char character)
+#include <string>
+#include <boost\algorithm\string.hpp>
+
+std::vector<float> WaveFrontLoad::_splitFloat(std::string str,std::string character)
 {
-	int lindex  = 0;
+	
 	std::vector<float> lfinal = std::vector<float>();
-	while(str.length() >= lindex)
+	std::vector<std::string> lstr = std::vector<std::string>();
+
+	boost::split(lstr,str,boost::is_any_of(character.c_str()));
+
+	for(int x = 0; x < lstr.size(); x++)
 	{
-		std::string lvalue = "";
-		while(str.length() >= lindex)
+		if(lstr[x] != "")
 		{
-			if(str[lindex] == character)
-			{
-				lindex++;
-				break;
-			}
-		
-			lvalue.push_back(str[lindex]);
-			lindex++;
+			lfinal.push_back((float)atof(lstr[x].c_str()));
 		}
-		lfinal.push_back((float)atof(lvalue.c_str()));
 	}
+
 	return lfinal;
 
 }
 
-std::vector<int> WaveFrontLoad::_splitInt(std::string str,char first, char secondary)
+std::vector<int> WaveFrontLoad::_splitInt(std::string str,std::string character)
 {
-	int lindex  = 0;
 	std::vector<int> lfinal = std::vector<int>();
-	while(str.length() >= lindex)
+	std::vector<std::string> lstr = std::vector<std::string>();
+
+	boost::split(lstr,str,boost::is_any_of(character.c_str()));
+
+	
+	for(int x = 0; x < lstr.size(); x++)
 	{
-		std::string lvalue = "";
-		while(str.length() >= lindex)
+		if(lstr[x] != "")
 		{
-			if(str[lindex] == first || str[lindex] == secondary)
-			{
-				lindex++;
-				break;
-			}
-		
-			lvalue.push_back(str[lindex]);
-			lindex++;
-		}
-		if(lvalue == "")
-		{
-			lfinal.push_back(-1);
+			lfinal.push_back(atoi(lstr[x].c_str()));
 		}
 		else
 		{
-			lfinal.push_back(atoi(lvalue.c_str()));
+			lfinal.push_back(-1);
 		}
 	}
+	int s = lfinal.size();
+	
 	return lfinal;
 }
 
@@ -101,28 +94,30 @@ VertexArrayObject* WaveFrontLoad::Load(const char* file,AAssetManager* assetMana
 				break;
 			}
 		}
+	
 		//verticies
 		if(lfinal[0] == 'v' && lfinal[1] == ' ')
 		{
-			std::vector<float> f = _splitFloat(lfinal.substr(2),' ');
+			std::vector<float> f = _splitFloat(lfinal.substr(2)," ");
 			lverticies.push_back(Vector3(f[0],f[1],f[2]));
 		}
 		//vertex normal
 		if(lfinal[0] == 'v' && lfinal[1] == 'n')
 		{
-			std::vector<float> f = _splitFloat(lfinal.substr(2),' ');
+			std::string lstr[] = {" "};
+			std::vector<float> f = _splitFloat(lfinal.substr(2)," ");
 			lvertexNormals.push_back(Vector3(f[0],f[1],f[2]));
 		}
 		//texture coordinates
 		if(lfinal[0] == 'v' && lfinal[1] == 't')
 		{
-			std::vector<float> f = _splitFloat(lfinal.substr(2),' ');
+			std::vector<float> f = _splitFloat(lfinal.substr(2)," ");
 			ltexCoords.push_back(Vector2(f[0],f[1]));
 		}
 		//fragment faces
 		if(lfinal[0] == 'f' && lfinal[1] == ' ')
 		{
-			std::vector<int> f = _splitInt(lfinal.substr(2),' ', '/');
+			std::vector<int> f = _splitInt(lfinal.substr(2), "/ ");
 
 			if(lfinalVerts == NULL)
 			{
@@ -231,14 +226,14 @@ VertexArrayObject* WaveFrontLoad::Load(const char* file,AAssetManager* assetMana
 				lindecies.push_back(f[6]);
 			}
 		}
-		
-		vertexBufferObjectWithSubData->AddSubData(VertexBufferObjectWithSubData::SubData(lfinalVerts));
-		if(lfinalNormals != NULL)
-		vertexBufferObjectWithSubData->AddSubData(VertexBufferObjectWithSubData::SubData(lfinalNormals));
-		if(lfinalTexCoords != NULL)
-		vertexBufferObjectWithSubData->AddSubData(VertexBufferObjectWithSubData::SubData(lfinalTexCoords));
-
 	}
+
+		vertexBufferObjectWithSubData->AddSubData(VertexBufferObjectWithSubData::SubData(lfinalVerts,lverticies.size(),3));
+		if(lfinalNormals != NULL)
+		vertexBufferObjectWithSubData->AddSubData(VertexBufferObjectWithSubData::SubData(lfinalNormals,lverticies.size(),3));
+		if(lfinalTexCoords != NULL)
+		vertexBufferObjectWithSubData->AddSubData(VertexBufferObjectWithSubData::SubData(lfinalTexCoords,lverticies.size(),2));
+
 
 	free(lbuffer);
 	free(lfinalVerts);
@@ -246,7 +241,7 @@ VertexArrayObject* WaveFrontLoad::Load(const char* file,AAssetManager* assetMana
 	free(lfinalNormals);
 
 	GLushort* lind = &lindecies[0];
-	return new VertexArrayObject(lind);
+	return new VertexArrayObject(lind,lindecies.size());
 
-
+	
 }

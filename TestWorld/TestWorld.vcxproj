@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="jni\Main.cpp" />
+    <ClCompile Include="jni\TestScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SmokeEngine\SmokeEngine.vcxproj">
@@ -96,6 +97,9 @@
       <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="jni\TestScene.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B99564E7-7EDE-4E73-851F-B89AD4B0F7CE}</ProjectGuid>
     <RootNamespace>TestWorld</RootNamespace>
@@ -104,6 +108,7 @@
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
     <AndroidTargetAPI>android-15</AndroidTargetAPI>
     <ConfigurationType>Application</ConfigurationType>
+    <AndroidArch>armv7-a</AndroidArch>
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|Tegra-Android'">
     <AndroidTargetAPI>android-15</AndroidTargetAPI>
@@ -116,19 +121,18 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
-    <IncludePath>$(ProjectDir)/Include/;$(IncludePath)</IncludePath>
-    <LibraryPath>
-    </LibraryPath>
+    <IncludePath>$(ProjectDir)/Include/;$(SolutionDir)/Library/boost_1_55_0/;$(SolutionDir)/SmokeEngine/Include/;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)/Tegra-Android/$(Configuration);$(SolutionDir)/Library/boost_1_55_0/libs/;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
     <ClCompile>
-      <PreprocessorDefinitions>DISABLE_IMPORTGL</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)/../SmokeEngine/Include/;C:\NVPACK\OpenCV-2.4.5-Tegra-sdk-r2\sdk\native\jni\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DISABLE_IMPORTG</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Warnings>AllWarnings</Warnings>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>android;stdc++;c;m;log;dl;z;GLESv2;EGL;OpenSLES;opencv_androidcamera;opencv_calib3d;opencv_contrib;opencv_core;opencv_features2d;opencv_flann;opencv_highgui;opencv_imgproc;opencv_legacy;opencv_ml;opencv_objdetect;opencv_photo;opencv_stitching;opencv_ts;opencv_video;opencv_videostab;IlmImf;libjasper;libjpeg;libpng;libtiff;tbb;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)/../Tegra-Android/$(Configuration);C:\NVPACK\OpenCV-2.4.5-Tegra-sdk-r2\sdk\native\libs\armeabi-v7a;C:\NVPACK\OpenCV-2.4.5-Tegra-sdk-r2\sdk\native\3rdparty\libs\armeabi-v7a;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>android;stdc++;c;m;log;dl;z;GLESv2;EGL;OpenSLES;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SoName>libSmokeEngine.a</SoName>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
     </Link>

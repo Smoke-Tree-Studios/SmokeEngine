@@ -1,4 +1,4 @@
-﻿Build started 4/1/2014 10:01:40 PM.
+﻿Build started 4/5/2014 11:26:12 AM.
      1>Project "C:\SmokeEngine\TestProject\TestProject.vcxproj" on node 3 (rebuild target(s)).
      1>_PrepareForClean:
          Deleting file "Tegra-Android\Debug\TestProject.lastbuildstate".
@@ -133,7 +133,7 @@
          debug:
          
          BUILD SUCCESSFUL
-         Total time: 7 seconds
+         Total time: 5 seconds
          Picked up _JAVA_OPTIONS: -Xms256m -Xmx512m
          Copying file from "C:\SmokeEngine\TestProject\Tegra-Android\Debug\bin\HelloJni-debug.apk" to "C:\SmokeEngine\Tegra-Android\Debug\\TestProject.apk".
        DeployAfterBuild:
@@ -145,4 +145,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:12.90
+Time Elapsed 00:00:07.79

@@ -22,6 +22,7 @@ protected:
 			RootNode(SceneNode * sceneNode,std::map<std::string, Node*>* nodes, std::string ID);
 	};
 public:
+
 	Camera * mMainCamera;
 
 	ShaderSourceStorage * mShaderSourceStorage;

@@ -1,11 +1,11 @@
 #include "VertexObject\VertexArrayObject.h"
 
 
-VertexArrayObject::VertexArrayObject(GLushort data[]) : VertexObject()
+VertexArrayObject::VertexArrayObject(GLushort data[],int size) : VertexObject()
 {
 	_numberOfIndecies = sizeof(data);
 	glBindBuffer(GL_ARRAY_BUFFER,*_id);
-	glBufferData(GL_ARRAY_BUFFER,sizeof(GLushort) * sizeof(data),data,GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER,sizeof(GLushort) *size,data,GL_STATIC_DRAW);
 }
 
 

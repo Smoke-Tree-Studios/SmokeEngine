@@ -16,10 +16,10 @@ public:
 			GLfloat * _data;
 			int _size;
 		public:
-			SubData(GLfloat data[]);
-			SubData(Vector2 data[]);
-			SubData(Vector3 data[]);
-			SubData(Vector4 data[]);
+			SubData(GLfloat data[],int size,int vectorType);
+			SubData(Vector2 data[],int size);
+			SubData(Vector3 data[],int size);
+			SubData(Vector4 data[],int size);
 			~SubData();
 
 			GLfloat* GetData();

@@ -49,5 +49,13 @@
     <ClCompile Include="jni\Main.cpp">
       <Filter>jni</Filter>
     </ClCompile>
+    <ClCompile Include="jni\TestScene.cpp">
+      <Filter>jni</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="jni\TestScene.h">
+      <Filter>jni</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
