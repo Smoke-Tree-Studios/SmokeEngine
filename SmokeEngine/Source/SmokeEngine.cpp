@@ -1,10 +1,11 @@
 #include "SmokeEngine.h"
 
 
-SmokeEngine::SmokeEngine()
+SmokeEngine::SmokeEngine(AAssetManager * assetManager)
 {
-	mSceneManager = new SceneManager(this);
 	mRenderer = new Renderer();
+	mAssetManager = assetManager;
+	mSceneManager = new SceneManager(this);
 
 	_time = clock();
 }

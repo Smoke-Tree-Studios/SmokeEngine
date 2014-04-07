@@ -12,6 +12,7 @@ Source::Source(const char* source,GLenum Type)
 }
 Source::Source(const char* file,AAssetManager* assetManager)
 {
+	__android_log_print(ANDROID_LOG_INFO,"SMOKE_ENGINE",(char*)("loading shader file:" +std::string(file)).c_str());
 
 	if(file[ strlen(file) -1] == 's' && file[ strlen(file) -2] == 'v')
 	{
@@ -65,7 +66,7 @@ void Source::_compile(const char* source)
 				char* lbuffer = (char*) malloc(linfoLen);
 				if (lbuffer) {
 					glGetShaderInfoLog(_source, linfoLen, NULL, lbuffer);
-					//LOGE("Could not compile shader %s\n", lbuffer);
+					 __android_log_print(ANDROID_LOG_ERROR,"SMOKE_ENGINE","Could not compile shader %s\n",lbuffer);
 					free(lbuffer);
 				}
 				glDeleteShader(_source);

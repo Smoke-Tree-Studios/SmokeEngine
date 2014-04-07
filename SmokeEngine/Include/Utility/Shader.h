@@ -50,5 +50,3 @@ public:
 
 	void SetTexture(const GLchar* UniformID,Texture* texture,int index);
 };
-
-int Shader::ActiveProgram = 0;

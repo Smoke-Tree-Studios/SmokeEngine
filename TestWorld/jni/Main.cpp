@@ -27,20 +27,29 @@ extern "C" {
 
 AAssetManager * mAssetManager;
 SmokeEngine * s;
+bool load = false;
 JNIEXPORT void JNICALL Java_com_android_Engine_Lib_Initate(JNIEnv* env, jobject obj,jobject assetmanager)
 {
-	s = new SmokeEngine();
 	mAssetManager = AAssetManager_fromJava(env,assetmanager);
+	s = new SmokeEngine(mAssetManager);
 	// __android_log_print(ANDROID_LOG_INFO,"SMOKE_ENGINE","testing source");
 	//Texture* t = new Texture("lice1.png",mAssetManager);
-	VertexBufferObjectWithSubData * v = new VertexBufferObjectWithSubData();
-	WaveFrontLoad::Load("drag.wobj",mAssetManager,v);
-	int x = 0;
+	//VertexBufferObjectWithSubData * v = new VertexBufferObjectWithSubData();
+	//WaveFrontLoad::Load("drag.wobj",mAssetManager,v);
 	 
 }
 
 JNIEXPORT void JNICALL Java_com_android_Engine_Lib_Step(JNIEnv* env, jobject obj)
 {
+	if(!load)
+	{
+		s->mSceneManager->AppendScene("main",new TestScene(s,new Camera(-1,-1,1,1,.5,10)));
+		s->mSceneManager->SetActiveScene("main");
+		load = true;
+	}
+
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glClearColor(1.0f,1.0f,0.0f,1.0f);
 	s->Step(); 
 }
 

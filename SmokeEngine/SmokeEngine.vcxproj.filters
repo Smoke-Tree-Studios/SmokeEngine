@@ -84,6 +84,7 @@
     <ClInclude Include="Include\Storage\ViewStorage.h">
       <Filter>Header\Storage</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Render\Sprite.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\BoundedBox.cpp">
@@ -169,6 +170,7 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Source\WaveFrontLoad.cpp" />
+    <ClCompile Include="Source\Sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source">

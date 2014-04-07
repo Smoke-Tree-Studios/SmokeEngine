@@ -4,7 +4,7 @@
 #include "android\asset_manager.h"
 
 #include <time.h>
-
+class AAssetManager;
 class SceneManager;
 class SmokeEngine
 {
@@ -15,11 +15,12 @@ public:
 	int * Height;
 
 	SceneManager * mSceneManager;
+	AAssetManager * mAssetManager;
 	Renderer* mRenderer;
 
 	void Step();
 
-	SmokeEngine();
+	SmokeEngine(AAssetManager * assetManager);
 	~SmokeEngine(void);
 };
 

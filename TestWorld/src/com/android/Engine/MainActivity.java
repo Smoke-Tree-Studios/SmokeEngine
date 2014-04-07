@@ -14,6 +14,7 @@ public class MainActivity extends Activity
         super.onCreate(bundle);
     	_view = new View(getApplication());
 		setContentView(_view);
+		
 		_assetManager = this.getAssets();
 		Lib.Initate(_assetManager);
     }
@@ -23,6 +24,8 @@ public class MainActivity extends Activity
         _view.onPause();
     }
 
+
+    
     @Override protected void onResume() {
         super.onResume();
         _view.onResume();

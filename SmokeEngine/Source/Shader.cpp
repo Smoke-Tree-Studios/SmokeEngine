@@ -28,7 +28,6 @@ Shader::~Shader(void)
 
 void Shader::AttachSource(Source* source)
 {
-	
 	glAttachShader(_shaderProgram,source->GetSourceID());
 }
 
@@ -219,3 +218,6 @@ void Shader::Unbind()
 	Shader::ActiveProgram = 0;
 
 }
+
+
+int Shader::ActiveProgram = 0;

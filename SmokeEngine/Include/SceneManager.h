@@ -5,6 +5,7 @@
 class SmokeEngine;
 class SceneNode;
 class SmokeEngine;
+class AAssetManager;
 class SceneManager
 {
 	private:

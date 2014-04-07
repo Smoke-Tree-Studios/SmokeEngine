@@ -20,14 +20,12 @@ import android.opengl.GLES20;
 public class GLRenderer implements GLSurfaceView.Renderer {
 
 	public GLRenderer() {
-      Log.d("GLRender", "constructor");
+
 	}
 
 	@Override
 	public void onDrawFrame(GL10 arg0) {
-		// TODO Auto-generated method stub
-		GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT | GLES20.GL_DEPTH_BUFFER_BIT);
-		GLES20.glClearColor(1.0f,0.0f,0.0f,1.0f);
+
 		Lib.Step();
 	}
 
