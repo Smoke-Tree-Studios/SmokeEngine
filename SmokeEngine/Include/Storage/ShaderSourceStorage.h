@@ -3,10 +3,11 @@
 #include <string>
 #include "Utility\Source.h"
 
-
 #define VERTEX_SOURCE "VERTEX_SOURCE"
 #define FRAMGENT_SOURCE "FRAMGENT_SOURCE"
-
+/**
+*stores shader source to be used with multiple objects within the engine
+**/
 class ShaderSourceStorage
 {
 private:
@@ -22,7 +23,11 @@ public:
 	*/
 	void AppendSource(std::string id, Source* source);
 	
+	/**
+	*tells if the source is used
+	**/
 	bool IsSourceUsed(std::string id,GLenum Type);
+
 	/** 
 	 * retrives the source with the id 
 	 *

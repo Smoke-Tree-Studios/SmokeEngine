@@ -6,6 +6,7 @@
 RenderObject::RenderObject(SceneNode * sceneNode)
 {
 	mShader = new Shader();
+	_depthShader = new Shader();
 	if(!sceneNode->mShaderSourceStorage->IsSourceUsed(DEPTH_SHADER,GL_FRAGMENT_SHADER))
 	{
 		
@@ -18,8 +19,8 @@ RenderObject::RenderObject(SceneNode * sceneNode)
 	}
 
 
-	mShader->AttachSource(sceneNode->mShaderSourceStorage->GetSource(DEPTH_SHADER,GL_FRAGMENT_SHADER));
-	mShader->AttachSource(sceneNode->mShaderSourceStorage->GetSource(DEPTH_SHADER,GL_VERTEX_SHADER));
+	_depthShader->AttachSource(sceneNode->mShaderSourceStorage->GetSource(DEPTH_SHADER,GL_FRAGMENT_SHADER));
+	_depthShader->AttachSource(sceneNode->mShaderSourceStorage->GetSource(DEPTH_SHADER,GL_VERTEX_SHADER));
 }
 
 

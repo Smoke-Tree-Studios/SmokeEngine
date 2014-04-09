@@ -12,11 +12,11 @@ public class MainActivity extends Activity
 	private AssetManager _assetManager;
     @Override protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
+		_assetManager = this.getAssets();
+        Lib.Initate(_assetManager);
+        
     	_view = new View(getApplication());
 		setContentView(_view);
-		
-		_assetManager = this.getAssets();
-		Lib.Initate(_assetManager);
     }
 
     @Override protected void onPause() {

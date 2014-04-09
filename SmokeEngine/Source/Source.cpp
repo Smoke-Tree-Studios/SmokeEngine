@@ -19,10 +19,14 @@ Source::Source(const char* file,AAssetManager* assetManager)
 		_type = GL_VERTEX_SHADER;
 		_source = glCreateShader(GL_VERTEX_SHADER);
 	}
-	else if(file[ strlen(file) -1] == 'f' && file[ strlen(file) -2] == 's')
+	else if(file[ strlen(file) -2] == 'f' && file[ strlen(file) -1] == 's')
 	{
 		_type = GL_FRAGMENT_SHADER;
 		_source = glCreateShader(GL_FRAGMENT_SHADER);
+	}
+	else
+	{
+		__android_log_print(ANDROID_LOG_INFO,"SMOKE_ENGINE",(char*)("unknown shader file type:" +std::string(file)).c_str());
 	}
 
 	AAsset* lasset = AAssetManager_open(assetManager,file,AASSET_MODE_UNKNOWN);
@@ -32,13 +36,14 @@ Source::Source(const char* file,AAssetManager* assetManager)
 		 __android_log_print(ANDROID_LOG_INFO,"SMOKE_ENGINE",(char*)("Failed to open: " + std::string(file)).c_str());
 	}
 
-	long lsize = AAsset_getLength(lasset);
+	int lsize = AAsset_getLength(lasset);
 
-	char* lbuffer = (char*) malloc(sizeof(char)*lsize);
-	AAsset_read(lasset,lbuffer,lsize);
+	char * ldata = (char*)malloc(lsize * sizeof(char));
+	AAsset_read(lasset,ldata,lsize);
 
-	_compile(lbuffer);
-	free(lbuffer);
+	_compile(ldata);
+	delete[] ldata;
+
 }
 
 GLuint Source::GetSourceID()
@@ -79,4 +84,6 @@ void Source::_compile(const char* source)
 
 Source::~Source(void)
 {
+
+		glDeleteShader(_source);
 }

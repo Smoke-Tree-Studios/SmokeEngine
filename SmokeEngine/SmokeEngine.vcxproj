@@ -18,9 +18,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\render\model.h" />
     <ClInclude Include="Include\Utility\BoundedBox.h" />
     <ClInclude Include="Include\Utility\Camera.h" />
-    <ClInclude Include="Include\Render\Model.h" />
     <ClInclude Include="Include\Storage\ShaderSourceStorage.h" />
     <ClInclude Include="Include\SmokeEngine.h" />
     <ClInclude Include="Include\Utility\Matrix\Matrix4x4.h" />
@@ -48,8 +48,11 @@
     <ClInclude Include="Include\Utility\LodePNG.h" />
     <ClInclude Include="Include\VertexObject\WaveFrontLoad.h" />
     <ClInclude Include="Include\Render\Sprite.h" />
+    <ClInclude Include="Source\m.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Model.cpp" />
+    <ClCompile Include="Source\asdf.cpp" />
     <ClCompile Include="Source\LodePNG.cpp" />
     <ClCompile Include="Source\BoundedBox.cpp" />
     <ClCompile Include="Source\Camera.cpp" />
@@ -80,6 +83,9 @@
     <ClCompile Include="Source\ViewStorage.cpp" />
     <ClCompile Include="Source\WaveFrontLoad.cpp" />
     <ClCompile Include="Source\Sprite.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{293D3ECB-3EA2-400C-9D37-EDF3FD59D4AA}</ProjectGuid>

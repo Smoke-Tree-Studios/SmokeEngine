@@ -15,23 +15,54 @@ VertexBufferStorage::~VertexBufferStorage(void)
 
 void VertexBufferStorage::AppendVertexObject(std::string id,VertexBufferObjectWithSubData* vertexObject)
 {
-	_vertexObjects.insert(std::pair<std::string,VertexObject*>(id + VERTEX_BUFFER_OBJECT_WITH_SUBDATA,vertexObject));
+	std::string lid = id+std::string(VERTEX_BUFFER_OBJECT_WITH_SUBDATA);
+	_vertexObjects.insert(std::pair<std::string,VertexObject*>(lid,vertexObject));
 
 }
 void VertexBufferStorage::AppendVertexObject(std::string id,VertexArrayObject* vertexObject)
 {
-	_vertexObjects.insert(std::pair<std::string,VertexObject*>(id + VERTEX_ARRAY_OBJECT,vertexObject));
+	std::string lid = id+std::string(VERTEX_ARRAY_OBJECT);
+	_vertexObjects.insert(std::pair<std::string,VertexObject*>(lid,vertexObject));
 }
 
 VertexBufferObjectWithSubData* VertexBufferStorage::GetVertexObjectWithSubData(std::string id)
 {
-	return (VertexBufferObjectWithSubData*)_vertexObjects[id+ VERTEX_BUFFER_OBJECT_WITH_SUBDATA];
+	std::string lid = id+std::string(VERTEX_BUFFER_OBJECT_WITH_SUBDATA);
+	return (VertexBufferObjectWithSubData*)_vertexObjects[lid];
 }
 
 VertexArrayObject* VertexBufferStorage::GetVertexArryObject(std::string id)
 {
-	return (VertexArrayObject*)_vertexObjects[id+ VERTEX_ARRAY_OBJECT];
+	std::string lid = id+std::string(VERTEX_ARRAY_OBJECT);
+	return (VertexArrayObject*)_vertexObjects[lid];
 }
+
+bool VertexBufferStorage::IsVertexArrayObjectExist(std::string id)
+{
+	std::string lid = id+std::string(VERTEX_ARRAY_OBJECT);
+	if(_vertexObjects.count(lid))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+bool VertexBufferStorage::IsVertexObjectWithSubDataExist(std::string id)
+{
+	std::string lid = id+std::string(VERTEX_BUFFER_OBJECT_WITH_SUBDATA);
+	if(_vertexObjects.count(lid))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 	
 void VertexBufferStorage::DeleteVertexObjectWithSubData(std::string id)
 {

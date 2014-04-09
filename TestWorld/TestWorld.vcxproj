@@ -33,6 +33,7 @@
     <None Include="AndroidManifest.xml" />
     <None Include="assets\bunny.wobj" />
     <None Include="assets\drag.wobj" />
+    <None Include="assets\julianset.fs" />
     <None Include="assets\lice1.png" />
     <None Include="assets\Teapot.wobj" />
     <None Include="assets\test.vs" />

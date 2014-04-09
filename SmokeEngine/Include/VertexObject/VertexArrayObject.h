@@ -6,14 +6,14 @@ class VertexArrayObject : public VertexObject
 {
 private:
 	int _numberOfIndecies;
-
+	GLushort * _data;
 public:
 
 	/**
 	*declares a vertex array of indecies
 	*
 	**/
-	VertexArrayObject(GLushort data[],int size);
+	VertexArrayObject(const GLushort data[], int size);
 	~VertexArrayObject(void);
 
 	/**

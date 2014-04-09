@@ -16,9 +16,6 @@
     <ClInclude Include="Include\Utility\Texture.h">
       <Filter>Header\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Utility\Shader.h">
-      <Filter>Header\Utility</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Utility\Vector\Vector2.h">
       <Filter>Header\Utility\Vector</Filter>
     </ClInclude>
@@ -74,9 +71,6 @@
     <ClInclude Include="Include\Render\RenderObject.h">
       <Filter>Header\Render</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Render\Model.h">
-      <Filter>Header\Render</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Render\Renderer.h">
       <Filter>Header\Render</Filter>
     </ClInclude>
@@ -85,6 +79,11 @@
       <Filter>Header\Storage</Filter>
     </ClInclude>
     <ClInclude Include="Include\Render\Sprite.h" />
+    <ClInclude Include="Include\Utility\Shader.h">
+      <Filter>Header\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="include\render\model.h" />
+    <ClInclude Include="Source\m.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\BoundedBox.cpp">
@@ -100,9 +99,6 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Source\MatrixStack.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Model.cpp">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Source\Node.cpp">
@@ -171,6 +167,9 @@
     </ClCompile>
     <ClCompile Include="Source\WaveFrontLoad.cpp" />
     <ClCompile Include="Source\Sprite.cpp" />
+    <ClCompile Include="Source\Model.cpp" />
+    <ClCompile Include="Source\asdf.cpp" />
+    <ClCompile Include="Source\Model.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source">
@@ -200,5 +199,8 @@
     <Filter Include="Header\Utility\Matrix">
       <UniqueIdentifier>{764d1195-6a6b-4403-8eb9-e29b1dc1f71b}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
 </Project>

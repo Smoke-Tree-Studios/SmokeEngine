@@ -3,13 +3,17 @@
 #include "Node\ObjectNode.h"
 #include "Render\RenderObject.h"
 #include "Render\Sprite.h"
+#include "Utility\Source.h"
 
 TestScene::TestScene(SmokeEngine* smokeEngine,Camera * camera) : SceneNode::SceneNode(smokeEngine,camera)
 {
-	Sprite * s = new Sprite(this);
+	
+	Source * frag = new Source("julianset.fs",this->mSmokeEngine->mAssetManager);
+	Sprite * s = new Sprite(this,frag);
 	ltestObject = new ObjectNode("test",s);
 	this->mRootSceneNode->AppendNode(ltestObject);
 }
+
 
 
 TestScene::~TestScene(void)

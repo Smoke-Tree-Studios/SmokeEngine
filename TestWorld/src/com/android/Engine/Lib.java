@@ -6,5 +6,6 @@ public class Lib {
 	}
 	public static native void OnSurfaceChange(int width,int height);
 	public static native void Initate(AssetManager assetmanager);
+	public static native void OpenglInitiate();
 	public static native void Step();
 }

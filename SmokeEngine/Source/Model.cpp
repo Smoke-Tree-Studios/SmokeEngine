@@ -50,7 +50,7 @@ void Model::Draw(Matrix4x4 transform, Matrix4x4 view)
 
 void Model::DepthDraw(Matrix4x4 transform, Matrix4x4 view)
 {
-	_depthShader->BindShader();
+	/*_depthShader->BindShader();
 
 	_depthShader->SetMatrix4x4("in_Transform",transform);
 	_depthShader->SetMatrix4x4("in_View",view);
@@ -59,5 +59,5 @@ void Model::DepthDraw(Matrix4x4 transform, Matrix4x4 view)
 	_vertexBufferObject->Bind();
 
 	glDrawElements(GL_TRIANGLES,_vertexArrayObject->GetNumberOfIndecies(),GL_UNSIGNED_SHORT,0);
-
+	*/
 }

@@ -1,11 +1,16 @@
 #include "VertexObject\VertexArrayObject.h"
+#include <stdlib.h>
 
-
-VertexArrayObject::VertexArrayObject(GLushort data[],int size) : VertexObject()
+VertexArrayObject::VertexArrayObject(const GLushort data[], int size)
 {
-	_numberOfIndecies = sizeof(data);
+	_numberOfIndecies = size;
+	_data = (GLushort*)malloc(sizeof(GLushort) * size);
+	for(int i = 0; i < size; i++)
+	{
+		_data[i] = data[i];
+	}
 	glBindBuffer(GL_ARRAY_BUFFER,*_id);
-	glBufferData(GL_ARRAY_BUFFER,sizeof(GLushort) *size,data,GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER,sizeof(GLushort) * size,_data,GL_STATIC_DRAW);
 }
 
 
@@ -21,4 +26,5 @@ int VertexArrayObject::GetNumberOfIndecies()
 
 VertexArrayObject::~VertexArrayObject(void)
 {
+	free( _data);
 }

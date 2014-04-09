@@ -1,8 +1,11 @@
 #pragma once
 #include "Render/RenderObject.h"
-
+#define SPRITE_VERTICIES_SIZE 12
 #define SPRITE_VERTICIES { 0, 0,0, 1, 0,0, 0, 1,0, 1, 1,0 }
-#define SPRITE_TEXCOORDS { 2,0,1,2,1,3 }
+
+#define SPRITE_INDECIES_SIZE 4
+#define SPRITE_INDECIES {0,1,2,3}
+
 #define SPRITE_VERTEX_SHADER "attribute  vec3 in_Verts; \
 attribute float in_Index; \
 uniform mat4 in_Transform; \
@@ -30,19 +33,30 @@ void main(void)\
 		p_TexCoords = vec2(in_Clipping_Position.x+ in_Clipping_Size.x,in_Clipping_Position.y); \
 	} \
 }"
-
 #define SPRITE_FRAGMENT_SHADER ""
-#define SPRITE_SHADER "SMOKE_SPRITE_SHADER"
+#define SPRITE "SMOKE_SPRITE"
+class Vector2;
 class Matrix4x4;
 class SceneNode;
+class VertexBufferObjectWithSubData;
+class VertexArrayObject;
+class Source;
 class Sprite : public RenderObject
 {
+private:
+	VertexArrayObject * mVertexArrayObject;
+
+	void _initialize(SceneNode * sceneNode);
 public:
+	VertexBufferObjectWithSubData * mVertexSubData;
+	Sprite(SceneNode * sceneNode,Source * fragmentShader);
 	Sprite(SceneNode * sceneNode);
 	~Sprite(void);
 
-	 virtual void Draw(Matrix4x4 transform, Matrix4x4 view);
-	 virtual void DepthDraw(Matrix4x4 transform, Matrix4x4 view);
+	void SetClippingRectangle(Vector2 pos, Vector2 size);
+
+	virtual void Draw(Matrix4x4 transform, Matrix4x4 view);
+	virtual void DepthDraw(Matrix4x4 transform, Matrix4x4 view);
 
 };
 

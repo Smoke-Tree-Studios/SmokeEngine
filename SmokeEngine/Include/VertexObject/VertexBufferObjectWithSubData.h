@@ -34,14 +34,14 @@ public:
 	};
 
 private:
-	std::vector<SubData> _data;
+	std::vector<SubData*> _data;
 
 public:
 
 
 	VertexBufferObjectWithSubData(void);
 	~VertexBufferObjectWithSubData(void);
-	void AddSubData(SubData subData);
+	void AddSubData(SubData* subData);
 	void IntalizeBuffer();
 	virtual void Bind();
 };

@@ -20,7 +20,7 @@ import android.opengl.GLES20;
 public class GLRenderer implements GLSurfaceView.Renderer {
 
 	public GLRenderer() {
-
+		Lib.OpenglInitiate();
 	}
 
 	@Override

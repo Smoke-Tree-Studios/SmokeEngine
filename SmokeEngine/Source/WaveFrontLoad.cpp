@@ -228,17 +228,17 @@ VertexArrayObject* WaveFrontLoad::Load(const char* file,AAssetManager* assetMana
 		}
 	}
 
-		vertexBufferObjectWithSubData->AddSubData(VertexBufferObjectWithSubData::SubData(lfinalVerts,lverticies.size(),3));
+		vertexBufferObjectWithSubData->AddSubData(new VertexBufferObjectWithSubData::SubData(lfinalVerts,lverticies.size(),3));
 		if(lfinalNormals != NULL)
-		vertexBufferObjectWithSubData->AddSubData(VertexBufferObjectWithSubData::SubData(lfinalNormals,lverticies.size(),3));
+		vertexBufferObjectWithSubData->AddSubData(new VertexBufferObjectWithSubData::SubData(lfinalNormals,lverticies.size(),3));
 		if(lfinalTexCoords != NULL)
-		vertexBufferObjectWithSubData->AddSubData(VertexBufferObjectWithSubData::SubData(lfinalTexCoords,lverticies.size(),2));
+		vertexBufferObjectWithSubData->AddSubData(new VertexBufferObjectWithSubData::SubData(lfinalTexCoords,lverticies.size(),2));
 
 
-	free(lbuffer);
-	free(lfinalVerts);
-	free(lfinalTexCoords);
-	free(lfinalNormals);
+	delete[] lbuffer;
+	delete[] lfinalVerts;
+	delete[] lfinalTexCoords;
+	delete[] lfinalNormals;
 
 	GLushort* lind = &lindecies[0];
 	return new VertexArrayObject(lind,lindecies.size());

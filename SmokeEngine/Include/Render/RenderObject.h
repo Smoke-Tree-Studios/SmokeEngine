@@ -22,7 +22,7 @@ class Matrix4x4;
 class SceneNode;
 class RenderObject
 {
-protected:
+private:
 	Shader * _depthShader;
 public:
 	Shader * mShader;
