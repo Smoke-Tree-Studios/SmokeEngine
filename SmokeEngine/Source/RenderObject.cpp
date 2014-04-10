@@ -21,10 +21,13 @@ RenderObject::RenderObject(SceneNode * sceneNode)
 
 	_depthShader->AttachSource(sceneNode->mShaderSourceStorage->GetSource(DEPTH_SHADER,GL_FRAGMENT_SHADER));
 	_depthShader->AttachSource(sceneNode->mShaderSourceStorage->GetSource(DEPTH_SHADER,GL_VERTEX_SHADER));
+	
+
 }
 
 
 RenderObject::~RenderObject(void)
 {
 	delete(mShader);
+	delete(_depthShader);
 }

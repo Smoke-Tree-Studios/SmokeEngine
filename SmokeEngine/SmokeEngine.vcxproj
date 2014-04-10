@@ -46,17 +46,14 @@
     <ClInclude Include="Include\VertexObject\VertexObject.h" />
     <ClInclude Include="Include\Storage\ViewStorage.h" />
     <ClInclude Include="Include\Utility\LodePNG.h" />
-    <ClInclude Include="Include\VertexObject\WaveFrontLoad.h" />
+    <ClInclude Include="Include\Utility\WaveFrontLoad.h" />
     <ClInclude Include="Include\Render\Sprite.h" />
-    <ClInclude Include="Source\m.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Model.cpp" />
-    <ClCompile Include="Source\asdf.cpp" />
     <ClCompile Include="Source\LodePNG.cpp" />
     <ClCompile Include="Source\BoundedBox.cpp" />
     <ClCompile Include="Source\Camera.cpp" />
-    <ClCompile Include="Source\Model.cpp" />
     <ClCompile Include="Source\ShaderSourceStorage.cpp" />
     <ClCompile Include="Source\SmokeEngine.cpp" />
     <ClCompile Include="Source\Matrix4x4.cpp" />

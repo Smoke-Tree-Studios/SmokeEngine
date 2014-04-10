@@ -14,7 +14,9 @@ if((x * x + y * y) > 4.0) break;
 z.x = x;
 z.y = y;
 }
-
-gl_FragColor = vec4(float(i) / 100.0,0.0,0.0,1.0);
+highp float lrange = float(i) / 100.0;
+gl_FragColor = vec4(lrange,0.0,0.0,1.0);
 
 }
+
+ 

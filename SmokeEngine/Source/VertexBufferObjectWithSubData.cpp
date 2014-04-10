@@ -2,7 +2,7 @@
 #include <android\log.h>
 #include <string>
 
-VertexBufferObjectWithSubData::SubData::SubData(GLfloat data[],int size,int vectorType)
+VertexBufferObjectWithSubData::SubData::SubData(GLfloat data[],int size,int vectorType) 
 {
 		_data = new GLfloat[size];
 		 for(int x =0; x < size; x++)
@@ -10,10 +10,10 @@ VertexBufferObjectWithSubData::SubData::SubData(GLfloat data[],int size,int vect
 			 _data[x] = data[x];
 		 }
 
-		 _size = size;
+		 _size = size * sizeof(GLfloat);
 		 _vectorType = vectorType;
 }
-VertexBufferObjectWithSubData::SubData::SubData(Vector2 data[],int size)
+VertexBufferObjectWithSubData::SubData::SubData(Vector2 data[],int size) 
 {
 		_data = new GLfloat[size* 2];
 		 for(int x =0; x < size; x++)
@@ -21,7 +21,7 @@ VertexBufferObjectWithSubData::SubData::SubData(Vector2 data[],int size)
 			 _data[(x * 2)+ 0] = data[x].X;
 			 _data[(x * 2)+ 1] = data[x].Y;
 		 }
-		 _size = size * 2;
+		 _size = size * 2* sizeof(GLfloat);
 		 _vectorType = 2;
 }
 VertexBufferObjectWithSubData::SubData::SubData(Vector3 data[],int size)
@@ -33,10 +33,10 @@ VertexBufferObjectWithSubData::SubData::SubData(Vector3 data[],int size)
 			 _data[(x * 3)+ 1] = data[x].Y;
 			 _data[(x * 3)+ 2] = data[x].Z;
 		 }
-		 _size = size * 3;
+		 _size = size * 3* sizeof(GLfloat);
 		 _vectorType = 3;
 }
-VertexBufferObjectWithSubData::SubData::SubData(Vector4 data[],int size)
+VertexBufferObjectWithSubData::SubData::SubData(Vector4 data[],int size) 
 {
 		_data = new GLfloat[size* 4];
 		 for(int x =0; x < size; x++)
@@ -46,7 +46,7 @@ VertexBufferObjectWithSubData::SubData::SubData(Vector4 data[],int size)
 			 _data[(x * 4)+ 2] = data[x].Z;
 			 _data[(x * 4)+ 3] = data[x].W;
 		 }
-		 _size = size * 4;
+		 _size = size * 4* sizeof(GLfloat);
 		 _vectorType = 4;
 	
 }
@@ -93,6 +93,7 @@ VertexBufferObjectWithSubData::~VertexBufferObjectWithSubData(void)
 
 void VertexBufferObjectWithSubData::IntalizeBuffer()
 {
+
 	GLsizeiptr lsize = 0;
 	for(int x =0; x < _data.size(); x++)
 	{

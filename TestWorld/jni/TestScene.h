@@ -5,7 +5,7 @@ class ObjectNode;
 class TestScene : public SceneNode
 {
 private:
-	ObjectNode * ltestObject;
+	ObjectNode * _testObject;
 
 public:
 	

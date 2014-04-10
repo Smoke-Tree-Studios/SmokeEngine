@@ -5,7 +5,7 @@
 #include "Utility\Texture.h"
 #include "android\asset_manager.h"
 #include "android\asset_manager_jni.h"
-#include "VertexObject\WaveFrontLoad.h"
+#include "Utility\WaveFrontLoad.h"
 #include "SmokeEngine.h"
 #include "VertexObject\VertexArrayObject.h"
 #include "VertexObject\VertexBufferObjectWithSubData.h"
@@ -42,7 +42,6 @@ JNIEXPORT void JNICALL Java_com_android_Engine_Lib_Initate(JNIEnv* env, jobject 
 
 JNIEXPORT void JNICALL Java_com_android_Engine_Lib_OpenglInitiate(  JNIEnv* env, jobject obj)
 {
-		new TestScene(s,new Camera(-1,-1,1,1,0,100));
 		s->mSceneManager->AppendScene("main",new TestScene(s,new Camera(-1,-1,1,1,0,100)));
 		s->mSceneManager->SetActiveScene("main");
 
@@ -54,7 +53,7 @@ JNIEXPORT void JNICALL Java_com_android_Engine_Lib_Step(JNIEnv* env, jobject obj
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glClearColor(1.0f,1.0f,0.0f,1.0f);
-	//s->Step(); 
+	s->Step(); 
 }
 
 JNIEXPORT void JNICALL Java_com_android_Engine_Lib_OnSurfaceChange(JNIEnv* env, jobject obj,  jint width, jint height)

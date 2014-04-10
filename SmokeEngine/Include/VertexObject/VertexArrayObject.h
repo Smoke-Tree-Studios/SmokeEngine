@@ -13,7 +13,7 @@ public:
 	*declares a vertex array of indecies
 	*
 	**/
-	VertexArrayObject(const GLushort data[], int size);
+	VertexArrayObject(const GLushort data[], int size) ;
 	~VertexArrayObject(void);
 
 	/**

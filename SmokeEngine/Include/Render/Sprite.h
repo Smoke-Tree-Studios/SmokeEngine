@@ -1,7 +1,7 @@
 #pragma once
 #include "Render/RenderObject.h"
 #define SPRITE_VERTICIES_SIZE 12
-#define SPRITE_VERTICIES { 0, 0,0, 1, 0,0, 0, 1,0, 1, 1,0 }
+#define SPRITE_VERTICIES {0,0,0, 1,0,0, 0,1,0, 1,1,0 }
 
 #define SPRITE_INDECIES_SIZE 4
 #define SPRITE_INDECIES {0,1,2,3}

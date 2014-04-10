@@ -28,6 +28,7 @@
     <None Include="assets\drag.wobj" />
     <None Include="assets\Teapot.wobj" />
     <None Include="assets\julianset.fs" />
+    <None Include="assets\red.fs" />
   </ItemGroup>
   <ItemGroup>
     <JCompile Include="src\com\example\Engine\GLRenderer.java" />

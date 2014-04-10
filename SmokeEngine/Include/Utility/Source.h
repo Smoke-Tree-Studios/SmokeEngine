@@ -9,6 +9,7 @@ class Source
 {
 private:
 	GLuint _source;
+	char* _data;
 	GLenum _type;
 	void _compile(const char* source);
 public:

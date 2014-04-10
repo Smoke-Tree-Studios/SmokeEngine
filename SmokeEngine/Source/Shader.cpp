@@ -15,10 +15,10 @@ Shader::Shader(void)
 
 void Shader::_useShader()
 {
-	if(_shaderProgram == Shader::ActiveProgram )
+	if(_shaderProgram != Shader::ActiveProgram )
 		glUseProgram(_shaderProgram);
-	else
-		Shader::ActiveProgram = _shaderProgram;
+	
+	Shader::ActiveProgram = _shaderProgram;
 }
 
 Shader::~Shader(void)

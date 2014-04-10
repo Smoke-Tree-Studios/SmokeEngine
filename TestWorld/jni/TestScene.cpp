@@ -5,13 +5,17 @@
 #include "Render\Sprite.h"
 #include "Utility\Source.h"
 
-TestScene::TestScene(SmokeEngine* smokeEngine,Camera * camera) : SceneNode::SceneNode(smokeEngine,camera)
+#include "Utility\Vector\Vector3.h"
+
+TestScene::TestScene(SmokeEngine* smokeEngine,Camera * camera) : SceneNode(smokeEngine,camera)
 {
 	
 	Source * frag = new Source("julianset.fs",this->mSmokeEngine->mAssetManager);
 	Sprite * s = new Sprite(this,frag);
-	ltestObject = new ObjectNode("test",s);
-	this->mRootSceneNode->AppendNode(ltestObject);
+	_testObject = new ObjectNode("test",s);
+	this->mRootSceneNode->AppendNode(_testObject);
+
+	_testObject->Position = Vector3(0,0,1);
 }
 
 

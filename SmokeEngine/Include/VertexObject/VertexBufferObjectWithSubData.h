@@ -6,6 +6,7 @@
 #include "Utility\Vector\Vector4.h"
 #include <vector>
 #include "VertexObject.h"
+
 class VertexBufferObjectWithSubData : public VertexObject
 {
 public:
@@ -16,7 +17,7 @@ public:
 			GLfloat * _data;
 			int _size;
 		public:
-			SubData(GLfloat data[],int size,int vectorType);
+			SubData(GLfloat data[],int size,int vectorType) ;
 			SubData(Vector2 data[],int size);
 			SubData(Vector3 data[],int size);
 			SubData(Vector4 data[],int size);

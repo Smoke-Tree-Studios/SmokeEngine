@@ -38,11 +38,10 @@ Source::Source(const char* file,AAssetManager* assetManager)
 
 	int lsize = AAsset_getLength(lasset);
 
-	char * ldata = (char*)malloc(lsize * sizeof(char));
+	char * ldata = (char*)calloc(lsize +1, sizeof(char));
 	AAsset_read(lasset,ldata,lsize);
-
+	ldata[lsize] = 0;
 	_compile(ldata);
-	delete[] ldata;
 
 }
 
@@ -71,6 +70,7 @@ void Source::_compile(const char* source)
 				char* lbuffer = (char*) malloc(linfoLen);
 				if (lbuffer) {
 					glGetShaderInfoLog(_source, linfoLen, NULL, lbuffer);
+					 __android_log_print(ANDROID_LOG_ERROR,"SMOKE_ENGINE","%s\n",source);
 					 __android_log_print(ANDROID_LOG_ERROR,"SMOKE_ENGINE","Could not compile shader %s\n",lbuffer);
 					free(lbuffer);
 				}

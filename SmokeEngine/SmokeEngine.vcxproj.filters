@@ -64,7 +64,6 @@
     <ClInclude Include="Include\VertexObject\VertexObject.h">
       <Filter>Header\VertexObject</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Utility\LodePNG.h" />
     <ClInclude Include="Include\Utility\Quaternion.h">
       <Filter>Header\Utility</Filter>
     </ClInclude>
@@ -74,7 +73,6 @@
     <ClInclude Include="Include\Render\Renderer.h">
       <Filter>Header\Render</Filter>
     </ClInclude>
-    <ClInclude Include="Include\VertexObject\WaveFrontLoad.h" />
     <ClInclude Include="Include\Storage\ViewStorage.h">
       <Filter>Header\Storage</Filter>
     </ClInclude>
@@ -83,7 +81,10 @@
       <Filter>Header\Utility</Filter>
     </ClInclude>
     <ClInclude Include="include\render\model.h" />
-    <ClInclude Include="Source\m.h" />
+    <ClInclude Include="Include\Utility\LodePNG.h">
+      <Filter>Header\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utility\WaveFrontLoad.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\BoundedBox.cpp">
@@ -161,15 +162,22 @@
     <ClCompile Include="Source\VertexObject.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Source\LodePNG.cpp" />
     <ClCompile Include="Source\Quaternion.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Source\WaveFrontLoad.cpp" />
-    <ClCompile Include="Source\Sprite.cpp" />
     <ClCompile Include="Source\Model.cpp" />
-    <ClCompile Include="Source\asdf.cpp" />
-    <ClCompile Include="Source\Model.cpp" />
+    <ClCompile Include="Source\Sprite.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\LodePNG.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Model.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\WaveFrontLoad.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source">
