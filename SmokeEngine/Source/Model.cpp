@@ -8,22 +8,36 @@
 #include "Utility\Matrix\Matrix4x4.h"
 #include "Utility\Shader.h"
 #include "Utility\Matrix\Matrix4x4.h"
+#include "VertexObject\VertexBufferObjectWithSubData.h"
+#include "VertexObject\VertexArrayObject.h"
 
+#include "S_Debug.h"
 
-Model::Model(SceneNode* sceneNode,VertexBufferObjectWithSubData* vertexBufferObject,VertexArrayObject* vertexArrayObject,Source* vertexSource, Source* Fragmentsource,Texture* texture) : RenderObject::RenderObject(sceneNode)
+Model::Model(SceneNode* sceneNode,VertexBufferObjectWithSubData* vertexBufferObject,VertexArrayObject* vertexArrayObject,Source* vertexSource, Source* Fragmentsource) : RenderObject::RenderObject(sceneNode)
 {
 	
 	mShader->AttachSource(vertexSource);
 	mShader->AttachSource(Fragmentsource);
+	mShader->IntalizeShader();
 
-	mShader->SetAttrib(0,"in_Verts");
-	mShader->SetAttrib(1,"in_TexCoords");
-	mShader->SetAttrib(2,"in_Normals");
+	for(int x = 0; x < vertexBufferObject->GetSize(); x++)
+	{
+		if((*vertexBufferObject)[x]->GetListedType() == VERTEX)
+		{
+			mShader->SetAttrib(x,"in_Verts");
+		}
+		else if((*vertexBufferObject)[x]->GetListedType() == NORMALS)
+		{
+			mShader->SetAttrib(x,"in_Normals");
+		}
+		else if((*vertexBufferObject)[x]->GetListedType() == TEX_COORDS)
+		{
+			mShader->SetAttrib(x,"in_TexCoords");
+		}
+	}
 
 	mShader->SetMatrix4x4("in_Transform",Matrix4x4::Idenity());
 	mShader->SetMatrix4x4("in_View",Matrix4x4::Idenity());
-
-	mShader->SetTexture("in_BaseImage",texture,0);
 
 	_vertexArrayObject = vertexArrayObject;
 	_vertexBufferObject = vertexBufferObject;

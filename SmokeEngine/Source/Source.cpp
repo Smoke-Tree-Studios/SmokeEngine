@@ -1,7 +1,6 @@
 #include "Utility\Source.h"
 #include <android\asset_manager.h>
-#include <android\log.h>
-
+#include "S_Debug.h"
 
 Source::Source(const char* source,GLenum Type)
 {
@@ -12,7 +11,7 @@ Source::Source(const char* source,GLenum Type)
 }
 Source::Source(const char* file,AAssetManager* assetManager)
 {
-	__android_log_print(ANDROID_LOG_INFO,"SMOKE_ENGINE",(char*)("loading shader file:" +std::string(file)).c_str());
+	INFO("loading shader file: %s",file);
 
 	if(file[ strlen(file) -1] == 's' && file[ strlen(file) -2] == 'v')
 	{
@@ -26,14 +25,14 @@ Source::Source(const char* file,AAssetManager* assetManager)
 	}
 	else
 	{
-		__android_log_print(ANDROID_LOG_INFO,"SMOKE_ENGINE",(char*)("unknown shader file type:" +std::string(file)).c_str());
+		ERROR("Invalid shader file type: %s",file);
 	}
 
 	AAsset* lasset = AAssetManager_open(assetManager,file,AASSET_MODE_UNKNOWN);
 
 	if(NULL == lasset)
 	{
-		 __android_log_print(ANDROID_LOG_INFO,"SMOKE_ENGINE",(char*)("Failed to open: " + std::string(file)).c_str());
+		ERROR("Failed to open: %s", file);
 	}
 
 	int lsize = AAsset_getLength(lasset);
@@ -41,7 +40,10 @@ Source::Source(const char* file,AAssetManager* assetManager)
 	char * ldata = (char*)calloc(lsize +1, sizeof(char));
 	AAsset_read(lasset,ldata,lsize);
 	ldata[lsize] = 0;
-	_compile(ldata);
+	if(!_compile(ldata))
+	{
+		ERROR("Failed to comple shader: %s",file);
+	}
 
 }
 
@@ -55,7 +57,7 @@ GLenum Source::GetType()
 	return _type;
 }
 
-void Source::_compile(const char* source)
+bool Source::_compile(const char* source)
 {
 	if(_source)
 	{
@@ -70,16 +72,20 @@ void Source::_compile(const char* source)
 				char* lbuffer = (char*) malloc(linfoLen);
 				if (lbuffer) {
 					glGetShaderInfoLog(_source, linfoLen, NULL, lbuffer);
-					 __android_log_print(ANDROID_LOG_ERROR,"SMOKE_ENGINE","%s\n",source);
-					 __android_log_print(ANDROID_LOG_ERROR,"SMOKE_ENGINE","Could not compile shader %s\n",lbuffer);
+					ERROR("could not compile shader");
+					ERROR(source);
+					ERROR("\n");
+					ERROR(lbuffer);
 					free(lbuffer);
 				}
 				glDeleteShader(_source);
 				_source = 0;
+				return false;
 			 }
 
 		}
 	}
+	return true;
 }
 
 Source::~Source(void)

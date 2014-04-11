@@ -101,8 +101,6 @@ void Sprite::Draw(Matrix4x4 transform, Matrix4x4 view)
 	this->mShader->SetMatrix4x4("in_View",view);
 
 	glDrawElements(GL_TRIANGLES,mVertexArrayObject->GetNumberOfIndecies(),GL_UNSIGNED_SHORT,NULL);
-
-
 }
 
 void Sprite::DepthDraw(Matrix4x4 transform, Matrix4x4 view)

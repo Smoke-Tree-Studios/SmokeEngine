@@ -10,7 +10,7 @@ MatrixStack::~MatrixStack(void)
 {
 }
 
-void MatrixStack::Push(Matrix4x4 matrix)
+void MatrixStack::Push(const Matrix4x4& matrix)
 {
 	_matricies.push_back(matrix);
 }

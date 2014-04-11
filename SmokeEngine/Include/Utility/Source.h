@@ -11,7 +11,7 @@ private:
 	GLuint _source;
 	char* _data;
 	GLenum _type;
-	void _compile(const char* source);
+	bool _compile(const char* source);
 public:
 	Source(const char* source,GLenum Type);
 	Source(const char* file,AAssetManager* assetManager);

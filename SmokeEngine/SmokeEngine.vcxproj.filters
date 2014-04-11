@@ -85,6 +85,7 @@
       <Filter>Header\Utility</Filter>
     </ClInclude>
     <ClInclude Include="Include\Utility\WaveFrontLoad.h" />
+    <ClInclude Include="Include\S_Debug.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\BoundedBox.cpp">

@@ -9,7 +9,7 @@
 #include "SmokeEngine.h"
 #include "VertexObject\VertexArrayObject.h"
 #include "VertexObject\VertexBufferObjectWithSubData.h"
-
+#include "S_Debug.h"
 #include "TestScene.h"
 
 namespace boost
@@ -37,6 +37,7 @@ JNIEXPORT void JNICALL Java_com_android_Engine_Lib_Initate(JNIEnv* env, jobject 
 	//Texture* t = new Texture("lice1.png",mAssetManager);
 	//VertexBufferObjectWithSubData * v = new VertexBufferObjectWithSubData();
 	//WaveFrontLoad::Load("drag.wobj",mAssetManager,v);
+
 	 
 }
 

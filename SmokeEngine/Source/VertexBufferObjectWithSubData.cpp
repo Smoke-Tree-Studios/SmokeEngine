@@ -12,6 +12,7 @@ VertexBufferObjectWithSubData::SubData::SubData(GLfloat data[],int size,int vect
 
 		 _size = size * sizeof(GLfloat);
 		 _vectorType = vectorType;
+		  _listedType ="";
 }
 VertexBufferObjectWithSubData::SubData::SubData(Vector2 data[],int size) 
 {
@@ -23,6 +24,7 @@ VertexBufferObjectWithSubData::SubData::SubData(Vector2 data[],int size)
 		 }
 		 _size = size * 2* sizeof(GLfloat);
 		 _vectorType = 2;
+		  _listedType ="";
 }
 VertexBufferObjectWithSubData::SubData::SubData(Vector3 data[],int size)
 {
@@ -35,6 +37,7 @@ VertexBufferObjectWithSubData::SubData::SubData(Vector3 data[],int size)
 		 }
 		 _size = size * 3* sizeof(GLfloat);
 		 _vectorType = 3;
+		  _listedType ="";
 }
 VertexBufferObjectWithSubData::SubData::SubData(Vector4 data[],int size) 
 {
@@ -48,8 +51,31 @@ VertexBufferObjectWithSubData::SubData::SubData(Vector4 data[],int size)
 		 }
 		 _size = size * 4* sizeof(GLfloat);
 		 _vectorType = 4;
+		 _listedType ="";
 	
 }
+
+VertexBufferObjectWithSubData::SubData::SubData(GLfloat data[],int size,int vectorType,std::string listed)
+{
+	SubData(data,size,vectorType);
+	_listedType = listed;
+}
+VertexBufferObjectWithSubData::SubData::SubData(Vector2 data[],int size,std::string listed)
+{
+	SubData(data,size);
+	_listedType = listed;
+}
+VertexBufferObjectWithSubData::SubData::SubData(Vector3 data[],int size,std::string listed)
+{
+	SubData(data,size);
+	_listedType = listed;
+}
+VertexBufferObjectWithSubData::SubData::SubData(Vector4 data[],int size,std::string listed)
+{
+	SubData(data,size);
+	_listedType = listed;
+}
+
 
 VertexBufferObjectWithSubData::SubData::~SubData()
 {
@@ -75,6 +101,17 @@ GLfloat* VertexBufferObjectWithSubData::SubData::GetData()
 {
 	return _data;
 }
+
+void VertexBufferObjectWithSubData::SubData::SetListed(std::string type)
+{
+	_listedType = type;
+}
+
+std::string VertexBufferObjectWithSubData::SubData::GetListedType()
+{
+	return _listedType;
+}
+
 
 
 VertexBufferObjectWithSubData::VertexBufferObjectWithSubData(void) : VertexObject()
@@ -115,7 +152,6 @@ void VertexBufferObjectWithSubData::AddSubData(SubData* subData)
 	_data.push_back(subData);
 }
 
-
 void VertexBufferObjectWithSubData::Bind()
 {
 	glBindBuffer(GL_ARRAY_BUFFER,*_id);
@@ -127,4 +163,14 @@ void VertexBufferObjectWithSubData::Bind()
 		loffset += _data[x]->GetSize();
 	}
 
+}
+
+int VertexBufferObjectWithSubData::GetSize()
+{
+	return _data.size();
+}
+
+VertexBufferObjectWithSubData::SubData* VertexBufferObjectWithSubData::operator [] (const int index)
+{
+	return _data[index];
 }

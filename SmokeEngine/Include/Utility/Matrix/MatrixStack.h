@@ -10,7 +10,7 @@ private:
 
 public:
 	//pushes on the stack
-	void Push(Matrix4x4 matrix);
+	void Push(const Matrix4x4& matrix);
 	//pop from the matrix stack
 	void Pop();
 	
