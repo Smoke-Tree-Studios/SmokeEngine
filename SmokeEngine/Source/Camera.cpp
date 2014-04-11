@@ -7,7 +7,6 @@ Camera::Camera(Matrix4x4 ViewMatrix)
 
 	Position = Vector3(0,0,0);
 	Rotation  = Quaternion();
-	_viewMatrix = Matrix4x4();
 }
 
 Camera::Camera(float fov,float aspect, float zNear, float zFar)
@@ -17,16 +16,14 @@ Camera::Camera(float fov,float aspect, float zNear, float zFar)
 	
 	Position = Vector3(0,0,0);
 	Rotation  = Quaternion();
-	_viewMatrix = Matrix4x4();
 }
 
 Camera::Camera(float left, float top, float right, float bottom, float zNear,float zFar)
 {
-	_viewMatrix = Matrix4x4::Orthographic(left,right,top,bottom,zNear,zFar);
+	_viewMatrix = Matrix4x4::Orthographic(left,right,top,bottom,zFar,zNear);
 
 	Position = Vector3(0,0,0);
 	Rotation  = Quaternion();
-	_viewMatrix = Matrix4x4();
 }
 
 Camera::~Camera(void)

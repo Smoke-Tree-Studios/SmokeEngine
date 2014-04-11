@@ -15,7 +15,6 @@ TestScene::TestScene(SmokeEngine* smokeEngine,Camera * camera) : SceneNode(smoke
 	_testObject = new ObjectNode("test",s);
 	this->mRootSceneNode->AppendNode(_testObject);
 
-	_testObject->Position = Vector3(0,0,1);
 }
 
 

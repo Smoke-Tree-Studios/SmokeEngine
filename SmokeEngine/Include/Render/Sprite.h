@@ -3,10 +3,11 @@
 #define SPRITE_VERTICIES_SIZE 12
 #define SPRITE_VERTICIES {0,0,0, 1,0,0, 0,1,0, 1,1,0 }
 
-#define SPRITE_INDECIES_SIZE 4
-#define SPRITE_INDECIES {0,1,2,3}
+#define SPRITE_INDECIES_SIZE 6
+#define SPRITE_INDECIES {2,0,1,2,1,3}
 
-#define SPRITE_VERTEX_SHADER "attribute  vec3 in_Verts; \
+#define SPRITE_VERTEX_SHADER "\
+attribute  vec3 in_Verts; \
 attribute float in_Index; \
 uniform mat4 in_Transform; \
 uniform mat4 in_View; \

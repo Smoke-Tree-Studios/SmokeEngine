@@ -180,14 +180,11 @@ Matrix4x4 Matrix4x4::Scale(float x, float y,float z)
 
 Matrix4x4 Matrix4x4::Orthographic(float left, float right, float top, float bottom,float far, float near)
 {
-	Matrix4x4 lfinal = Matrix4x4();
-	lfinal.m11 = 2/(right-left);
-	lfinal.m22 = 2/(top-bottom);
-	lfinal.m33 = (-2)/(far-near);
-	lfinal.m41 = -((right+left)/(right-left));
-	lfinal.m42 = -((top+bottom)/(top-bottom));
-	lfinal.m43 = ((far+near)/(far-near));
-	return lfinal;
+	return Matrix4x4(
+	2/(right-left),0,0,-((right-left)/(right-left)),
+	0,2/(top-bottom),0,-((top+bottom)/(top-bottom)),
+	0,0,-2/(far-near),-((far+near)/(far-near)),
+	0,0,0,1);
 	
 }
 Matrix4x4 Matrix4x4::Perspective(float fov, float aspect, float znear, float zfar)

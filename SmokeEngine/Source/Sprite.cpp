@@ -56,11 +56,11 @@ void Sprite::_initialize(SceneNode * sceneNode)
 		}
 
 		{
-			GLfloat ldata [] = SPRITE_INDECIES;
-			lvertexObject->AddSubData(new VertexBufferObjectWithSubData::SubData(ldata,SPRITE_INDECIES_SIZE,1));
+			GLfloat ldata [] = {0,1,2,3};
+			lvertexObject->AddSubData(new VertexBufferObjectWithSubData::SubData(ldata,4,1));
 		}
 		lvertexObject->IntalizeBuffer();
-		sceneNode->mVertexBufferStorage->AppendVertexObject(SPRITE,new VertexBufferObjectWithSubData());
+		sceneNode->mVertexBufferStorage->AppendVertexObject(SPRITE,lvertexObject);
 	}
 
 	this->mVertexArrayObject = sceneNode->mVertexBufferStorage->GetVertexArryObject(SPRITE);
@@ -94,11 +94,11 @@ void Sprite::Draw(Matrix4x4 transform, Matrix4x4 view)
 {
 	this->mShader->BindShader();
 
-	this->mShader->SetMatrix4x4("in_View",view);
-	this->mShader->SetMatrix4x4("in_Transform",transform);
-
 	this->mVertexSubData->Bind();
 	this->mVertexArrayObject->Bind();
+
+	this->mShader->SetMatrix4x4("in_Transform",transform);
+	this->mShader->SetMatrix4x4("in_View",view);
 
 	glDrawElements(GL_TRIANGLES,mVertexArrayObject->GetNumberOfIndecies(),GL_UNSIGNED_SHORT,NULL);
 

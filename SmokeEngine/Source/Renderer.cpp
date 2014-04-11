@@ -18,7 +18,6 @@ Renderer::~Renderer(void)
 
 void Renderer::Draw(SceneNode* scene)
 {
-
 	DrawNode(scene->mRootSceneNode,scene);
 
 	//DrawNode(scene->mRootOverlayNode);
@@ -30,7 +29,7 @@ void Renderer::DrawNode(Node * n,SceneNode *scene)
 	{
 		_matrixStack.Push((*iter)->GetMatrix());
 		(*iter)->Draw(_matrixStack.GetTransform(),scene->mMainCamera->GetMatrix());
-			DrawNode((*iter),scene);
+		DrawNode((*iter),scene);
 		_matrixStack.Pop();
 	}
 }
