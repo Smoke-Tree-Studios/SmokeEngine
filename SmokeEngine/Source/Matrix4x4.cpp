@@ -26,23 +26,23 @@ Matrix4x4::Matrix4x4(void)
 Matrix4x4::Matrix4x4(float m11, float m21, float m31, float m41, float m12, float m22, float m32, float m42,float m13, float m23, float m33, float m43,float m14, float m24, float m34, float m44)
 {
 	Matrix4x4::m11= m11;
-	Matrix4x4::m21 = m12;
-	Matrix4x4::m31 = m13;
-	Matrix4x4::m41 = m14;
+	Matrix4x4::m21 = m21;
+	Matrix4x4::m31 = m31;
+	Matrix4x4::m41 = m41;
 
-	Matrix4x4::m12 = m21;
+	Matrix4x4::m12 = m12;
 	Matrix4x4::m22 = m22;
-	Matrix4x4::m32 = m23;
-	Matrix4x4::m42 = m24;
+	Matrix4x4::m32 = m32;
+	Matrix4x4::m42 = m42;
 
-	Matrix4x4::m13 = m31;
-	Matrix4x4::m23 = m32;
+	Matrix4x4::m13 = m13;
+	Matrix4x4::m23 = m23;
 	Matrix4x4::m33= m33;
-	Matrix4x4::m43 = m34;
+	Matrix4x4::m43 = m43;
 
-	Matrix4x4::m14 = m41;
-	Matrix4x4::m24 = m42;
-	Matrix4x4::m34 = m43;
+	Matrix4x4::m14 = m14;
+	Matrix4x4::m24 = m24;
+	Matrix4x4::m34 = m34;
 	Matrix4x4::m44 = m44;
 		
 }
@@ -181,21 +181,20 @@ Matrix4x4 Matrix4x4::Scale(float x, float y,float z)
 Matrix4x4 Matrix4x4::Orthographic(float left, float right, float top, float bottom,float far, float near)
 {
 	return Matrix4x4(
-	2/(right-left),0,0,-((right-left)/(right-left)),
-	0,2/(top-bottom),0,-((top+bottom)/(top-bottom)),
-	0,0,-2/(far-near),-((far+near)/(far-near)),
+	(2.0f/(right-left)),0,0,-((right+left)/(right-left)),
+	0,(2.0f/(top-bottom)),0,-((top+bottom)/(top-bottom)),
+	0,0,-(2.0f/(far-near)),-((far+near)/(far-near)),
 	0,0,0,1);
 	
 }
 Matrix4x4 Matrix4x4::Perspective(float fov, float aspect, float znear, float zfar)
 {
-		float lh = znear * tan(fov);
-		float lneg_depgh = znear - zfar;
+		double lh = 1.0f/tan(fov/2.0f);
 		return Matrix4x4(
 			lh/aspect,0,0,0,
 			0,lh,0,0,
-			0,0,(zfar+znear)/lneg_depgh,-1,
-			0,0,2.0f * (znear*zfar)/lneg_depgh,0);
+			0,0,(zfar)/(zfar-znear),(-zfar*znear)/( zfar-znear ),
+			0,0,1,0);
 }
 
 

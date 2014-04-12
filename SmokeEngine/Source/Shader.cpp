@@ -146,7 +146,7 @@ void Shader::SetTexture(const GLchar* UniformID,Texture* texture,int index)
 
 void Shader::SetMatrix4x4(const GLchar* UniformID, Matrix4x4 m)
 {
-	GLfloat lvalue[16] ;
+	GLfloat lvalue[16];
 	lvalue[0] = m.m11;
 	lvalue[1] = m.m21;
 	lvalue[2] = m.m31;
@@ -159,8 +159,8 @@ void Shader::SetMatrix4x4(const GLchar* UniformID, Matrix4x4 m)
 
 	lvalue[8] = m.m13;
 	lvalue[9] = m.m23;
-	lvalue[10] = m.m34;
-	lvalue[11] = m.m41;
+	lvalue[10] = m.m33;
+	lvalue[11] = m.m43;
 
 	lvalue[12] = m.m14;
 	lvalue[13] = m.m24;

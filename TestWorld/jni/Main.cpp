@@ -43,7 +43,7 @@ JNIEXPORT void JNICALL Java_com_android_Engine_Lib_Initate(JNIEnv* env, jobject 
 
 JNIEXPORT void JNICALL Java_com_android_Engine_Lib_OpenglInitiate(  JNIEnv* env, jobject obj)
 {
-		s->mSceneManager->AppendScene("main",new TestScene(s,new Camera(0,0,1,1,0,100)));
+	s->mSceneManager->AppendScene("main",new TestScene(s,new Camera(-1,-1,1,1,-1,1)));//new Camera(3.14f/2.0f,1,1,20)));
 		s->mSceneManager->SetActiveScene("main");
 
 }

@@ -6,14 +6,16 @@
 #include "Utility\Source.h"
 
 #include "Utility\Vector\Vector3.h"
+#include "Utility\WaveFrontLoad.h"
 
 TestScene::TestScene(SmokeEngine* smokeEngine,Camera * camera) : SceneNode(smokeEngine,camera)
 {
 	
-	Source * frag = new Source("julianset.fs",this->mSmokeEngine->mAssetManager);
+	Source * frag = new Source("red.fs",this->mSmokeEngine->mAssetManager);
 	Sprite * s = new Sprite(this,frag);
 	_testObject = new ObjectNode("test",s);
 	this->mRootSceneNode->AppendNode(_testObject);
+	_testObject->Position = Vector3(-1,-1,0);
 
 }
 
