@@ -23,7 +23,7 @@ public:
 		private:
 			int _vectorType;
 			GLfloat * _data;
-			int _size;
+			GLsizeiptr _size;
 			std::string _listedType;
 		public:
 			SubData(GLfloat data[],int size,int vectorType);
@@ -42,10 +42,8 @@ public:
 
 			//returns the vector type
 			int GetVectorType();
-			//get the number of elements
-			int GetLength();
 			//get the total size
-			int GetSize();
+			GLsizeiptr GetSize();
 
 			//allows the subdata object to have an id value attached to it
 			void SetListed(std::string type);

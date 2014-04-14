@@ -1,5 +1,8 @@
 #include "VertexObject\VertexArrayObject.h"
 #include <stdlib.h>
+#include "S_Debug.h"
+
+
 
 VertexArrayObject::VertexArrayObject(const GLushort data[], int size) : VertexObject()
 {

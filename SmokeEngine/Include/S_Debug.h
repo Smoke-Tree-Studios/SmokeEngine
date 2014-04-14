@@ -1,6 +1,6 @@
 #pragma once
 #ifndef _S_DEBUG_H
-#define _S_DEBUG_H;
+#define _S_DEBUG_H
 
 #include <android\log.h>
 

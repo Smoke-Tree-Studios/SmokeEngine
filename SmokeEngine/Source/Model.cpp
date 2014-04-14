@@ -13,12 +13,12 @@
 
 #include "S_Debug.h"
 
-Model::Model(SceneNode* sceneNode,VertexBufferObjectWithSubData* vertexBufferObject,VertexArrayObject* vertexArrayObject,Source* vertexSource, Source* Fragmentsource) : RenderObject::RenderObject(sceneNode)
+Model::Model(SceneNode* sceneNode,VertexBufferObjectWithSubData* vertexBufferObject,VertexArrayObject* vertexArrayObject,Source* vertexSource, Source* Fragmentsource) : RenderObject(sceneNode)
 {
-	
+	vertexBufferObject->IntalizeBuffer();
+
 	mShader->AttachSource(vertexSource);
 	mShader->AttachSource(Fragmentsource);
-	mShader->IntalizeShader();
 
 	for(int x = 0; x < vertexBufferObject->GetSize(); x++)
 	{
@@ -35,6 +35,8 @@ Model::Model(SceneNode* sceneNode,VertexBufferObjectWithSubData* vertexBufferObj
 			mShader->SetAttrib(x,"in_TexCoords");
 		}
 	}
+	
+	mShader->IntalizeShader();
 
 	mShader->SetMatrix4x4("in_Transform",Matrix4x4::Idenity());
 	mShader->SetMatrix4x4("in_View",Matrix4x4::Idenity());

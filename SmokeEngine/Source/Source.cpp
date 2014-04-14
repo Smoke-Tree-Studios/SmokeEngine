@@ -44,6 +44,7 @@ Source::Source(const char* file,AAssetManager* assetManager)
 	{
 		ERROR("Failed to comple shader: %s",file);
 	}
+	free(ldata);
 
 }
 

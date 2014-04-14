@@ -29,6 +29,8 @@
     <None Include="assets\Teapot.wobj" />
     <None Include="assets\julianset.fs" />
     <None Include="assets\red.fs" />
+    <None Include="assets\basic.vs" />
+    <None Include="assets\phongshading.fs" />
   </ItemGroup>
   <ItemGroup>
     <JCompile Include="src\com\example\Engine\GLRenderer.java" />

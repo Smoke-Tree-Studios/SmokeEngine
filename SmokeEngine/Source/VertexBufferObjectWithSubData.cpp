@@ -1,6 +1,7 @@
 #include "VertexObject\VertexBufferObjectWithSubData.h"
 #include <android\log.h>
 #include <string>
+#include "S_Debug.h"
 
 VertexBufferObjectWithSubData::SubData::SubData(GLfloat data[],int size,int vectorType) 
 {
@@ -57,22 +58,55 @@ VertexBufferObjectWithSubData::SubData::SubData(Vector4 data[],int size)
 
 VertexBufferObjectWithSubData::SubData::SubData(GLfloat data[],int size,int vectorType,std::string listed)
 {
-	SubData(data,size,vectorType);
+	_data = new GLfloat[size];
+	for(int x =0; x < size; x++)
+	{
+		_data[x] = data[x];
+	}
+
+	_size = size * sizeof(GLfloat);
+	_vectorType = vectorType;
+	
 	_listedType = listed;
 }
 VertexBufferObjectWithSubData::SubData::SubData(Vector2 data[],int size,std::string listed)
 {
-	SubData(data,size);
+	_data = new GLfloat[size* 2];
+	for(int x =0; x < size; x++)
+	{
+		_data[(x * 2)+ 0] = data[x].X;
+		_data[(x * 2)+ 1] = data[x].Y;
+	}
+	_size = size * 2* sizeof(GLfloat);
+	_vectorType = 2;
+
 	_listedType = listed;
 }
 VertexBufferObjectWithSubData::SubData::SubData(Vector3 data[],int size,std::string listed)
 {
-	SubData(data,size);
+	_data = new GLfloat[size* 3];
+	for(int x =0; x < size; x++)
+	{
+		_data[(x * 3)+ 0] = data[x].X;
+		_data[(x * 3)+ 1] = data[x].Y;
+		_data[(x * 3)+ 2] = data[x].Z;
+	}
+	_size = size * 3* sizeof(GLfloat);
+	_vectorType = 3;
 	_listedType = listed;
 }
 VertexBufferObjectWithSubData::SubData::SubData(Vector4 data[],int size,std::string listed)
 {
-	SubData(data,size);
+	_data = new GLfloat[size* 4];
+	for(int x =0; x < size; x++)
+	{
+		_data[(x * 4)+ 0] = data[x].X;
+		_data[(x * 4)+ 1] = data[x].Y;
+		_data[(x * 4)+ 2] = data[x].Z;
+		_data[(x * 4)+ 3] = data[x].W;
+	}
+	_size = size * 4* sizeof(GLfloat);
+	_vectorType = 4;
 	_listedType = listed;
 }
 
@@ -87,15 +121,12 @@ int VertexBufferObjectWithSubData::SubData::GetVectorType()
 	return _vectorType;
 }
 
-int VertexBufferObjectWithSubData::SubData::GetLength()
+
+GLsizeiptr VertexBufferObjectWithSubData::SubData::GetSize()
 {
 	return _size;
 }
 
-int VertexBufferObjectWithSubData::SubData::GetSize()
-{
-	return _size * sizeof(GLfloat);
-}
 
 GLfloat* VertexBufferObjectWithSubData::SubData::GetData()
 {
@@ -134,8 +165,10 @@ void VertexBufferObjectWithSubData::IntalizeBuffer()
 	GLsizeiptr lsize = 0;
 	for(int x =0; x < _data.size(); x++)
 	{
+			INFO("%d", _data[x]->GetSize());
 		lsize += _data[x]->GetSize();
 	}
+	INFO("%d", lsize);
 	glBindBuffer(GL_ARRAY_BUFFER,*_id);
 	glBufferData(GL_ARRAY_BUFFER,lsize,NULL, GL_STATIC_DRAW );
 
@@ -144,6 +177,7 @@ void VertexBufferObjectWithSubData::IntalizeBuffer()
 	{
 		glBufferSubData(GL_ARRAY_BUFFER,loffset,_data[x]->GetSize(),_data[x]->GetData());
 		loffset += _data[x]->GetSize();
+	
 	}
 }
 

@@ -18,7 +18,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\render\model.h" />
+    <ClInclude Include="Include\Render\Model.h" />
     <ClInclude Include="Include\S_Debug.h" />
     <ClInclude Include="Include\Utility\BoundedBox.h" />
     <ClInclude Include="Include\Utility\Camera.h" />

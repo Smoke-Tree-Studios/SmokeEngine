@@ -80,12 +80,12 @@
     <ClInclude Include="Include\Utility\Shader.h">
       <Filter>Header\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="include\render\model.h" />
     <ClInclude Include="Include\Utility\LodePNG.h">
       <Filter>Header\Utility</Filter>
     </ClInclude>
     <ClInclude Include="Include\Utility\WaveFrontLoad.h" />
     <ClInclude Include="Include\S_Debug.h" />
+    <ClInclude Include="Include\Render\Model.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\BoundedBox.cpp">
