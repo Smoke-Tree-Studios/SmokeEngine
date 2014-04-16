@@ -44,8 +44,7 @@ JNIEXPORT void JNICALL Java_com_android_Engine_Lib_Initate(JNIEnv* env, jobject 
 JNIEXPORT void JNICALL Java_com_android_Engine_Lib_OpenglInitiate(  JNIEnv* env, jobject obj)
 {
 	s->mSceneManager->AppendScene("main",new TestScene(s,new Camera(3.14f/2.0f,1,.5f,20)));
-		s->mSceneManager->SetActiveScene("main");
-
+	s->mSceneManager->SetActiveScene("main");
 }
 
 JNIEXPORT void JNICALL Java_com_android_Engine_Lib_Step(JNIEnv* env, jobject obj)
@@ -53,7 +52,7 @@ JNIEXPORT void JNICALL Java_com_android_Engine_Lib_Step(JNIEnv* env, jobject obj
 	glEnable(GL_DEPTH_TEST);
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glClearColor(0.0f,1.0f,0.0f,1.0f);
+	glClearColor(0.0f,0.0f,0.0f,1.0f);
 	s->Step(); 
 }
 

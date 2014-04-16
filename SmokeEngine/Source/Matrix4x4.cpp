@@ -164,9 +164,13 @@ Matrix4x4 Matrix4x4::RotationZ(float amount)
 		0,0,0,1);
 }
 
-Matrix4x4 Matrix4x4::Rotation(Quaternion quanterion)
+Matrix4x4 Matrix4x4::Rotation(Quaternion q)
 {
-	return Matrix4x4();
+	return Matrix4x4(
+		1-(2*q.Y * q.Y)-(2*q.Z * q.Z),(2 * q.X * q.Y)+(2*q.W * q.Z),(2*q.X*q.Z)-(2*q.W*q.Y),0,
+		(2*q.X*q.Y)-(2*q.W*q.Z),1-(2*q.X*q.X)-(2*q.Z*q.Z),(2*q.Y*q.Z)+(2*q.W*q.X),0,
+		(2*q.X*q.Z)+(2*q.W*q.Y),(2*q.Y*q.Z)-(2*q.W*q.X),1-(2*q.X*q.X)-(2*q.Y*q.Y),0,
+		0,0,0,1.0f);
 }
 
 Matrix4x4 Matrix4x4::Scale(float x, float y,float z)
@@ -177,26 +181,6 @@ Matrix4x4 Matrix4x4::Scale(float x, float y,float z)
 			0,0,z,0,
 			0,0,0,1);
 }
-
-Matrix4x4 Matrix4x4::Orthographic(float left, float right, float top, float bottom,float far, float near)
-{
-	return Matrix4x4(
-	(2.0f/(right-left)),0,0,-((right+left)/(right-left)),
-	0,(2.0f/(top-bottom)),0,-((top+bottom)/(top-bottom)),
-	0,0,-(2.0f/(far-near)),-((far+near)/(far-near)),
-	0,0,0,1);
-	
-}
-Matrix4x4 Matrix4x4::Perspective(float fov, float aspect, float znear, float zfar)
-{
-		double lh = 1.0f/tan(fov/2.0f);
-		return Matrix4x4(
-			lh/aspect,0,0,0,
-			0,lh,0,0,
-			0,0,(zfar+znear)/(znear-zfar),(2.0f*zfar*znear)/( znear-zfar ),
-			0,0,-1,0);
-}
-
 
 
 Matrix4x4 Matrix4x4::Scale(Vector3 scale)

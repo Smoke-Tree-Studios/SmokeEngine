@@ -38,8 +38,6 @@ class Matrix4x4
 		static Matrix4x4 Scale(float x, float y,float z);
 		static Matrix4x4 Scale(Vector3 scale);
 
-		static Matrix4x4 Orthographic(float left, float right, float top, float bottom,float far, float near);
-		static Matrix4x4 Perspective(float fov, float aspect, float znear, float zfar);
 
 		static Matrix4x4 Idenity();
 
