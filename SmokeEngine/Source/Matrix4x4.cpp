@@ -193,8 +193,8 @@ Matrix4x4 Matrix4x4::Perspective(float fov, float aspect, float znear, float zfa
 		return Matrix4x4(
 			lh/aspect,0,0,0,
 			0,lh,0,0,
-			0,0,(zfar)/(zfar-znear),(-zfar*znear)/( zfar-znear ),
-			0,0,1,0);
+			0,0,(zfar+znear)/(znear-zfar),(2.0f*zfar*znear)/( znear-zfar ),
+			0,0,-1,0);
 }
 
 

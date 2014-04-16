@@ -204,17 +204,17 @@ VertexArrayObject* WaveFrontLoad::Load(const char* file,AAssetManager* assetMana
 	}
  
 	vertexBufferObjectWithSubData->AddSubData(new VertexBufferObjectWithSubData::SubData(lfinalVerts,lverticies.size(),VERTEX));
-	//delete[] lfinalVerts;
+	delete[] lfinalVerts;
 
 	if(lfinalNormals != NULL)
 	{
 		vertexBufferObjectWithSubData->AddSubData(new VertexBufferObjectWithSubData::SubData(lfinalNormals,lverticies.size(),NORMALS));
-		//delete[] lfinalNormals;
+		delete[] lfinalNormals;
 	}
 	if(lfinalTexCoords != NULL)
 	{
 		vertexBufferObjectWithSubData->AddSubData(new VertexBufferObjectWithSubData::SubData(lfinalTexCoords,lverticies.size(),TEX_COORDS));
-		//delete[] lfinalTexCoords;
+		delete[] lfinalTexCoords;
 	}
 
 	free(lbuffer);
