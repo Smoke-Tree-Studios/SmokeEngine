@@ -15,7 +15,8 @@ public:
 	void Pop();
 	
 	//get the full transform set
-	Matrix4x4 GetTransform();
+	Matrix4x4 GetTransformMatrix();
+	Matrix4x4 GetReverseTransformMatrix();
 
 	MatrixStack(void);
 	~MatrixStack(void);

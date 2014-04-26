@@ -1,12 +1,14 @@
 #pragma once
 #include "Node\SceneNode.h"
 
+class Node;
 class ObjectNode;
 class TestScene : public SceneNode
 {
 private:
 	ObjectNode * _testObject;
-
+	Node * _lightNode;
+	float x = 0;
 public:
 	
 

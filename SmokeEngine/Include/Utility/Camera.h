@@ -2,8 +2,8 @@
 #include "Utility/Matrix/Matrix4x4.h"
 #include "Utility/Vector/Vector3.h"
 #include "Utility/Quaternion.h"
-#include "Node/Node.h"
 
+class Node;
 class Camera
 {
 private:
@@ -22,5 +22,7 @@ public:
 
 	/** returns the transform matrix for the camera*/
 	Matrix4x4 GetMatrix();
+	Matrix4x4 GetTransformMatrixForNode(Node * node);
+	Matrix4x4 GetViewMatrix();
 };
 

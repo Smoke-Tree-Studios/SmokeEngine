@@ -164,15 +164,6 @@ Matrix4x4 Matrix4x4::RotationZ(float amount)
 		0,0,0,1);
 }
 
-Matrix4x4 Matrix4x4::Rotation(Quaternion q)
-{
-	return Matrix4x4(
-		1-(2*q.Y * q.Y)-(2*q.Z * q.Z),(2 * q.X * q.Y)+(2*q.W * q.Z),(2*q.X*q.Z)-(2*q.W*q.Y),0,
-		(2*q.X*q.Y)-(2*q.W*q.Z),1-(2*q.X*q.X)-(2*q.Z*q.Z),(2*q.Y*q.Z)+(2*q.W*q.X),0,
-		(2*q.X*q.Z)+(2*q.W*q.Y),(2*q.Y*q.Z)-(2*q.W*q.X),1-(2*q.X*q.X)-(2*q.Y*q.Y),0,
-		0,0,0,1.0f);
-}
-
 Matrix4x4 Matrix4x4::Scale(float x, float y,float z)
 {
 		return Matrix4x4(

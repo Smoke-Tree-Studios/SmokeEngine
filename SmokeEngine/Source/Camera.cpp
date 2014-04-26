@@ -1,6 +1,7 @@
 #include "Utility\Camera.h"
 #include "math.h"
-
+#include "Node\Node.h"
+#include "Utility\Matrix\MatrixStack.h"
 Camera::Camera(Matrix4x4 ViewMatrix)
 {
 	_viewMatrix= ViewMatrix;
@@ -39,6 +40,28 @@ Camera::~Camera(void)
 }
 
 Matrix4x4 Camera::GetMatrix()
+{
+	Matrix4x4 lposition = Matrix4x4::Translation(Position * -1);
+	Matrix4x4 lRotation = Rotation.ConvertToMatrix();
+
+    return (lRotation * lposition);
+}
+
+Matrix4x4 Camera::GetTransformMatrixForNode(Node * node)
+{
+	MatrixStack lstack = MatrixStack();
+	Node * lnode = node;
+	while(lnode != NULL)
+	{
+		lstack.Push(lnode->GetMatrix());
+		lnode = lnode->GetParent();
+	}
+	lstack.Push(GetMatrix());
+	Matrix4x4 r = GetMatrix();
+	return lstack.GetReverseTransformMatrix();
+}
+
+Matrix4x4 Camera::GetViewMatrix()
 {
 	return _viewMatrix;
 }

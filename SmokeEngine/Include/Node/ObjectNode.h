@@ -7,9 +7,8 @@ class RenderObject;
 class Matrix4x4;
 class ObjectNode : public Node
 {
-private:
-	RenderObject * _renderObject;
 public:
+	RenderObject * mRenderObject;
 	Vector3 Origin;
 
 	ObjectNode(std::string ID, RenderObject * renderObject);

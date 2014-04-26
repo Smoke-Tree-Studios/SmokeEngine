@@ -18,17 +18,19 @@ Renderer::~Renderer(void)
 
 void Renderer::Draw(SceneNode* scene)
 {
+	_matrixStack.Push(scene->mMainCamera->GetMatrix());
 	DrawNode(scene->mRootSceneNode,scene);
-
+	_matrixStack.Pop();
 	//DrawNode(scene->mRootOverlayNode);
 }
 
 void Renderer::DrawNode(Node * n,SceneNode *scene)
 {
+	
 	for(std::list<Node*>::iterator iter = n->GetChildren()->begin(); iter !=  n->GetChildren()->end();++iter)
 	{
 		_matrixStack.Push((*iter)->GetMatrix());
-		(*iter)->Draw(_matrixStack.GetTransform(),scene->mMainCamera->GetMatrix());
+		(*iter)->Draw(_matrixStack.GetTransformMatrix(),scene->mMainCamera->GetViewMatrix());
 		DrawNode((*iter),scene);
 		_matrixStack.Pop();
 	}

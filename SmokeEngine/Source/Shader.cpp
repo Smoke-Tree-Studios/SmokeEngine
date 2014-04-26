@@ -168,6 +168,7 @@ void Shader::SetMatrix4x4(const GLchar* UniformID, Matrix4x4 m)
 	lvalue[15] = m.m44;
 	_useShader();
 	glUniformMatrix4fv(glGetUniformLocation(_shaderProgram,UniformID),1,false,lvalue);
+
 }
 
 void Shader::SetMatrix4x4(const GLchar* UniformID,Matrix4x4 m[])

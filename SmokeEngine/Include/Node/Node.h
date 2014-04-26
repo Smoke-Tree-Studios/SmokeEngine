@@ -6,6 +6,7 @@
 #include "Utility\Quaternion.h"
 #include "Utility\Matrix\Matrix4x4.h"
 
+class Camera;
 class SceneNode;
 class Node 
 {
@@ -44,6 +45,9 @@ class Node
 
 		//delete's all the children nodes
 		void DeleteAllChildren();
+
+		Matrix4x4 GetLocationOfNode(Camera* cam);
+        
 
 		virtual void Update();
 		virtual void Draw(Matrix4x4 transform, Matrix4x4 view);
