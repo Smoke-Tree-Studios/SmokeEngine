@@ -9,3 +9,9 @@ Developmen Tools
 Visual C++ - http://www.microsoft.com/en-us/download/details.aspx?id=30679
 
 Nvida android developmetn kit - https://developer.nvidia.com/tegra-android-development-pack?display%5B0%5D=(
+
+Additional Resources
+=====================
+Opengl ES 2.0 documentation - http://www.khronos.org/opengles/sdk/docs/man/ 
+
+GLSL documentation - http://www.khronos.org/opengles/sdk/docs/man3/index.php
