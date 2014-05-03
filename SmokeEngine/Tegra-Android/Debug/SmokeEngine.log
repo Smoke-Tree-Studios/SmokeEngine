@@ -1,10 +1,13 @@
-﻿Build started 4/26/2014 9:59:35 AM.
+﻿Build started 5/2/2014 8:48:04 PM.
      1>Project "C:\SmokeEngine\SmokeEngine\SmokeEngine.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Touching "Tegra-Android\Debug\SmokeEngine.unsuccessfulbuild".
+         Creating "Tegra-Android\Debug\SmokeEngine.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          C:\NVPACK\android-ndk-r9b\toolchains\arm-linux-androideabi-4.8\prebuilt\windows\bin\arm-linux-androideabi-g++.exe 
-         MatrixStack.cpp
+         Texture.cpp
+     1>C:\SmokeEngine\SmokeEngine\Source\Texture.cpp(5,34): warning : 'POWER_TWO' initialized and declared 'extern' [enabled by default]
+          extern unsigned int POWER_TWO [26] = {1,2,4,8,16,32,64,128,256,512,1024,2048,4096,8192,16384,32768,65536,131072,262144,524288,1048576,2097152,4194304,8388608,16777216,33554432};
+                                           ^
        Lib:
          C:\NVPACK\android-ndk-r9b\toolchains\arm-linux-androideabi-4.8\prebuilt\windows\bin\arm-linux-androideabi-ar.exe rcs C:/SmokeEngine/Tegra-Android/Debug/libSmokeEngine.a Tegra-Android/Debug/Model.o Tegra-Android/Debug/LodePNG.o Tegra-Android/Debug/BoundedBox.o Tegra-Android/Debug/Camera.o Tegra-Android/Debug/ShaderSourceStorage.o Tegra-Android/Debug/SmokeEngine.o Tegra-Android/Debug/Matrix4x4.o Tegra-Android/Debug/MatrixStack.o Tegra-Android/Debug/Node.o Tegra-Android/Debug/ObjectNode.o Tegra-Android/Debug/Quaternion.o Tegra-Android/Debug/Renderer.o Tegra-Android/Debug/RenderObject.o Tegra-Android/Debug/SceneManager.o Tegra-Android/Debug/SceneNode.o Tegra-Android/Debug/Shader.o Tegra-Android/Debug/Source.o Tegra-Android/Debug/S_Rectangle.o Tegra-Android/Debug/Texture.o Tegra-Android/Debug/TextureStorage.o Tegra-Android/Debug/Vector2.o Tegra-Android/Debug/Vector3.o Tegra-Android/Debug/Vector4.o Tegra-Android/Debug/VertexArrayObject.o Tegra-Android/Debug/VertexBufferObjectWithSubData.o Tegra-Android/Debug/VertexBufferStorage.o Tegra-Android/Debug/VertexObject.o Tegra-Android/Debug/ViewStorage.o Tegra-Android/Debug/WaveFrontLoad.o Tegra-Android/Debug/Sprite.o
          SmokeEngine.vcxproj -> C:\SmokeEngine\Tegra-Android\Debug\libSmokeEngine.a
@@ -15,4 +18,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.52
+Time Elapsed 00:00:01.39

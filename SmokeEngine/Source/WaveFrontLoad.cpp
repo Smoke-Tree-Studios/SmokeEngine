@@ -192,7 +192,7 @@ VertexArrayObject* WaveFrontLoad::Load(const char* file,AAssetManager* assetMana
 				lfinalNormals[f[6]] = lvertexNormals[f[8]];
 
 				//pass in texCoords
-				lfinalTexCoords[f[9]] = ltexCoords[f[1]];
+				lfinalTexCoords[f[8]] = ltexCoords[f[1]];
 				lfinalTexCoords[f[3]] = ltexCoords[f[4]];
 				lfinalTexCoords[f[6]] = ltexCoords[f[7]];
 
@@ -220,8 +220,6 @@ VertexArrayObject* WaveFrontLoad::Load(const char* file,AAssetManager* assetMana
 	free(lbuffer);
 	GLushort* lind = &lindecies[0];
 	return new VertexArrayObject(lind,lindecies.size());
-
-
 
 	
 }

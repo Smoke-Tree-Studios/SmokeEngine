@@ -1,17 +1,11 @@
-﻿Build started 4/26/2014 10:00:53 AM.
+﻿Build started 5/2/2014 8:52:59 PM.
      1>Project "C:\SmokeEngine\TestWorld\TestWorld.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Tegra-Android\Debug\TestWorld.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         C:\NVPACK\android-ndk-r9b\toolchains\arm-linux-androideabi-4.8\prebuilt\windows\bin\arm-linux-androideabi-g++.exe 
-         TestScene.cpp
-         C:\SmokeEngine\TestWorld\jni\TestScene.cpp(1): includes this header: 0:
-     1>C:\SmokeEngine\TestWorld\jni\TestScene.h(11,12): warning : non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
-           float x = 0;
-                     ^
+         All outputs are up-to-date.
        Link:
-         C:\NVPACK\android-ndk-r9b\toolchains\arm-linux-androideabi-4.8\prebuilt\windows\bin\arm-linux-androideabi-g++.exe Tegra-Android/Debug/Main.o Tegra-Android/Debug/TestScene.o C:/SmokeEngine/Tegra-Android/Debug/libSmokeEngine.a  -oC:/SmokeEngine/Tegra-Android/Debug/libTestWorld.so "-landroid" "-lstdc++" "-lc" "-lm" "-llog" "-ldl" "-lz" "-lGLESv2" "-lEGL" "-lOpenSLES" -lc -lm -llog -lgcc -Wl,-soname,libSmokeEngine.a -Wl,--no-undefined -fuse-ld=bfd -L"C:/SmokeEngine//Tegra-Android/Debug" -LC:/SmokeEngine//Library/boost_1_55_0/libs/ -L"C:/NVPACK/android-ndk-r9b/platforms/android-15/arch-arm/usr/lib" -L"C:/NVPACK/android-ndk-r9b/sources/cxx-stl/gnu-libstdc++/4.8/libs/armeabi-v7a" -L"C:/NVPACK/android-ndk-r9b/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/lib/gcc/arm-linux-androideabi/4.8/armv7-a" -L"C:/NVPACK/android-ndk-r9b/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/lib/gcc/arm-linux-androideabi/4.8/armv7-a" -shared -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -Wl,-rpath-link=C:/NVPACK/android-ndk-r9b/platforms/android-15/arch-arm/usr/lib --sysroot=C:/NVPACK/android-ndk-r9b/platforms/android-15/arch-arm "-lsupc++" "-lgnustl_static" "-lgcc" 
-         TestWorld.vcxproj -> C:\SmokeEngine\Tegra-Android\Debug\libTestWorld.so
+         All outputs are up-to-date.
        StripLibrary:
          C:\NVPACK\android-ndk-r9b\toolchains\arm-linux-androideabi-4.8\prebuilt\windows\bin\arm-linux-androideabi-strip.exe --strip-unneeded -o"C:\SmokeEngine\Tegra-Android\Debug\stripped_libTestWorld.so" "C:\SmokeEngine\Tegra-Android\Debug\libTestWorld.so"
          Stripping C:\SmokeEngine\Tegra-Android\Debug\libTestWorld.so to C:\SmokeEngine\Tegra-Android\Debug\stripped_libTestWorld.so
@@ -138,4 +132,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:13.79
+Time Elapsed 00:00:12.76

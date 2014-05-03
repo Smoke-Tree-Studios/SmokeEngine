@@ -31,6 +31,7 @@
     <None Include="assets\red.fs" />
     <None Include="assets\basic.vs" />
     <None Include="assets\phongshading.fs" />
+    <None Include="assets\test-pattern.png" />
   </ItemGroup>
   <ItemGroup>
     <JCompile Include="src\com\example\Engine\GLRenderer.java" />

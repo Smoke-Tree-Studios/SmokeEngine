@@ -14,6 +14,8 @@
 #include "VertexObject\VertexArrayObject.h"
 #include "Utility\Shader.h"
 
+#include "Utility\Texture.h"
+
 #include "math.h"
 
 TestScene::TestScene(SmokeEngine* smokeEngine,Camera * camera) : SceneNode(smokeEngine,camera)
@@ -21,7 +23,7 @@ TestScene::TestScene(SmokeEngine* smokeEngine,Camera * camera) : SceneNode(smoke
 	Source * frag = new Source("phongshading.fs",this->mSmokeEngine->mAssetManager);
 	Source * vertex = new Source("basic.vs",this->mSmokeEngine->mAssetManager);
 	VertexBufferObjectWithSubData * _subData = new VertexBufferObjectWithSubData();
-	VertexArrayObject * _vertexArray = WaveFrontLoad::Load("drag.wobj",this->mSmokeEngine->mAssetManager,_subData);
+	VertexArrayObject * _vertexArray = WaveFrontLoad::Load("Teapot.wobj",this->mSmokeEngine->mAssetManager,_subData);
 
 	_lightNode = new Node("Light");
 	
@@ -30,10 +32,10 @@ TestScene::TestScene(SmokeEngine* smokeEngine,Camera * camera) : SceneNode(smoke
 
 	this->mRootSceneNode->AppendNode(_testObject);
 	this->mRootSceneNode->AppendNode(_lightNode);
-	_testObject->Position = Vector3(0,-3,-16);
+	_testObject->Position = Vector3(0,-3,-30);
 
-
-
+	Texture * t = new Texture("test-pattern.png",this->mSceneManager->mSmokeEngine->mAssetManager); 
+	_testObject->mRenderObject->mShader->SetTexture("in_BaseImage",t,0);
 }
 
 
