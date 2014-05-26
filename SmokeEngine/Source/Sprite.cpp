@@ -8,6 +8,8 @@
 #include "Utility\Vector\Vector2.h"
 #include "VertexObject\VertexArrayObject.h"
 #include "VertexObject\VertexBufferObjectWithSubData.h"
+#include "Storage\VertexBufferStorage.h"
+#include "Storage\ShaderSourceStorage.h"
 
 Sprite::Sprite(SceneNode * sceneNode,Source * fragmentShader) : RenderObject(sceneNode)
 {

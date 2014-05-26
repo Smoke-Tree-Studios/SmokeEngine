@@ -6,6 +6,7 @@
 #include "Utility\Quaternion.h"
 #include "Utility\Matrix\Matrix4x4.h"
 
+class SharedNodeInfo;
 class Camera;
 class SceneNode; 
 class Node
@@ -13,16 +14,20 @@ class Node
 	private:
 
 	protected:
+
 		std::string _id;
 
 		//the children nodes related to the set
 		std::list<Node*>* _children;
 
 		//list of all the nodes in a scene. used for the scenemanager
-		std::map<std::string, Node*>* _nodes;
+		SharedNodeInfo* _sharedNodeInfo;
 
 		Node * _parentNode;
 		SceneNode * _sceneNode;
+
+		virtual void _onNodeAppend();
+	
 	public:
 
 		Vector3 Position;
@@ -38,7 +43,7 @@ class Node
 		std::string GetID();
 
 		//appends a node to the set
-		void AppendNode(Node * n);
+		virtual void AppendNode(Node * n);
 
 		std::list<Node*>* GetChildren();
 		Node* GetParent();

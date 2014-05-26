@@ -1,25 +1,27 @@
 #pragma once
-#include "SmokeEngine.h"
 #include "Node.h"
-#include "SceneManager.h"
-#include "Storage\ShaderSourceStorage.h"
-#include "Storage\TextureStorage.h"
-#include "Storage\VertexBufferStorage.h"
-#include "Storage\ViewStorage.h"
-#include "Utility\Camera.h"
+#include "SmokeEngine.h"
 
+class SceneManager;
+class ShaderSourceStorage;
+class TextureStorage;
+class VertexBufferStorage;
+class ViewStorage;
+class Camera;
 class SmokeEngine;
 class SceneManager;
+class AttachmentNode;
+class SharedNodeInfo;
 class SceneNode
 {
 private:
-	//a map of all the nodes that exist in the tree including both scene and ovelray nodes
-	std::map<std::string, Node*>* _nodes;
+	//node information that is shared between all the nodes
+	SharedNodeInfo* _sharedNodeInfo;
 protected:
 	class RootNode : public Node
 	{
 		public:
-			RootNode(SceneNode * sceneNode,std::map<std::string, Node*>* nodes, std::string ID);
+			RootNode(SceneNode * sceneNode,SharedNodeInfo* sharedNodeInfo, std::string ID);
 			virtual std::string GetType();
 	};
 public:

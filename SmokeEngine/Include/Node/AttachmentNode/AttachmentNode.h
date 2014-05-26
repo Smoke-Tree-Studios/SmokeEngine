@@ -5,17 +5,15 @@ class btGhostObject;
 class ObjectNode;
 class AttachmentNode : public Node
 {
+protected:
+	virtual void _onNodeAppend();
 private:
 	std::string _mask;
 public:
 	class AttachmentNodeCallback{
-
 		public:
 			AttachmentNodeCallback();
-
 			void Callback(ObjectNode* objectNode, std::list<AttachmentNode*> attachmentNodes);
-
-
 	};
 
 	virtual std::string GetType();

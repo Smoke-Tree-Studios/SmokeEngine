@@ -14,6 +14,8 @@
 #include "VertexObject\VertexArrayObject.h"
 #include "Utility\Shader.h"
 
+#include "Utility\Camera.h"
+
 #include "Utility\Texture.h"
 
 #include "math.h"

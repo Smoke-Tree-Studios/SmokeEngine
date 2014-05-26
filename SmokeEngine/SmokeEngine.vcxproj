@@ -51,8 +51,10 @@
     <ClInclude Include="Include\Utility\WaveFrontLoad.h" />
     <ClInclude Include="Include\Render\Sprite.h" />
     <ClInclude Include="Include\Node\AttachmentNode\LightAttachmentNode.h" />
+    <ClInclude Include="Include\Node\SharedNodeInfo.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\SharedNodeInfo.cpp" />
     <ClCompile Include="Source\LightAttachmentNode.cpp" />
     <ClCompile Include="Source\AttachmentNode.cpp" />
     <ClCompile Include="Source\Model.cpp" />

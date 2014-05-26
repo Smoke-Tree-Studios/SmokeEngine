@@ -4,6 +4,7 @@
 class LightAttachmentNode :
 	public AttachmentNode
 {
+
 public:
 	Vector3 mColor;
 	float mIntesnity;

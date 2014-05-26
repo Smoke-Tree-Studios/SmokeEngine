@@ -2,6 +2,7 @@
 #include "Utility\Matrix\MatrixStack.h"
 #include "Utility\Matrix\Matrix4x4.h"
 #include "Utility\Camera.h"
+#include "Node\SharedNodeInfo.h"
 
 Node::Node(std::string ID)
 {
@@ -18,7 +19,9 @@ Node::Node(std::string ID)
 
 Node::~Node(void)
 {
-	(*_nodes).erase(_id); 
+	_sharedNodeInfo->mNodes->erase(_id);
+	
+	//(*_nodes).erase(_id); 
 }
 
 std::string Node::GetID()
@@ -28,7 +31,6 @@ std::string Node::GetID()
 
 void Node::DeleteAllChildren()
 {
-	
 	for(std::list<Node*>::iterator literator =  _children->begin(); literator != _children->end(); ++literator)
 	{
 		delete((*literator));
@@ -52,11 +54,18 @@ void Node::AppendNode(Node * n)
 {
 	n->_parentNode = (this);
 	n->_sceneNode = _sceneNode;
-	n->_nodes = _nodes;
-
-	(*_nodes)[n->_id] = n;
-
+	n->_sharedNodeInfo = _sharedNodeInfo;
+	
+	(*_sharedNodeInfo->mNodes)[n->_id] = n;
+	//(*_nodes)[n->_id] = n;
+	
 	_children->push_back(n);
+
+	n->_onNodeAppend();
+
+}
+
+void Node::_onNodeAppend(){
 }
 
 Node* Node::GetParent()
@@ -98,3 +107,4 @@ Matrix4x4 Node::GetLocationOfNode(Camera* cam)
 void Node::Update()
 {
 }
+

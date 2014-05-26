@@ -3,6 +3,7 @@
 #include <list>
 #include "Node\Node.h"
 #include "Node\ObjectNode.h"
+#include "Utility\Camera.h"
 
 Renderer::Renderer(void)
 {

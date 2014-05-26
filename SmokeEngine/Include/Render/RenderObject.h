@@ -16,7 +16,6 @@ void main() \
 	 gl_FragColor = vec4(0,0,0,1); \
  }"
 #define DEPTH_SHADER "SMOKE_DEPTH_SHADER"
-
 class Shader;
 class Matrix4x4;
 class SceneNode;

@@ -11,7 +11,7 @@
 #include "VertexObject\VertexBufferObjectWithSubData.h"
 #include "S_Debug.h"
 #include "TestScene.h"
-
+#include "Utility\Camera.h"
 namespace boost
 {
 	void throw_exception(std::exception const&)

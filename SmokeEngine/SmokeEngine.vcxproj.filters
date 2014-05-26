@@ -88,6 +88,7 @@
     </ClInclude>
     <ClInclude Include="Include\Node\AttachmentNode\AttachmentNode.h" />
     <ClInclude Include="Include\Node\AttachmentNode\LightAttachmentNode.h" />
+    <ClInclude Include="Include\Node\SharedNodeInfo.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\BoundedBox.cpp">
@@ -183,6 +184,7 @@
     </ClCompile>
     <ClCompile Include="Source\AttachmentNode.cpp" />
     <ClCompile Include="Source\LightAttachmentNode.cpp" />
+    <ClCompile Include="Source\SharedNodeInfo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source">

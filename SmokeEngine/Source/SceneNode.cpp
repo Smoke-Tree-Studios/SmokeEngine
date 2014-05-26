@@ -1,9 +1,20 @@
 #include "Node\SceneNode.h"
+#include "Node\Node.h"
+#include "Utility\Camera.h"
+#include "Storage\ShaderSourceStorage.h"
+#include "Storage\VertexBufferStorage.h"
+#include "Storage\ViewStorage.h"
+#include "Storage\VertexBufferStorage.h"
+#include "Storage\TextureStorage.h"
+#include "Storage\ShaderSourceStorage.h"
+#include "SceneManager.h"
+#include "SmokeEngine.h"
+#include "Node\SharedNodeInfo.h"
 
-SceneNode::RootNode::RootNode(SceneNode * sceneNode,std::map< std::string, Node* >* nodes, std::string ID) : Node(ID) 
+SceneNode::RootNode::RootNode(SceneNode * sceneNode,SharedNodeInfo* sharedNodeInfo, std::string ID) : Node(ID) 
 {
 	_sceneNode = sceneNode;
-	_nodes = nodes;
+	_sharedNodeInfo = sharedNodeInfo;
 
 }
 std::string SceneNode::RootNode::GetType()
@@ -13,13 +24,13 @@ std::string SceneNode::RootNode::GetType()
 
 SceneNode::SceneNode(SmokeEngine* smokeEngine,Camera * camera)
 {
+	_sharedNodeInfo = new SharedNodeInfo();
+
 	mSceneManager = smokeEngine->mSceneManager;
 	mSmokeEngine = smokeEngine;
 
-	_nodes = new std::map< std::string, Node* >();
-
-	mRootSceneNode = new RootNode(this,_nodes,"ROOT_SCENE");
-	mRootOverlayNode  = new RootNode(this,_nodes,"ROOT_OVERLAY");
+	mRootSceneNode = new RootNode(this,_sharedNodeInfo,"ROOT_SCENE");
+	mRootOverlayNode  = new RootNode(this,_sharedNodeInfo,"ROOT_OVERLAY");
 
 	mShaderSourceStorage = new ShaderSourceStorage();
 	mTextureStorage = new TextureStorage();
