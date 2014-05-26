@@ -13,16 +13,17 @@ class SceneManager;
 class SceneNode
 {
 private:
+	//a map of all the nodes that exist in the tree including both scene and ovelray nodes
 	std::map<std::string, Node*>* _nodes;
-
 protected:
 	class RootNode : public Node
 	{
 		public:
 			RootNode(SceneNode * sceneNode,std::map<std::string, Node*>* nodes, std::string ID);
+			virtual std::string GetType();
 	};
 public:
-
+	//the main camera 
 	Camera * mMainCamera;
 
 	ShaderSourceStorage * mShaderSourceStorage;

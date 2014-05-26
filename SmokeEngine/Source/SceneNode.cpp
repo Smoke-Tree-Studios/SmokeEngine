@@ -5,9 +5,11 @@ SceneNode::RootNode::RootNode(SceneNode * sceneNode,std::map< std::string, Node*
 	_sceneNode = sceneNode;
 	_nodes = nodes;
 
-	
 }
-
+std::string SceneNode::RootNode::GetType()
+{
+	return "root_node";
+}
 
 SceneNode::SceneNode(SmokeEngine* smokeEngine,Camera * camera)
 {
@@ -15,6 +17,7 @@ SceneNode::SceneNode(SmokeEngine* smokeEngine,Camera * camera)
 	mSmokeEngine = smokeEngine;
 
 	_nodes = new std::map< std::string, Node* >();
+
 	mRootSceneNode = new RootNode(this,_nodes,"ROOT_SCENE");
 	mRootOverlayNode  = new RootNode(this,_nodes,"ROOT_OVERLAY");
 

@@ -18,6 +18,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Include\Node\AttachmentNode\AttachmentNode.h" />
     <ClInclude Include="Include\Render\Model.h" />
     <ClInclude Include="Include\S_Debug.h" />
     <ClInclude Include="Include\Utility\BoundedBox.h" />
@@ -49,8 +50,11 @@
     <ClInclude Include="Include\Utility\LodePNG.h" />
     <ClInclude Include="Include\Utility\WaveFrontLoad.h" />
     <ClInclude Include="Include\Render\Sprite.h" />
+    <ClInclude Include="Include\Node\AttachmentNode\LightAttachmentNode.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\LightAttachmentNode.cpp" />
+    <ClCompile Include="Source\AttachmentNode.cpp" />
     <ClCompile Include="Source\Model.cpp" />
     <ClCompile Include="Source\LodePNG.cpp" />
     <ClCompile Include="Source\BoundedBox.cpp" />
@@ -111,7 +115,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
-    <IncludePath>$(ProjectDir)/Include/;$(SolutionDir)/Library/boost_1_55_0/;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)/Include/;$(SolutionDir)/Library/boost_1_55_0/;$(SolutionDir)/Library/bullet-2.82/src/;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)/Library/boost_1_55_0/libs/;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">

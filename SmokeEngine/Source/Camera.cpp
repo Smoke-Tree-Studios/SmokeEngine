@@ -47,7 +47,7 @@ Matrix4x4 Camera::GetMatrix()
     return (lRotation * lposition);
 }
 
-Matrix4x4 Camera::GetTransformMatrixForNode(Node * node)
+Matrix4x4 Camera::GetTransformMatrixRelativeToNode(Node * node)
 {
 	MatrixStack lstack = MatrixStack();
 	Node * lnode = node;

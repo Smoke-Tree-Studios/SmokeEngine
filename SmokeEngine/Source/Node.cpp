@@ -5,6 +5,7 @@
 
 Node::Node(std::string ID)
 {
+
 	_parentNode = NULL;
 
 	Position = Vector3();
@@ -33,6 +34,10 @@ void Node::DeleteAllChildren()
 		delete((*literator));
 	}
 	delete(_children);
+}
+
+std::string Node::GetType(){
+	return "Node";
 }
 
 Matrix4x4 Node::GetMatrix()
@@ -91,9 +96,5 @@ Matrix4x4 Node::GetLocationOfNode(Camera* cam)
 }
 
 void Node::Update()
-{
-}
-
-void Node::Draw(Matrix4x4 transform, Matrix4x4 view)
 {
 }

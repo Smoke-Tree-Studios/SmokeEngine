@@ -52,9 +52,6 @@
     <ClInclude Include="Include\Utility\BoundedBox.h">
       <Filter>Header\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Node\SceneNode.h">
-      <Filter>Header\Node</Filter>
-    </ClInclude>
     <ClInclude Include="Include\VertexObject\VertexArrayObject.h">
       <Filter>Header\VertexObject</Filter>
     </ClInclude>
@@ -86,6 +83,11 @@
     <ClInclude Include="Include\Utility\WaveFrontLoad.h" />
     <ClInclude Include="Include\S_Debug.h" />
     <ClInclude Include="Include\Render\Model.h" />
+    <ClInclude Include="Include\Node\SceneNode.h">
+      <Filter>Header\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Node\AttachmentNode\AttachmentNode.h" />
+    <ClInclude Include="Include\Node\AttachmentNode\LightAttachmentNode.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\BoundedBox.cpp">
@@ -179,6 +181,8 @@
     <ClCompile Include="Source\WaveFrontLoad.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="Source\AttachmentNode.cpp" />
+    <ClCompile Include="Source\LightAttachmentNode.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source">

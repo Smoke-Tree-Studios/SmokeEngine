@@ -24,8 +24,12 @@ void ObjectNode::Update()
 {
 }
 
+std::string ObjectNode::GetType()
+{
+	return "object_node";
+}
 
 void ObjectNode::Draw(Matrix4x4 transform, Matrix4x4 view)
 {
-	mRenderObject->Draw(transform,_sceneNode->mMainCamera->GetViewMatrix());
+	mRenderObject->Draw(transform,view);
 }

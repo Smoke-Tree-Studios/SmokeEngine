@@ -1,12 +1,11 @@
 #include "SmokeEngine.h"
-
+#include <btBulletDynamicsCommon.h>
 
 SmokeEngine::SmokeEngine(AAssetManager * assetManager)
 {
 	mRenderer = new Renderer();
 	mAssetManager = assetManager;
 	mSceneManager = new SceneManager(this);
-
 	_time = clock();
 }
 

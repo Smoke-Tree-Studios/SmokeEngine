@@ -4,6 +4,7 @@
 #include "android\asset_manager.h"
 
 #include <time.h>
+class btDiscreteDynamicsWorld;
 class AAssetManager;
 class SceneManager;
 class SmokeEngine

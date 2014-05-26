@@ -7,8 +7,8 @@
 #include "Utility\Matrix\Matrix4x4.h"
 
 class Camera;
-class SceneNode;
-class Node 
+class SceneNode; 
+class Node
 {
 	private:
 
@@ -24,6 +24,7 @@ class Node
 		Node * _parentNode;
 		SceneNode * _sceneNode;
 	public:
+
 		Vector3 Position;
 		Vector3 Scale;
 		Quaternion Rotation;
@@ -48,8 +49,8 @@ class Node
 
 		Matrix4x4 GetLocationOfNode(Camera* cam);
         
+		virtual std::string GetType();
 
 		virtual void Update();
-		virtual void Draw(Matrix4x4 transform, Matrix4x4 view);
 };
 

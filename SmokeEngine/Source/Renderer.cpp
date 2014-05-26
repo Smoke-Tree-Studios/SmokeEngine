@@ -2,6 +2,7 @@
 #include "Node\SceneNode.h"
 #include <list>
 #include "Node\Node.h"
+#include "Node\ObjectNode.h"
 
 Renderer::Renderer(void)
 {
@@ -26,11 +27,13 @@ void Renderer::Draw(SceneNode* scene)
 
 void Renderer::DrawNode(Node * n,SceneNode *scene)
 {
-	
 	for(std::list<Node*>::iterator iter = n->GetChildren()->begin(); iter !=  n->GetChildren()->end();++iter)
 	{
 		_matrixStack.Push((*iter)->GetMatrix());
-		(*iter)->Draw(_matrixStack.GetTransformMatrix(),scene->mMainCamera->GetViewMatrix());
+		if((*iter)->GetType() == "object_node")
+		{
+			static_cast<ObjectNode*>((*iter))->Draw(_matrixStack.GetTransformMatrix(),scene->mMainCamera->GetViewMatrix());
+		}
 		DrawNode((*iter),scene);
 		_matrixStack.Pop();
 	}

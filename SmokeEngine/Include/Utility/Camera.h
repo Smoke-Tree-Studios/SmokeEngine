@@ -22,7 +22,7 @@ public:
 
 	/** returns the transform matrix for the camera*/
 	Matrix4x4 GetMatrix();
-	Matrix4x4 GetTransformMatrixForNode(Node * node);
+	Matrix4x4 GetTransformMatrixRelativeToNode(Node * node);
 	Matrix4x4 GetViewMatrix();
 };
 

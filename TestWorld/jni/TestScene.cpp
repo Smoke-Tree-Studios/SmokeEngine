@@ -46,8 +46,8 @@ TestScene::~TestScene(void)
 
 void TestScene::Update(float deltaT) 
 {
-	_testObject->mRenderObject->mShader->SetMatrix4x4("in_light",this->mMainCamera->GetTransformMatrixForNode(_lightNode));
-	Matrix4x4 t = this->mMainCamera->GetTransformMatrixForNode(_lightNode);
+	_testObject->mRenderObject->mShader->SetMatrix4x4("in_light",this->mMainCamera->GetTransformMatrixRelativeToNode(_lightNode));
+	Matrix4x4 t = this->mMainCamera->GetTransformMatrixRelativeToNode(_lightNode);
 	x += (deltaT*.002f);
 	//this->mMainCamera->Position = Vector3(sin(x) * 5,0,0);
 	_lightNode->Position = Vector3( 100,0,0);
