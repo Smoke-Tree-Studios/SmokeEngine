@@ -24,6 +24,21 @@ void ObjectNode::Update()
 {
 }
 
+void ObjectNode::AddAttchmentNodeCallback(std::string nodeType,AttachmentNodeCallback* attachmentNodeCallback)
+{
+	_attachmentNodeSet[nodeType] = attachmentNodeCallback;
+
+}
+
+void ObjectNode::RemoveAndDeleteAttachmentNodeCallback(std::string nodeType)
+{
+	 AttachmentNodeCallback * lcallback = _attachmentNodeSet[nodeType];
+	_attachmentNodeSet.erase(nodeType);
+	delete(lcallback);
+
+
+}
+
 std::string ObjectNode::GetType()
 {
 	return "object_node";
@@ -31,5 +46,6 @@ std::string ObjectNode::GetType()
 
 void ObjectNode::Draw(Matrix4x4 transform, Matrix4x4 view)
 {
+	//draws the render object
 	mRenderObject->Draw(transform,view);
 }

@@ -19,9 +19,9 @@ Node::Node(std::string ID)
 
 Node::~Node(void)
 {
+	 Node * lnode= (*_sharedNodeInfo->mNodes)[_id];
 	_sharedNodeInfo->mNodes->erase(_id);
-	
-	//(*_nodes).erase(_id); 
+	delete(lnode);
 }
 
 std::string Node::GetID()

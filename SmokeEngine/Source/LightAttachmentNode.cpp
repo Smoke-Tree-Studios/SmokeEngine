@@ -3,6 +3,8 @@
 
 LightAttachmentNode::LightAttachmentNode(std::string id, SmokeEngine * Engine) : AttachmentNode(id,Engine)
 {
+	mColor = Vector3(0,0,0);
+	mIntesnity = 1;
 }
 
 
