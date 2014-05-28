@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SmokeEngine" Collapsed="true">
+    <Position X="13.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAgAgAAAAAAAUAAAAAEAAAAIAAAAAACAAE=</HashCode>
+      <FileName>Include\SmokeEngine.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneManager" Collapsed="true">
+    <Position X="13.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAEAABAAAAQAAAEAAAAAEAAgIEAAAAAQ=</HashCode>
+      <FileName>Include\SceneManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Node" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AMQQAAABAAAAAIAgAAJAiiAAEEACQAEAAAAAAAUAQAA=</HashCode>
+      <FileName>Include\Node\Node.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObjectNode" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAACAAAAIAAgAAAAAACAAAAAAAACEAAAgAAAgAAAg=</HashCode>
+      <FileName>Include\Node\ObjectNode.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneNode" Collapsed="true">
+    <Position X="15.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQABBAAAEAAAAAAAAAAAAAAQEUCAAAAABAAEAACAAA=</HashCode>
+      <FileName>Include\Node\SceneNode.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BoundedBox" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAgAAAIAAAAABEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Include\Utility\BoundedBox.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Camera" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACAAAAAAAAAIAgQAAACAAAACACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Include\Utility\Camera.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Quaternion" Collapsed="true">
+    <Position X="17.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAEAYYAE=</HashCode>
+      <FileName>Include\Utility\Quaternion.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shader" Collapsed="true">
+    <Position X="17.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIEAAAAAAUAAgEAAAAAAAAAgACAAgAAAxAAGAgAAgAA=</HashCode>
+      <FileName>Include\Utility\Shader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Source" Collapsed="true">
+    <Position X="15.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABABkAAAAQAAAAAAAAAAAQAAAGAAAAAAAAAAAA=</HashCode>
+      <FileName>Include\Utility\Source.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="S_Rectangle" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAgAAEAAAAAAAAAACAAAAABAAABAAA=</HashCode>
+      <FileName>Include\Utility\S_Rectangle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Texture" Collapsed="true">
+    <Position X="17.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gBAAAAgAAACAgAwAgAAAAAAAABAAAAEAAAIAAQICQAA=</HashCode>
+      <FileName>Include\Utility\Texture.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vector2" Collapsed="true">
+    <Position X="12" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAABAAAABAAEAAAAAAAAAAAAAAAgAAAAYAA=</HashCode>
+      <FileName>Include\Utility\Vector\Vector2.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vector3" Collapsed="true">
+    <Position X="13.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAQABAAEAAAAAAAAAAAAAAAgAAAAYAE=</HashCode>
+      <FileName>Include\Utility\Vector\Vector3.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vector4" Collapsed="true">
+    <Position X="15.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAABAAEAAAAAAAAAIAAAAAgAAAIYAE=</HashCode>
+      <FileName>Include\Utility\Vector\Vector4.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Matrix4x4" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAIAAAAAAAAIACAAIAAAAAAAAgAgAAAAAwAAACQAA=</HashCode>
+      <FileName>Include\Utility\Matrix\Matrix4x4.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MatrixStack" Collapsed="true">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAAAAAAAAAAAgAAAAAgAAACAAAAAAAAAAAAACAE=</HashCode>
+      <FileName>Include\Utility\Matrix\MatrixStack.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Renderer" Collapsed="true">
+    <Position X="10.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAgAAAAIAAAAAAAAAAAAABACAAAAAAAA=</HashCode>
+      <FileName>Include\Render\Renderer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RenderObject" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAEgAAAAgAAAAAIAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Include\Render\RenderObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShaderSourceStorage" Collapsed="true">
+    <Position X="10.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAQAEAAAAAABAAAAAAAAAAAAAAAAACAAAAAAAIA=</HashCode>
+      <FileName>Include\Storage\ShaderSourceStorage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextureStorage" Collapsed="true">
+    <Position X="10.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAACAQAACAAIAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Include\Storage\TextureStorage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VertexBufferStorage" Collapsed="true">
+    <Position X="17.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAIAAEAAEQAAAAEAAAAAAAAkAAAAAAAAAAAIA=</HashCode>
+      <FileName>Include\Storage\VertexBufferStorage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ViewStorage" Collapsed="true">
+    <Position X="10.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAJAEgAAAAAAIAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Include\Storage\ViewStorage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VertexArrayObject" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgFAABAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Include\VertexObject\VertexArrayObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VertexBufferObjectWithSubData" Collapsed="true">
+    <Position X="2.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAgAAABAAAAACAAAAACAAAAAEAAAAAAAAAAAAIAAg=</HashCode>
+      <FileName>Include\VertexObject\VertexBufferObjectWithSubData.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VertexObject" Collapsed="true">
+    <Position X="1.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAACAAABBAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Include\VertexObject\VertexObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AttachmentNode" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAACIAAAAEAAAAAAAAAAAFAAAAAABAAQAA=</HashCode>
+      <FileName>Include\Node\AttachmentNode\AttachmentNode.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAEgAAAAAAAAAAAACAAAAAAAgAAEAAAAA=</HashCode>
+      <FileName>Include\Render\Model.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WaveFrontLoad" Collapsed="true">
+    <Position X="12" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Include\Utility\WaveFrontLoad.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sprite" Collapsed="true">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAACEAEgBAAAAAAAAAAAAAAAAQAAAAAAAAAAI=</HashCode>
+      <FileName>Include\Render\Sprite.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LightAttachmentNode" Collapsed="true">
+    <Position X="2.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAACAAAAAAAAAAAAAAgAAAAAAAAAAAAAgAAAAAgA=</HashCode>
+      <FileName>Include\Node\AttachmentNode\LightAttachmentNode.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SharedNodeInfo" Collapsed="true">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAEgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Include\Node\SharedNodeInfo.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lodepng::State" Collapsed="true">
+    <Position X="5.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Include\Utility\LodePNG.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="uivector" Collapsed="true">
+    <Position X="15.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAQAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Source\LodePNG.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ucvector" Collapsed="true">
+    <Position X="13.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAQAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Source\LodePNG.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="HuffmanTree" Collapsed="true">
+    <Position X="17.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAEAAAAAAAAAICAAAAAAAAACAA=</HashCode>
+      <FileName>Source\LodePNG.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Coin" Collapsed="true">
+    <Position X="10.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Source\LodePNG.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Hash" Collapsed="true">
+    <Position X="15.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAgAAAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Source\LodePNG.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ColorTree" Collapsed="true">
+    <Position X="13.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Source\LodePNG.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ColorProfile" Collapsed="true">
+    <Position X="12" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCgAAAAAAAgAAAABoAAEAAAAAAAAgBAKAIAVCAAAAAA=</HashCode>
+      <FileName>Source\LodePNG.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="LodePNGDecompressSettings" Collapsed="true">
+    <Position X="15.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAACAAAAAAgAABAAAAAA=</HashCode>
+      <FileName>Include\Utility\LodePNG.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="LodePNGCompressSettings" Collapsed="true">
+    <Position X="12" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAIAAAACAAAAAAoAAAACAAAACIAAEAAAAAAA=</HashCode>
+      <FileName>Include\Utility\LodePNG.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="LodePNGColorMode" Collapsed="true">
+    <Position X="10.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAIAAIAAAAAAEQABAIAAAAAAIAAAA=</HashCode>
+      <FileName>Include\Utility\LodePNG.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="LodePNGTime" Collapsed="true">
+    <Position X="12" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAkAAAAAAAAAAAAAgAAAAAAAAQAAAAAAAAiAAAAAAA=</HashCode>
+      <FileName>Include\Utility\LodePNG.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="LodePNGInfo" Collapsed="true">
+    <Position X="10.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABQgAQAEAAgAAAEAQAAEQQwEAAAACAAQECAAAAEkA=</HashCode>
+      <FileName>Include\Utility\LodePNG.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="LodePNGDecoderSettings" Collapsed="true">
+    <Position X="13.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAEAAAAAAAAAAAAAAAAAAAABCAgAQAAAAAAA=</HashCode>
+      <FileName>Include\Utility\LodePNG.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="LodePNGEncoderSettings" Collapsed="true">
+    <Position X="17.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACABAAQAAAAAAAAAAAAAACAAIIAQgAAAAAA=</HashCode>
+      <FileName>Include\Utility\LodePNG.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="LodePNGState" Collapsed="true">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAIEAAAAAAAAAAAQAAAAAAQAAAQA=</HashCode>
+      <FileName>Include\Utility\LodePNG.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="LodePNGColorType" Collapsed="true">
+    <Position X="12" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAIBAAAAAAAAAACAAAAAAAIAA=</HashCode>
+      <FileName>Include\Utility\LodePNG.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LodePNGFilterStrategy" Collapsed="true">
+    <Position X="13.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAARAAAAAAAAAAAAAAAAAAAAAQAAAACAAAAAAAAA=</HashCode>
+      <FileName>Include\Utility\LodePNG.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LodePNGAutoConvert" Collapsed="true">
+    <Position X="10.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAABAAAAAQAIABAIA=</HashCode>
+      <FileName>Include\Utility\LodePNG.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

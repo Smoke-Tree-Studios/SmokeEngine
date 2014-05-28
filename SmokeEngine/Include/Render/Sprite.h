@@ -47,13 +47,21 @@ class Sprite : public RenderObject
 private:
 	VertexArrayObject * mVertexArrayObject;
 
+	//sprite intalization
 	void _initialize(SceneNode * sceneNode);
 public:
 	VertexBufferObjectWithSubData * mVertexSubData;
+	/**
+	*create a spirte object
+	**/
 	Sprite(SceneNode * sceneNode,Source * fragmentShader);
 	Sprite(SceneNode * sceneNode);
 	~Sprite(void);
 
+	/**
+	*sets the clipping rectangle for the sprite
+	*ranged from 0 to 1 based on tex coords
+	**/
 	void SetClippingRectangle(Vector2 pos, Vector2 size);
 
 	virtual void Draw(Matrix4x4 transform, Matrix4x4 view);

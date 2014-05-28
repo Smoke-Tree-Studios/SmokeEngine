@@ -14,8 +14,9 @@ public:
 	//pop from the matrix stack
 	void Pop();
 	
-	//get the full transform set
+	//get the full transform set from beginning of the set to the end
 	Matrix4x4 GetTransformMatrix();
+	//get the full transform set from the end of the set to the beginning
 	Matrix4x4 GetReverseTransformMatrix();
 
 	MatrixStack(void);

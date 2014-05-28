@@ -15,9 +15,14 @@ class Vector2
 		Vector2 operator*(const Vector2& other);
 		Vector2 operator/(const Vector2& other);
 
-		//returns the unit vector
+		/**
+		*returns the unit vector
+		**/
 		Vector2 GetUnitVector();
-		//returns the lenght of the vector
+
+		/**
+		*returns the lenght of the vector
+		**/
 		float GetLength();
 };
 

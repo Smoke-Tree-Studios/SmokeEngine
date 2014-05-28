@@ -8,8 +8,13 @@ public:
 
 	S_Rectangle(Vector2 position, Vector2 size);
 	~S_Rectangle(void);
-
+	/**
+	*check if two rectangles are intersecting
+	**/
 	bool RectangleIntersection(S_Rectangle r);
+	/**
+	*tells if a point is in a rectangle
+	**/
 	bool IsPointContainedInRectangle(Vector2 point);
 };
 

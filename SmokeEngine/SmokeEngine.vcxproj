@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{293D3ECB-3EA2-400C-9D37-EDF3FD59D4AA}</ProjectGuid>

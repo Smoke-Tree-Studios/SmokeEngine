@@ -5,18 +5,24 @@
 #include "Node\SharedNodeInfo.h"
 #include <map>
 #include <string>
-AttachmentNode::AttachmentNodeCallback::AttachmentNodeCallback(){
+
+
+AttachmentNodeCallback::AttachmentNodeCallback(){
 
 }
-void AttachmentNode::AttachmentNodeCallback::Callback(ObjectNode* objectNode, std::list<AttachmentNode*> attachmentNodes)
+AttachmentNodeCallback::~AttachmentNodeCallback()
+{
+
+}
+void AttachmentNodeCallback::Callback(ObjectNode* objectNode, std::list<AttachmentNode*> attachmentNodes)
 {
 }
-
 
 AttachmentNode::AttachmentNode(std::string ID, SmokeEngine * Engine): Node::Node(ID)
 {
 	
 }
+
 
 
 void AttachmentNode::_onNodeAppend(){
@@ -45,10 +51,6 @@ AttachmentNode::~AttachmentNode(void)
 }
 
 
-std::string AttachmentNode::GetTypeName()
-{
-	return "";
-}
 
 void AttachmentNode::SetMask(std::string mask)
 {

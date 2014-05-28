@@ -10,6 +10,9 @@ public:
 	ViewStorage(void);
 	~ViewStorage(void);
 
+	/**
+	*adds the camera to the storage
+	**/
 	void AddCamera(std::string id,Camera * camera);
 	void RemoveCamera(std::string id);
 	Camera * GetCamera(std::string id);

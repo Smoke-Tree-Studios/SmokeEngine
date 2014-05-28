@@ -2,9 +2,9 @@
 #include <list>
 #include <map>
 #include <string>
-#include "Utility\Vector\Vector3.h"
-#include "Utility\Quaternion.h"
-#include "Utility\Matrix\Matrix4x4.h"
+#include "Utility/Vector/Vector3.h"
+#include "Utility/Quaternion.h"
+#include "Utility/Matrix/Matrix4x4.h"
 
 class SharedNodeInfo;
 class Camera;
@@ -52,10 +52,13 @@ class Node
 		//delete's all the children nodes
 		void DeleteAllChildren();
 
+		//gets the location of the node relative to the camera
 		Matrix4x4 GetLocationOfNode(Camera* cam);
         
+		//gets the node type
 		virtual std::string GetType();
 
+		//update for the node 
 		virtual void Update();
 };
 

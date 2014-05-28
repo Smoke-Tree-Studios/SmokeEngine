@@ -40,6 +40,9 @@ public:
 
 	SmokeEngine * mSmokeEngine;
 
+	/**
+	*updates the scene with the given deltaT value
+	**/
 	virtual void Update(float deltaT) =0;
 
 	SceneNode( SmokeEngine* smokeEngine,Camera * camera);

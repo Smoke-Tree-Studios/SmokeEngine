@@ -11,10 +11,14 @@ public:
 	BoundedBox(Vector3 position, Vector3 Size);
 	~BoundedBox(void);
 
-	/** detects if two bounded boxes are intersecting */
+	/** 
+	*detects if two bounded boxes are intersecting 
+	**/
 	bool BoundedBoxIntersection(BoundedBox boundedBox);
 
-	/** detects in the point is inside of a boundedBox. */
+	/** 
+	*detects in the point is inside of a boundedBox. 
+	**/
 	bool IsBoundBoxContainPoint(Vector3 point);
 };
 

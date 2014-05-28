@@ -9,13 +9,19 @@ public:
 	TextureStorage();
 	~TextureStorage(void);
 
-	/** append texture to the texturestorage*/
+	/** 
+	*append texture to the texturestorage
+	**/
 	void AppendTexture(Texture* texture);
 
-	/** removes the texture from the set */
+	/** 
+	*removes the texture from the set 
+	**/
 	void DeleteTexture(std::string id);
 
-	/** retrieves the texture from storage */
+	/**
+	*retrieves the texture from storage 
+	**/
 	Texture* GetTexture(std::string id);
 };
 

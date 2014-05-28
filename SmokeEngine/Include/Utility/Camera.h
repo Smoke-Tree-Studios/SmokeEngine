@@ -20,9 +20,17 @@ public:
 
 	~Camera(void);
 
-	/** returns the transform matrix for the camera*/
+	/** 
+	*returns the transform matrix for the camera
+	**/
 	Matrix4x4 GetMatrix();
+	/**
+	*returns the transform for the matrix relative to the camera
+	**/
 	Matrix4x4 GetTransformMatrixRelativeToNode(Node * node);
+	/**
+	*gets the view matrix of the camera
+	**/
 	Matrix4x4 GetViewMatrix();
 };
 

@@ -8,7 +8,7 @@ class TestScene : public SceneNode
 private:
 	ObjectNode * _testObject;
 	Node * _lightNode;
-	float x = 0;
+	float x;
 public:
 	
 

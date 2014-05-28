@@ -37,7 +37,6 @@ class Matrix4x4
 		static Matrix4x4 Scale(float x, float y,float z);
 		static Matrix4x4 Scale(Vector3 scale);
 
-
 		static Matrix4x4 Idenity();
 
 		Matrix4x4 operator+(const Matrix4x4& other);

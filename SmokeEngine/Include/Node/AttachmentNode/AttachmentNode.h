@@ -3,6 +3,8 @@
 class SmokeEngine;
 class btGhostObject;
 class ObjectNode;
+
+
 class AttachmentNode : public Node
 {
 protected:
@@ -10,20 +12,31 @@ protected:
 private:
 	std::string _mask;
 public:
-	class AttachmentNodeCallback{
-		public:
-			AttachmentNodeCallback();
-			void Callback(ObjectNode* objectNode, std::list<AttachmentNode*> attachmentNodes);
-	};
-
+	
 	virtual std::string GetType();
 
 	AttachmentNode(std::string ID, SmokeEngine * Engine) ;
 	~AttachmentNode(void);
-	
+
+	/**
+	*not implemented
+	**/
 	void SetMask(std::string mask);
+	/**
+	*not implemented
+	**/
 	std::string GetMask();
 
-	virtual std::string GetTypeName();
+
+};
+
+class AttachmentNodeCallback{
+	public:
+			AttachmentNodeCallback();
+		virtual ~AttachmentNodeCallback();
+		/**
+		*callback used on the processing of attachment nodes to shader
+		**/
+		virtual void Callback(ObjectNode* objectNode, std::list<AttachmentNode*> attachmentNodes);
 };
 

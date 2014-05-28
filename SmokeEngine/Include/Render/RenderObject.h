@@ -25,7 +25,7 @@ private:
 	Shader * _depthShader;
 public:
 	Shader * mShader;
-
+	
 	RenderObject(SceneNode * sceneNode);
 	~RenderObject(void);
 

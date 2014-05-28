@@ -15,14 +15,28 @@ class SceneManager
 
 	public:
 		SmokeEngine* mSmokeEngine;
-
+		/**
+		*appends a scene to the manager that can be accessed later
+		**/
 		void AppendScene(std::string id, SceneNode * node);
 
+		/**
+		*sets the scene as the active view to be updated and rendered
+		**/
 		void SetActiveScene(std::string id);
+		/**
+		*returns the active scene
+		**/
 		SceneNode* GetActiveSceneNode();
 
+		/**
+		*updates the active scene and draws
+		**/
 		void Update(float DeltaT);
 
+		/**
+		*gets the scene node based on the given set id from append
+		**/
 		SceneNode* GetSceneNode(std::string id);
 
 		SceneManager(SmokeEngine* smokeEngine);

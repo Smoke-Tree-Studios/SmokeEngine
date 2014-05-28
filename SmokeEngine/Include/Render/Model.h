@@ -25,6 +25,7 @@ public:
 	Model(SceneNode* sceneNode,VertexBufferObjectWithSubData* vertexBufferObject,VertexArrayObject* vertexArrayObject,Source* vertexSource, Source* Fragmentsource);
 	virtual ~Model(void);
 
+	
 	virtual void Draw(Matrix4x4 transform, Matrix4x4 view);
 	virtual void DepthDraw(Matrix4x4 transform, Matrix4x4 view);
 };

@@ -1,7 +1,9 @@
-#include "Node\ObjectNode.h"
-#include "Utility\Matrix\Matrix4x4.h"
-#include "Render\RenderObject.h"
-#include "Node\SceneNode.h"
+#include "Node/ObjectNode.h"
+#include "Utility/Matrix/Matrix4x4.h"
+#include "Render/RenderObject.h"
+#include "Node/SceneNode.h"
+#include "Node/AttachmentNode/AttachmentNode.h"
+
 ObjectNode::ObjectNode(std::string ID, RenderObject * renderObject) : Node::Node(ID)
 {
 	mRenderObject = renderObject;
@@ -26,17 +28,16 @@ void ObjectNode::Update()
 
 void ObjectNode::AddAttchmentNodeCallback(std::string nodeType,AttachmentNodeCallback* attachmentNodeCallback)
 {
+	
 	_attachmentNodeSet[nodeType] = attachmentNodeCallback;
 
 }
 
 void ObjectNode::RemoveAndDeleteAttachmentNodeCallback(std::string nodeType)
 {
-	 AttachmentNodeCallback * lcallback = _attachmentNodeSet[nodeType];
+	AttachmentNodeCallback* cb = _attachmentNodeSet[nodeType];
+	 delete cb;
 	_attachmentNodeSet.erase(nodeType);
-	delete(lcallback);
-
-
 }
 
 std::string ObjectNode::GetType()

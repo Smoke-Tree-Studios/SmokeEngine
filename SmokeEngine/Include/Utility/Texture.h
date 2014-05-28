@@ -22,21 +22,31 @@ public:
 	Texture(const char * filename,AAssetManager* assetManager);
 	~Texture(void);
 
-	/** returns the file name of the asset */
+	/** 
+	*returns the file name of the asset 
+	**/
 	std::string GetFilename();
 
 	GLint GetResourceID();
 
-	/** returns the texcoords width */
+	/** 
+	*returns the texcoords width 
+	**/
 	float GetWidthScale();
 
-	/** returns the texcoords height */
+	/** 
+	*returns the texcoords height 
+	**/
 	float GetHeightScale();
 
-	/** returns width to height ratio of the texture */
+	/** 
+	*returns width to height ratio of the texture 
+	**/
 	float WidthToHeightRatio();
 
-	/** returns height to width ratio of the texture */
+	/** 
+	*returns height to width ratio of the texture 
+	**/
 	float HeightToWidthRatio();
 	
 };
