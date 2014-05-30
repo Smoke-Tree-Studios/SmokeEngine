@@ -15,3 +15,11 @@ Additional Resources
 Opengl ES 2.0 documentation - http://www.khronos.org/opengles/sdk/docs/man/ 
 
 GLSL documentation - http://www.khronos.org/opengles/sdk/docs/man3/index.php
+
+
+Planned Features
+=====================
+Audio System
+Input System
+Particles
+
