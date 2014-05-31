@@ -14,7 +14,15 @@ public:
 	*adds the camera to the storage
 	**/
 	void AddCamera(std::string id,Camera * camera);
+	
+	/**
+	 * Removes the camera from the scene
+	 **/
 	void RemoveCamera(std::string id);
+	
+	/**
+	 * retrieves the camera from storage
+	 **/
 	Camera * GetCamera(std::string id);
 
 };
