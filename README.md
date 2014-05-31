@@ -19,9 +19,17 @@ GLSL documentation - http://www.khronos.org/opengles/sdk/docs/man3/index.php
 
 Planned Features
 =====================
-Audio System
+OpenSl ES Audio and audio system
 
 Input System
 
 Particles
+
+optimizations to attachment system
+
+cross platform support
+
+
+
+
 
