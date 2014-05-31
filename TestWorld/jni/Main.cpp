@@ -31,6 +31,7 @@ SmokeEngine * s;
 bool load = false;
 JNIEXPORT void JNICALL Java_com_android_Engine_Lib_Initate(JNIEnv* env, jobject obj,jobject assetmanager)
 {
+	
 	mAssetManager = AAssetManager_fromJava(env,assetmanager);
 	s = new SmokeEngine(mAssetManager);
 	 //__android_log_print(ANDROID_LOG_INFO,"SMOKE_ENGINE","testing source");

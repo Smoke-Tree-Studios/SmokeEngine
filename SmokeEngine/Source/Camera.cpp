@@ -57,7 +57,6 @@ Matrix4x4 Camera::GetTransformMatrixRelativeToNode(Node * node)
 		lnode = lnode->GetParent();
 	}
 	lstack.Push(GetMatrix());
-	Matrix4x4 r = GetMatrix();
 	return lstack.GetReverseTransformMatrix();
 }
 

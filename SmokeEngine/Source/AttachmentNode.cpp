@@ -26,8 +26,8 @@ AttachmentNode::AttachmentNode(std::string ID, SmokeEngine * Engine): Node::Node
 
 
 void AttachmentNode::_onNodeAppend(){
+	//adds the node to the share space
 	(*_sharedNodeInfo->mAttachmentNodes)[GetType()].push_back(this);
-	
 }
 
 

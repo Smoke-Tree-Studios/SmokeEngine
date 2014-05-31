@@ -18,6 +18,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Include\Audio\AudioManager.h" />
     <ClInclude Include="Include\Node\AttachmentNode\AttachmentNode.h" />
     <ClInclude Include="Include\Render\Model.h" />
     <ClInclude Include="Include\S_Debug.h" />
@@ -52,8 +53,11 @@
     <ClInclude Include="Include\Render\Sprite.h" />
     <ClInclude Include="Include\Node\AttachmentNode\LightAttachmentNode.h" />
     <ClInclude Include="Include\Node\SharedNodeInfo.h" />
+    <ClInclude Include="Include\Audio\MusicManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\MusicManager.cpp" />
+    <ClCompile Include="Source\AudioManager.cpp" />
     <ClCompile Include="Source\SharedNodeInfo.cpp" />
     <ClCompile Include="Source\LightAttachmentNode.cpp" />
     <ClCompile Include="Source\AttachmentNode.cpp" />

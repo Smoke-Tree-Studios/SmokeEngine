@@ -42,7 +42,7 @@ Source::Source(const char* file,AAssetManager* assetManager)
 	ldata[lsize] = 0;
 	if(!_compile(ldata))
 	{
-		ERROR("Failed to comple shader: %s",file);
+		ERROR("Failed to compile shader: %s",file);
 	}
 	free(ldata);
 

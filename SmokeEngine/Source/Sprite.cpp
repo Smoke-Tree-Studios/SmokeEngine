@@ -10,14 +10,15 @@
 #include "VertexObject\VertexBufferObjectWithSubData.h"
 #include "Storage\VertexBufferStorage.h"
 #include "Storage\ShaderSourceStorage.h"
+#include "VertexObject/VertexBufferObjectWithSubData.h"
 
 Sprite::Sprite(SceneNode * sceneNode,Source * fragmentShader) : RenderObject(sceneNode)
 {
 
-	if(!sceneNode->mShaderSourceStorage->IsSourceUsed(SPRITE,GL_VERTEX_SHADER))
-		sceneNode->mShaderSourceStorage->AppendSource(SPRITE,new Source(SPRITE_VERTEX_SHADER,GL_VERTEX_SHADER));
+	if(!sceneNode->mSmokeEngine->mShaderSourceStorage->IsSourceUsed(SPRITE,GL_VERTEX_SHADER))
+		sceneNode->mSmokeEngine->mShaderSourceStorage->AppendSource(SPRITE,new Source(SPRITE_VERTEX_SHADER,GL_VERTEX_SHADER));
 
-	this->mShader->AttachSource(sceneNode->mShaderSourceStorage->GetSource(SPRITE,GL_VERTEX_SHADER));
+	this->mShader->AttachSource(sceneNode->mSmokeEngine->mShaderSourceStorage->GetSource(SPRITE,GL_VERTEX_SHADER));
 	this->mShader->AttachSource(fragmentShader);
 
 
@@ -27,13 +28,13 @@ Sprite::Sprite(SceneNode * sceneNode,Source * fragmentShader) : RenderObject(sce
 Sprite::Sprite(SceneNode * sceneNode) :  RenderObject(sceneNode)
 {
 
-	if(!sceneNode->mShaderSourceStorage->IsSourceUsed(SPRITE,GL_VERTEX_SHADER))
-		sceneNode->mShaderSourceStorage->AppendSource(SPRITE,new Source(SPRITE_VERTEX_SHADER,GL_VERTEX_SHADER));
-	if(!sceneNode->mShaderSourceStorage->IsSourceUsed(SPRITE,GL_FRAGMENT_SHADER))
-		sceneNode->mShaderSourceStorage->AppendSource(SPRITE,new Source(SPRITE_FRAGMENT_SHADER,GL_FRAGMENT_SHADER));
+	if(!sceneNode->mSmokeEngine->mShaderSourceStorage->IsSourceUsed(SPRITE,GL_VERTEX_SHADER))
+		sceneNode->mSmokeEngine->mShaderSourceStorage->AppendSource(SPRITE,new Source(SPRITE_VERTEX_SHADER,GL_VERTEX_SHADER));
+	if(!sceneNode->mSmokeEngine->mShaderSourceStorage->IsSourceUsed(SPRITE,GL_FRAGMENT_SHADER))
+		sceneNode->mSmokeEngine->mShaderSourceStorage->AppendSource(SPRITE,new Source(SPRITE_FRAGMENT_SHADER,GL_FRAGMENT_SHADER));
 
-	this->mShader->AttachSource(sceneNode->mShaderSourceStorage->GetSource(SPRITE,GL_VERTEX_SHADER));
-	this->mShader->AttachSource(sceneNode->mShaderSourceStorage->GetSource(SPRITE,GL_FRAGMENT_SHADER));
+	this->mShader->AttachSource(sceneNode->mSmokeEngine->mShaderSourceStorage->GetSource(SPRITE,GL_VERTEX_SHADER));
+	this->mShader->AttachSource(sceneNode->mSmokeEngine->mShaderSourceStorage->GetSource(SPRITE,GL_FRAGMENT_SHADER));
 	
 	//this->mShader->IntalizeShader();
 
@@ -44,12 +45,12 @@ Sprite::Sprite(SceneNode * sceneNode) :  RenderObject(sceneNode)
 void Sprite::_initialize(SceneNode * sceneNode)
 {
 
-	if(!sceneNode->mVertexBufferStorage->IsVertexArrayObjectExist(SPRITE))
+	if(!sceneNode->mSmokeEngine->mVertexBufferStorage->IsVertexArrayObjectExist(SPRITE))
 	{
 		GLushort ldata[] = SPRITE_INDECIES;
-		sceneNode->mVertexBufferStorage->AppendVertexObject(SPRITE,new VertexArrayObject(ldata, SPRITE_INDECIES_SIZE));
+		sceneNode->mSmokeEngine->mVertexBufferStorage->AppendVertexObject(SPRITE,new VertexArrayObject(ldata, SPRITE_INDECIES_SIZE));
 	}
-	if(!sceneNode->mVertexBufferStorage->IsVertexObjectWithSubDataExist(SPRITE))
+	if(!sceneNode->mSmokeEngine->mVertexBufferStorage->IsVertexObjectWithSubDataExist(SPRITE))
 	{
 		VertexBufferObjectWithSubData * lvertexObject = new VertexBufferObjectWithSubData();
 		{
@@ -62,11 +63,11 @@ void Sprite::_initialize(SceneNode * sceneNode)
 			lvertexObject->AddSubData(new VertexBufferObjectWithSubData::SubData(ldata,4,1));
 		}
 		lvertexObject->IntalizeBuffer();
-		sceneNode->mVertexBufferStorage->AppendVertexObject(SPRITE,lvertexObject);
+		sceneNode->mSmokeEngine->mVertexBufferStorage->AppendVertexObject(SPRITE,lvertexObject);
 	}
 
-	this->mVertexArrayObject = sceneNode->mVertexBufferStorage->GetVertexArryObject(SPRITE);
-	this->mVertexSubData = sceneNode->mVertexBufferStorage->GetVertexObjectWithSubData(SPRITE);
+	this->mVertexArrayObject = sceneNode->mSmokeEngine->mVertexBufferStorage->GetVertexArryObject(SPRITE);
+	this->mVertexSubData = sceneNode->mSmokeEngine->mVertexBufferStorage->GetVertexObjectWithSubData(SPRITE);
 		
 	this->mShader->SetAttrib(0,"in_Verts");
 	this->mShader->SetAttrib(1,"in_Index");

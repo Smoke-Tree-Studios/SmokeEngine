@@ -3,9 +3,6 @@
 #include "SmokeEngine.h"
 
 class SceneManager;
-class ShaderSourceStorage;
-class TextureStorage;
-class VertexBufferStorage;
 class ViewStorage;
 class Camera;
 class SmokeEngine;
@@ -28,9 +25,6 @@ public:
 	//the main camera 
 	Camera * mMainCamera;
 
-	ShaderSourceStorage * mShaderSourceStorage;
-	TextureStorage * mTextureStorage;
-	VertexBufferStorage * mVertexBufferStorage;
 	ViewStorage * mViewStorage;
 
 	SceneManager * mSceneManager;

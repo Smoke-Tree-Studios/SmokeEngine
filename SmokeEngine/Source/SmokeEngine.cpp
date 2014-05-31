@@ -1,8 +1,16 @@
 #include "SmokeEngine.h"
 #include <btBulletDynamicsCommon.h>
+#include "Storage/ShaderSourceStorage.h"
+#include "Storage/TextureStorage.h"
+#include "Storage/VertexBufferStorage.h"
 
 SmokeEngine::SmokeEngine(AAssetManager * assetManager)
 {
+	
+	mShaderSourceStorage = new ShaderSourceStorage();
+	mTextureStorage = new TextureStorage();
+	mVertexBufferStorage = new VertexBufferStorage();
+
 	mRenderer = new Renderer();
 	mAssetManager = assetManager;
 	mSceneManager = new SceneManager(this);

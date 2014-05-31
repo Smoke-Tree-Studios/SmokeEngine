@@ -25,8 +25,13 @@ public:
 	Model(SceneNode* sceneNode,VertexBufferObjectWithSubData* vertexBufferObject,VertexArrayObject* vertexArrayObject,Source* vertexSource, Source* Fragmentsource);
 	virtual ~Model(void);
 
-	
+	/**
+	*draws the model with the given shader
+	**/
 	virtual void Draw(Matrix4x4 transform, Matrix4x4 view);
+	/**
+	*draws the model without any from of shading
+	**/
 	virtual void DepthDraw(Matrix4x4 transform, Matrix4x4 view);
 };
 

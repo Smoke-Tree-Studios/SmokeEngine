@@ -32,9 +32,6 @@ SceneNode::SceneNode(SmokeEngine* smokeEngine,Camera * camera)
 	mRootSceneNode = new RootNode(this,_sharedNodeInfo,"ROOT_SCENE");
 	mRootOverlayNode  = new RootNode(this,_sharedNodeInfo,"ROOT_OVERLAY");
 
-	mShaderSourceStorage = new ShaderSourceStorage();
-	mTextureStorage = new TextureStorage();
-	mVertexBufferStorage = new VertexBufferStorage();
 	mViewStorage = new ViewStorage();
 
 	mMainCamera = camera;

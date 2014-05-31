@@ -21,6 +21,7 @@ public:
 	/**
 	*not implemented
 	**/
+
 	void SetMask(std::string mask);
 	/**
 	*not implemented
@@ -32,7 +33,7 @@ public:
 
 class AttachmentNodeCallback{
 	public:
-			AttachmentNodeCallback();
+		AttachmentNodeCallback();
 		virtual ~AttachmentNodeCallback();
 		/**
 		*callback used on the processing of attachment nodes to shader
