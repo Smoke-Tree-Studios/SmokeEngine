@@ -26,6 +26,9 @@ public:
 			GLsizeiptr _size;
 			std::string _listedType;
 		public:
+			/**
+			*
+			**/
 			SubData(GLfloat data[],int size,int vectorType);
 			SubData(Vector2 data[],int size);
 			SubData(Vector3 data[],int size);
@@ -40,15 +43,27 @@ public:
 
 			GLfloat* GetData();
 
-			//returns the vector type
+			/**
+			*returns the vector type
+			**/
 			int GetVectorType();
-			//get the total size
+			/**
+			 *get the total size
+			 **/
+			 
+			/**
+			 *Get the size of data sotred in the sub-data element
+			 **/
 			GLsizeiptr GetSize();
 
-			//allows the subdata object to have an id value attached to it
+			/**
+			 *get the stored size of the subdata element
+			 ***/
 			void SetListed(std::string type);
 
-			//get what the subdata is listed as
+			/**
+			 *get what the subdata is listed as
+			 **/
 			std::string GetListedType();
 
 	};
@@ -58,13 +73,33 @@ private:
 
 public:
 
-
+	
 	VertexBufferObjectWithSubData(void);
 	~VertexBufferObjectWithSubData(void);
+	
+	/**
+	 *adds a subdata element
+	 **/
 	void AddSubData(SubData* subData);
+	
+	/**
+	 *retrieves the size of the entire set
+	 **/
 	int GetSize();
+
+	/**
+	 *retrieves the index of the subdata location
+	 **/
 	SubData* operator [] (const int index);
+
+	/**
+	 *intalize the buffer object
+	 **/
 	void IntalizeBuffer();
+
+	/**
+	 *binds the buffer object
+	 **/
 	virtual void Bind();
 };
 
