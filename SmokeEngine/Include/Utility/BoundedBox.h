@@ -8,6 +8,9 @@ public:
 	Vector3 Position;
 	Vector3 Size;
 
+	/**
+	 * creates a bound box for the postion and size
+	 **/
 	BoundedBox(Vector3 position, Vector3 Size);
 	~BoundedBox(void);
 
