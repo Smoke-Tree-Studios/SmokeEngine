@@ -36,29 +36,55 @@ class Node
 
 		Node(std::string ID);
 		virtual ~Node(void);
-
+		
+		/**
+		 * retrieves the matrix for the object
+		 **/
 		virtual Matrix4x4 GetMatrix();
 
-		//gets the id of the node
+		/**
+		 * retrieves the ID of the node
+		 **/
 		std::string GetID();
 
-		//appends a node to the set
+		/**
+		 * appends a node to the set
+		 **/
 		virtual void AppendNode(Node * n);
 
+		/**
+		 * retrieves all the children nodes to the current node
+		 **/
 		std::list<Node*>* GetChildren();
+		
+		/**
+		 *retrieves the parent node of the current node
+		 **/
 		Node* GetParent();
+		
+		/**
+		 * retrieves the node with the id connected to the current
+		 **/
 		Node* GetNode(std::string id);
 
-		//delete's all the children nodes
+		/**
+		 * delete's all the children nodes
+		 **/
 		void DeleteAllChildren();
 
-		//gets the location of the node relative to the camera
+		/**
+		 * gets the location of the node relative to the camera
+		 **/
 		Matrix4x4 GetLocationOfNode(Camera* cam);
         
-		//gets the node type
+		/**
+		 * gets the node type
+		 **/
 		virtual std::string GetType();
 
-		//update for the node 
+		/**
+		 *updates the curren node
+		 **/
 		virtual void Update();
 };
 

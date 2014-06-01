@@ -1,16 +1,16 @@
-#include "Utility\WaveFrontLoad.h"
-#include <android\asset_manager.h>
+#include "Utility/WaveFrontLoad.h"
+#include <android/asset_manager.h>
 #include <GLES2/gl2.h>
 #include <GLES2/gl2ext.h>
-#include <android\log.h>
-#include "Utility\Vector\Vector3.h"
-#include "Utility\Vector\Vector2.h"
+#include <android/log.h>
+#include "Utility/Vector/Vector3.h"
+#include "Utility/Vector/Vector2.h"
 #include <stdlib.h>
 #include <vector>
-#include "VertexObject\VertexArrayObject.h"
-#include "VertexObject\VertexBufferObjectWithSubData.h"
+#include "VertexObject/VertexArrayObject.h"
+#include "VertexObject/VertexBufferObjectWithSubData.h"
 #include <string>
-#include <boost\algorithm\string.hpp>
+#include <boost/algorithm/string.hpp>
 #include "S_Debug.h"
 
 std::vector<float> WaveFrontLoad::_splitFloat(std::string str,std::string character)
@@ -52,17 +52,13 @@ std::vector<int> WaveFrontLoad::_splitInt(std::string str,std::string character)
 			lfinal.push_back(-1);
 		}
 	}
-	/*std::ostringstream os ;
-	for(int x = 0; x < lfinal.size(); x++)
-	{
-		 os << lfinal[x] << ",";
-	}
-	INFO(os.str().c_str());
-	int s = lfinal.size();*/
 	
 	return lfinal;
 }
 
+/*
+*loads the wavefront object and outputs a vertexArray object and adds the data to the vertex buffer object
+*/
 VertexArrayObject* WaveFrontLoad::Load(const char* file,AAssetManager* assetManager, VertexBufferObjectWithSubData * vertexBufferObjectWithSubData)
 {
 	std::vector<GLushort> lindecies = std::vector<GLushort>();
