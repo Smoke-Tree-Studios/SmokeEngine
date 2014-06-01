@@ -9,7 +9,6 @@
 #include <vector>
 #include "VertexObject\VertexArrayObject.h"
 #include "VertexObject\VertexBufferObjectWithSubData.h"
-//#include <sstream>
 #include <string>
 #include <boost\algorithm\string.hpp>
 #include "S_Debug.h"
