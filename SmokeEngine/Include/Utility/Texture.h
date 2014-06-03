@@ -1,11 +1,11 @@
 #pragma once
-#include <GLES2\gl2.h>
-#include "string"
-#include "Utility\Vector\Vector2.h"
-#include <gles2\gl2.h>
-#include <stdlib.h>
-#include <android\asset_manager.h>
 
+#include "string"
+#include <GLES2\gl2.h>
+#include <stdlib.h>
+
+
+class AAssetManager;
 class Texture
 {
 private:

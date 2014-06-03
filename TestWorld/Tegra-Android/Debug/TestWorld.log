@@ -1,4 +1,4 @@
-﻿Build started 5/29/2014 8:00:34 PM.
+﻿Build started 6/1/2014 1:36:06 PM.
      1>Project "C:\SmokeEngine\TestWorld\TestWorld.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Tegra-Android\Debug\TestWorld.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -88,8 +88,8 @@
                [dex] Using Pre-Dexed annotations-6865d278797e29f45d2d74a7ff3c20f6.jar <- C:\NVPACK\android-sdk-windows\tools\support\annotations.jar
                [dex] Found Deleted Target File
                [dex] Converting compiled files and external libraries into C:\SmokeEngine\TestWorld\Tegra-Android\Debug\bin\classes.dex...
-                [dx] Merged dex A (8 defs/3.7KiB) with dex B (2 defs/1.1KiB). Result is 10 defs/4.8KiB. Took 0.0s
                 [dx] Picked up _JAVA_OPTIONS: -Xms256m -Xmx512m
+                [dx] Merged dex A (8 defs/3.7KiB) with dex B (2 defs/1.1KiB). Result is 10 defs/4.8KiB. Took 0.0s
          
          -crunch:
             [crunch] Crunching PNG Files in source dir: C:\SmokeEngine\TestWorld\res
@@ -132,4 +132,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:11.97
+Time Elapsed 00:00:11.73

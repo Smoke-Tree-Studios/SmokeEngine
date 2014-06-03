@@ -1,6 +1,10 @@
 #include "Utility\Texture.h"
 #include <android\log.h>
 #include "Utility\LodePNG.h"
+#include "S_Debug.h"
+#include <android\asset_manager.h>
+#include "Utility\Vector\Vector2.h"
+
 
 extern unsigned int POWER_TWO [26] = {1,2,4,8,16,32,64,128,256,512,1024,2048,4096,8192,16384,32768,65536,131072,262144,524288,1048576,2097152,4194304,8388608,16777216,33554432};
 
@@ -13,9 +17,8 @@ Texture::Texture(const char * filename,AAssetManager* assetManager)
 	AAsset* lasset = AAssetManager_open(assetManager,filename,AASSET_MODE_UNKNOWN);
 
 	if(NULL == lasset)
-	{
-		 __android_log_print(ANDROID_LOG_ERROR,"SMOKE_ENGINE",(char*)("Failed to open: " + std::string(filename)).c_str());
-	}
+		ERROR("failed to open: %s",filename);
+	
 
 	long lsize = AAsset_getLength(lasset);
 
@@ -51,7 +54,6 @@ Texture::Texture(const char * filename,AAssetManager* assetManager)
 			_heightBuffer =((float)POWER_TWO[y]);
 		}
 	}
-	
 }
 
 
