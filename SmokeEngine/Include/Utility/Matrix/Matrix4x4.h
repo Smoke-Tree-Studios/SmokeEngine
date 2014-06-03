@@ -27,7 +27,13 @@ class Matrix4x4
 		float m34;
 		float m44;
 
+		/**
+		 *returns a translation matrix with the x y and z values
+		 **/
 		static Matrix4x4 Translation(float x, float y, float z);
+		/**
+		 *returns a translation matrtix using a vector3 object
+		 **/
 		static Matrix4x4 Translation(Vector3 translation);
 
 		static Matrix4x4 RotationX(float amount);
