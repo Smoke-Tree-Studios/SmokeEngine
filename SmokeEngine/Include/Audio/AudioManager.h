@@ -2,6 +2,8 @@
 #include "string"
 #include "sles\OpenSLES.h"
 #include "sles\OpenSLES_Android.h"
+class AudioPlayer;
+class AudioSource;
 class AudioManager
 {
 private:
@@ -12,11 +14,12 @@ private:
 
 	//output mix interface
 	SLObjectItf _outputMixerObject;
-	SLEnvironmentalReverbItf _outputMixEnviromentReverb;
 
 public:
-
 	AudioManager(void);
 	~AudioManager(void);
+
+	AudioPlayer* PlayTrack(AudioSource * src);
+	void PlaySound(AudioSource * src);
 };
 

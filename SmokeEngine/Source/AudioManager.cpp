@@ -1,5 +1,7 @@
 #include "Audio/AudioManager.h"
 #include "S_Debug.h"
+#include "Audio\AudioSource.h"
+#include "Audio\AudioPlayer.h"
 
 AudioManager::AudioManager(void)
 {
@@ -36,6 +38,17 @@ AudioManager::AudioManager(void)
 	// realize the output mix
     lresult = (*_outputMixerObject)->Realize(_outputMixerObject, SL_BOOLEAN_FALSE);
 	  ERROR("can't realize audio mix");
+}
+
+
+AudioPlayer* AudioManager::PlayTrack(AudioSource * src)
+{
+	return new AudioPlayer(&_mainEngine,src,&_outputMixerObject);
+
+}
+void AudioManager::PlaySound(AudioSource * src)
+{
+
 }
 
 
