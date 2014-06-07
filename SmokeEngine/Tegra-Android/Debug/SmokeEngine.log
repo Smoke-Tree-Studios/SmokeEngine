@@ -1,4 +1,4 @@
-﻿Build started 6/5/2014 10:10:34 PM.
+﻿Build started 6/6/2014 9:29:30 PM.
      1>Project "C:\SmokeEngine\SmokeEngine\SmokeEngine.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Tegra-Android\Debug\SmokeEngine.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -18,4 +18,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.34
+Time Elapsed 00:00:00.55

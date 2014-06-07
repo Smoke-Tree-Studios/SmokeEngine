@@ -10,11 +10,22 @@ private:
 
 	SLPlayItf _playerPlay;
 	SLSeekItf _playerSeek;
-	SLMuteSoloItf _playerMutoSolo;
+	SLMuteSoloItf _playerMuteSolo;
+	SLVolumeItf _playerVolume;
 
 
 public:
 	AudioPlayer(SLEngineItf * EngineObject,AudioSource * src,SLObjectItf * _outputMixerObject);
 	~AudioPlayer(void);
+
+	void SetLooped(bool state);
+	void SetPaused(bool state);
+	void SetChannelMute(int channel,bool state);
+	int GetNumberOfChannels();
+	int GetVolume();
+	void SetVolume(int volume);
+	void SetStereoPosition(bool state,int position);
+
+
 };
 
