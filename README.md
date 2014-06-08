@@ -1,4 +1,4 @@
-Native-Android-Engine
+SmokeEngine
 =====================
 SmokeEngine is a native rendering system built for android. The system itself uses a node based tree system to render components in a scene. The modular structure of the system allows other components to be written and replace the basic components that currently exist.
 
