@@ -19,8 +19,6 @@ GLSL documentation - http://www.khronos.org/opengles/sdk/docs/man3/index.php
 
 Planned Features
 =====================
-OpenSl ES Audio and audio system
-
 Input System
 
 Particles
