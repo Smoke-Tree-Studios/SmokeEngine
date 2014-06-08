@@ -21,7 +21,7 @@ AudioPlayer::AudioPlayer(SLEngineItf* EngineObject,AudioSource * src,SLObjectItf
 
 	 lresult = (*_playerObject)->Realize(_playerObject,SL_BOOLEAN_FALSE);
 	 if(lresult != SL_RESULT_SUCCESS)
-		ERROR("can't create player");
+		ERROR("can't realize player");
 
 	lresult = (*_playerObject)->GetInterface(_playerObject,SL_IID_PLAY,&_playerPlay);
 	if(lresult != SL_RESULT_SUCCESS)
@@ -49,6 +49,7 @@ void AudioPlayer::SetLooped(bool state)
 
 void AudioPlayer::SetPaused(bool state)
 {
+	
 	if(!state)
 	{
 		(*_playerPlay)->SetPlayState(_playerPlay,SL_PLAYSTATE_PLAYING);
@@ -57,6 +58,13 @@ void AudioPlayer::SetPaused(bool state)
 	{
 		(*_playerPlay)->SetPlayState(_playerPlay,SL_PLAYSTATE_PAUSED);
 	}
+}
+
+int AudioPlayer::GetPlayerState()
+{
+	SLuint32 state = 0;
+	(*_playerPlay)->GetPlayState(_playerPlay,&state);
+	return state;
 }
 
 void AudioPlayer::SetChannelMute(int channel,bool state)
@@ -98,8 +106,12 @@ void AudioPlayer::SetStereoPosition(bool state,int position)
 		(*_playerVolume)->EnableStereoPosition(_playerVolume,true);
 		(*_playerVolume)->SetStereoPosition(_playerVolume,position);
 	}
+	
 
 }
+
+
+
 
 
 AudioPlayer::~AudioPlayer(void)

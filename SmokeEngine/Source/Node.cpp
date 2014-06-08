@@ -19,9 +19,17 @@ Node::Node(std::string ID)
 
 Node::~Node(void)
 {
-	 Node * lnode= (*_sharedNodeInfo->mNodes)[_id];
 	_sharedNodeInfo->mNodes->erase(_id);
-	delete(lnode);
+	DeleteAllChildren();
+
+	for(std::list<Node*>::iterator literator =  _parentNode->_children->begin(); literator != _parentNode->_children->end(); ++literator)
+	{
+		if((*literator)->GetID() == GetID())
+		{
+			_parentNode->_children->erase(literator);
+		}
+	}
+
 }
 
 std::string Node::GetID()
@@ -35,8 +43,23 @@ void Node::DeleteAllChildren()
 	{
 		delete((*literator));
 	}
-	delete(_children);
+	_children->clear();
 }
+
+
+void Node::DeleteChild(std::string id)
+{
+	for(std::list<Node*>::iterator literator =  _children->begin(); literator != _children->end(); ++literator)
+	{
+		if((*literator)->GetID() == id)
+		{
+			_children->erase(literator);
+			delete((*literator));
+		}
+		
+	}
+}
+
 
 std::string Node::GetType(){
 	return "Node";

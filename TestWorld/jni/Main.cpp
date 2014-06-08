@@ -12,6 +12,7 @@
 #include "S_Debug.h"
 #include "TestScene.h"
 #include "Utility\Camera.h"
+
 namespace boost
 {
 	void throw_exception(std::exception const&)
@@ -50,10 +51,6 @@ JNIEXPORT void JNICALL Java_com_android_Engine_Lib_OpenglInitiate(  JNIEnv* env,
 
 JNIEXPORT void JNICALL Java_com_android_Engine_Lib_Step(JNIEnv* env, jobject obj)
 {
-	glEnable(GL_DEPTH_TEST);
-
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glClearColor(0.0f,0.0f,0.0f,1.0f);
 	s->Step(); 
 }
 

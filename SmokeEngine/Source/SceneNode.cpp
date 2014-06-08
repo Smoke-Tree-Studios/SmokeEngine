@@ -11,6 +11,8 @@
 #include "SmokeEngine.h"
 #include "Node\SharedNodeInfo.h"
 
+#include "egl\egl.h"
+
 SceneNode::RootNode::RootNode(SceneNode * sceneNode,SharedNodeInfo* sharedNodeInfo, std::string ID) : Node(ID) 
 {
 	_sceneNode = sceneNode;
@@ -24,9 +26,9 @@ std::string SceneNode::RootNode::GetType()
 
 SceneNode::SceneNode(SmokeEngine* smokeEngine,Camera * camera)
 {
+
 	_sharedNodeInfo = new SharedNodeInfo();
 
-	mSceneManager = smokeEngine->mSceneManager;
 	mSmokeEngine = smokeEngine;
 
 	mRootSceneNode = new RootNode(this,_sharedNodeInfo,"ROOT_SCENE");

@@ -61,6 +61,12 @@ class Node
 		 *retrieves the parent node of the current node
 		 **/
 		Node* GetParent();
+
+		/**
+		*deletes the child
+		**/
+		void DeleteChild(std::string id);
+
 		
 		/**
 		 * retrieves the node with the id connected to the current

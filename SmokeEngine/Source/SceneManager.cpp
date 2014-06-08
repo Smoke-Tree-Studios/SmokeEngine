@@ -1,7 +1,8 @@
 #include "SceneManager.h"
 #include "Node\SceneNode.h"
 #include "SmokeEngine.h"
-
+#include "egl\egl.h"
+#include "egl\eglext.h"
 
 SceneManager::SceneManager(SmokeEngine* smokeEngine)
 {
@@ -22,7 +23,6 @@ void SceneManager::AppendScene(std::string id, SceneNode * node)
 
 void SceneManager::SetActiveScene(std::string id)
 {
-
 	_activeScene = _sceneNodes[id];
 
 }
@@ -40,5 +40,6 @@ void SceneManager::Update(float DeltaT)
 
 SceneNode* SceneManager::GetActiveSceneNode()
 {
+
 	return _activeScene;
 }

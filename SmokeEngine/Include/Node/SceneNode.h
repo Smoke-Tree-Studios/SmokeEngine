@@ -27,7 +27,7 @@ public:
 
 	ViewStorage * mViewStorage;
 
-	SceneManager * mSceneManager;
+
 
 	RootNode * mRootSceneNode;
 	RootNode * mRootOverlayNode;
@@ -38,7 +38,7 @@ public:
 	*updates the scene with the given deltaT value
 	**/
 	virtual void Update(float deltaT) =0;
-	virtual void Input();
+	//virtual void Input();
 
 	SceneNode( SmokeEngine* smokeEngine,Camera * camera);
 	~SceneNode(void);

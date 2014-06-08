@@ -25,6 +25,7 @@ public:
 	int GetVolume();
 	void SetVolume(int volume);
 	void SetStereoPosition(bool state,int position);
+	int GetPlayerState();
 
 
 };

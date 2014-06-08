@@ -9,10 +9,10 @@
 SmokeEngine::SmokeEngine(AAssetManager * assetManager)
 {
 	
+	mAudioManager = new AudioManager();
 	mShaderSourceStorage = new ShaderSourceStorage();
 	mTextureStorage = new TextureStorage();
 	mVertexBufferStorage = new VertexBufferStorage();
-	mAudioManager = new AudioManager();
 
 	mAudioSourceStorage = new AudioSourceStorage();
 	mRenderer = new Renderer();
@@ -30,9 +30,12 @@ SmokeEngine::~SmokeEngine(void)
 
 void SmokeEngine::Step()
 {
-	float ldiff = (((float)( clock() - _time))/CLOCKS_PER_SEC) * 1000.0;
+	float ldiff = ((((double)( clock() - _time))/CLOCKS_PER_SEC) * 1000.0);
+	//updates the AudioManager
+	mAudioManager->Update();
 	mSceneManager->Update(ldiff);
 	mRenderer->Draw(mSceneManager->GetActiveSceneNode());
 	_time = clock();
+	
 
 }

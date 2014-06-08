@@ -37,10 +37,20 @@ Source* ShaderSourceStorage::GetSource(std::string id, GLenum Type)
 	return NULL;
 }
 
-void ShaderSourceStorage::DeleteSource(std::string id)
+void ShaderSourceStorage::DeleteSource(std::string id, GLenum Type)
 {
-	delete(_shaderSource[id]);
-	_shaderSource.erase(id);
+	std::string lid = "";
+
+	if(Type == GL_FRAGMENT_SHADER)
+	{
+		lid = id + FRAMGENT_SOURCE;
+	}
+	else if (Type == GL_VERTEX_SHADER)
+	{
+		lid =  id + VERTEX_SOURCE;
+	}
+	delete _shaderSource[lid];
+	_shaderSource.erase(lid);
 }
 
 bool ShaderSourceStorage::IsSourceUsed(std::string id,GLenum Type)

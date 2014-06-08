@@ -66,14 +66,13 @@ bool VertexBufferStorage::IsVertexObjectWithSubDataExist(std::string id)
 	
 void VertexBufferStorage::DeleteVertexObjectWithSubData(std::string id)
 {
-	VertexObject * lvertexObject = _vertexObjects[id+VERTEX_BUFFER_OBJECT_WITH_SUBDATA];
+	delete(_vertexObjects[id+VERTEX_BUFFER_OBJECT_WITH_SUBDATA]);
 	_vertexObjects.erase(id);
-	delete(lvertexObject);
 }
 
 void VertexBufferStorage::DeleteVertexArryObject(std::string id)
 {
-	VertexObject * lvertexObject = _vertexObjects[id+VERTEX_ARRAY_OBJECT];
+	delete(_vertexObjects[id+VERTEX_ARRAY_OBJECT]);
 	_vertexObjects.erase(id);
-	delete(lvertexObject);
+
 }

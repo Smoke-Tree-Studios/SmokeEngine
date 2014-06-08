@@ -1,47 +1,18 @@
-﻿Build started 6/7/2014 10:09:58 PM.
+﻿Build started 6/8/2014 3:15:41 PM.
      1>Project "C:\SmokeEngine\SmokeEngine\SmokeEngine.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Tegra-Android\Debug\SmokeEngine.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          C:\NVPACK\android-ndk-r9b\toolchains\arm-linux-androideabi-4.8\prebuilt\windows\bin\arm-linux-androideabi-g++.exe 
-         ObjectNode.cpp
-         Renderer.cpp
-         RenderObject.cpp
-         Model.cpp
-         C:\SmokeEngine\SmokeEngine\Source\ObjectNode.cpp(4): includes this header: 0:
-     1>C:\SmokeEngine\SmokeEngine\Include\Node\SceneNode.h(41,31): error : 'AInputEvent' was not declared in this scope
-           virtual void Input(std::list<AInputEvent*> events);
-                                        ^
-     1>C:\SmokeEngine\SmokeEngine\Include\Node\SceneNode.h(41,43): error : template argument 1 is invalid
-           virtual void Input(std::list<AInputEvent*> events);
-                                                    ^
-     1>C:\SmokeEngine\SmokeEngine\Include\Node\SceneNode.h(41,43): error : template argument 2 is invalid
-         C:\SmokeEngine\SmokeEngine\Source\Renderer.cpp(2): includes this header: 0:
-     1>C:\SmokeEngine\SmokeEngine\Include\Node\SceneNode.h(41,31): error : 'AInputEvent' was not declared in this scope
-           virtual void Input(std::list<AInputEvent*> events);
-                                        ^
-     1>C:\SmokeEngine\SmokeEngine\Include\Node\SceneNode.h(41,43): error : template argument 1 is invalid
-           virtual void Input(std::list<AInputEvent*> events);
-                                                    ^
-     1>C:\SmokeEngine\SmokeEngine\Include\Node\SceneNode.h(41,43): error : template argument 2 is invalid
-         C:\SmokeEngine\SmokeEngine\Source\RenderObject.cpp(3): includes this header: 0:
-     1>C:\SmokeEngine\SmokeEngine\Include\Node\SceneNode.h(41,31): error : 'AInputEvent' was not declared in this scope
-           virtual void Input(std::list<AInputEvent*> events);
-                                        ^
-     1>C:\SmokeEngine\SmokeEngine\Include\Node\SceneNode.h(41,43): error : template argument 1 is invalid
-           virtual void Input(std::list<AInputEvent*> events);
-                                                    ^
-     1>C:\SmokeEngine\SmokeEngine\Include\Node\SceneNode.h(41,43): error : template argument 2 is invalid
-         C:\SmokeEngine\SmokeEngine\Source\Model.cpp(6): includes this header: 0:
-     1>C:\SmokeEngine\SmokeEngine\Include\Node\SceneNode.h(41,31): error : 'AInputEvent' was not declared in this scope
-           virtual void Input(std::list<AInputEvent*> events);
-                                        ^
-     1>C:\SmokeEngine\SmokeEngine\Include\Node\SceneNode.h(41,43): error : template argument 1 is invalid
-           virtual void Input(std::list<AInputEvent*> events);
-                                                    ^
-     1>C:\SmokeEngine\SmokeEngine\Include\Node\SceneNode.h(41,43): error : template argument 2 is invalid
-     1>Done Building Project "C:\SmokeEngine\SmokeEngine\SmokeEngine.vcxproj" (build target(s)) -- FAILED.
+         SmokeEngine.cpp
+       Lib:
+         C:\NVPACK\android-ndk-r9b\toolchains\arm-linux-androideabi-4.8\prebuilt\windows\bin\arm-linux-androideabi-ar.exe rcs C:/SmokeEngine/Tegra-Android/Debug/libSmokeEngine.a Tegra-Android/Debug/AudioSourceStorage.o Tegra-Android/Debug/AudioPlayer.o Tegra-Android/Debug/AudioSource.o Tegra-Android/Debug/AudioManager.o Tegra-Android/Debug/SharedNodeInfo.o Tegra-Android/Debug/LightAttachmentNode.o Tegra-Android/Debug/AttachmentNode.o Tegra-Android/Debug/Model.o Tegra-Android/Debug/LodePNG.o Tegra-Android/Debug/BoundedBox.o Tegra-Android/Debug/Camera.o Tegra-Android/Debug/ShaderSourceStorage.o Tegra-Android/Debug/SmokeEngine.o Tegra-Android/Debug/Matrix4x4.o Tegra-Android/Debug/MatrixStack.o Tegra-Android/Debug/Node.o Tegra-Android/Debug/ObjectNode.o Tegra-Android/Debug/Quaternion.o Tegra-Android/Debug/Renderer.o Tegra-Android/Debug/RenderObject.o Tegra-Android/Debug/SceneManager.o Tegra-Android/Debug/SceneNode.o Tegra-Android/Debug/Shader.o Tegra-Android/Debug/Source.o Tegra-Android/Debug/S_Rectangle.o Tegra-Android/Debug/Texture.o Tegra-Android/Debug/TextureStorage.o Tegra-Android/Debug/Vector2.o Tegra-Android/Debug/Vector3.o Tegra-Android/Debug/Vector4.o Tegra-Android/Debug/VertexArrayObject.o Tegra-Android/Debug/VertexBufferObjectWithSubData.o Tegra-Android/Debug/VertexBufferStorage.o Tegra-Android/Debug/VertexObject.o Tegra-Android/Debug/ViewStorage.o Tegra-Android/Debug/WaveFrontLoad.o Tegra-Android/Debug/Sprite.o
+         SmokeEngine.vcxproj -> C:\SmokeEngine\Tegra-Android\Debug\libSmokeEngine.a
+       FinalizeBuildStatus:
+         Deleting file "Tegra-Android\Debug\SmokeEngine.unsuccessfulbuild".
+         Touching "Tegra-Android\Debug\SmokeEngine.lastbuildstate".
+     1>Done Building Project "C:\SmokeEngine\SmokeEngine\SmokeEngine.vcxproj" (build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:01.14
+Time Elapsed 00:00:00.94

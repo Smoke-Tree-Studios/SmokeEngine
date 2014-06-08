@@ -20,9 +20,8 @@ void ViewStorage::AddCamera(std::string id,Camera * camera)
 
 void ViewStorage::RemoveCamera(std::string id)
 {
-	Camera * lcam = _cameras[id];
+	delete( _cameras[id]);
 	_cameras.erase(id);
-	delete(lcam);
 }
 Camera* ViewStorage::GetCamera(std::string id)
 {

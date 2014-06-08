@@ -25,10 +25,17 @@ public:
 	
 	/**
 	*tells if the source is used
+	*
+	*Type has to be GL_FRAGMENT_SHADER or GL_VERTEX_SHADER
 	**/
 	bool IsSourceUsed(std::string id,GLenum Type);
 
-	void DeleteSource(std::string id);
+	/**
+	*delets the source
+	*
+	*Type has to be GL_FRAGMENT_SHADER or GL_VERTEX_SHADER
+	**/
+	void DeleteSource(std::string id, GLenum Type);
 
 	/** 
 	 * retrives the source with the id 

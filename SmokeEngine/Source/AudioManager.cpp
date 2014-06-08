@@ -5,6 +5,8 @@
 
 AudioManager::AudioManager(void)
 {
+	_audio = std::list<AudioPlayer*>();
+
 	SLresult lresult;
 
 	// engine
@@ -23,9 +25,6 @@ AudioManager::AudioManager(void)
 	 lresult = (*_engineObject)->GetInterface(_engineObject, SL_IID_ENGINE, &_mainEngine);
 	 if (lresult != SL_RESULT_SUCCESS)
 	  ERROR("can't create audio interface");
-
-
-
 
 	// create output mix, with environmental reverb specified as a non-required interface
 	 const SLInterfaceID ids[0] = {};
@@ -50,7 +49,18 @@ AudioPlayer* AudioManager::PlayTrack(AudioSource * src)
 }
 void AudioManager::PlaySound(AudioSource * src)
 {
+	_audio.push_back(new AudioPlayer(&_mainEngine,src,&_outputMixerObject));
+}
 
+void AudioManager::Update()
+{
+	for (std::list<AudioPlayer*>::iterator it=_audio.begin(); it != _audio.end(); ++it)
+	{
+		if((*it)->GetPlayerState() == SL_PLAYEVENT_HEADATEND)
+		{
+			it=_audio.erase(it);
+		}
+	}
 }
 
 

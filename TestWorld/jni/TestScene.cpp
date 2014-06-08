@@ -23,9 +23,11 @@
 
 #include "math.h"
 
+
+
 TestScene::TestScene(SmokeEngine* smokeEngine,Camera * camera) : SceneNode(smokeEngine,camera)
 {
-		AudioPlayer* p = this->mSmokeEngine->mAudioManager->PlayTrack( new AudioSource("W1_Level_01.ogg",this->mSceneManager->mSmokeEngine->mAssetManager));
+	 this->mSmokeEngine->mAudioManager->PlayTrack( new AudioSource("W1_Level_01.ogg",this->mSmokeEngine->mSceneManager->mSmokeEngine->mAssetManager));
 
 	Source * frag = new Source("phongshading.fs",this->mSmokeEngine->mAssetManager);
 	Source * vertex = new Source("basic.vs",this->mSmokeEngine->mAssetManager);
@@ -41,7 +43,7 @@ TestScene::TestScene(SmokeEngine* smokeEngine,Camera * camera) : SceneNode(smoke
 	this->mRootSceneNode->AppendNode(_lightNode);
 	_testObject->Position = Vector3(0,-3,-30);
 
-	Texture * t = new Texture("test-pattern.png",this->mSceneManager->mSmokeEngine->mAssetManager); 
+	Texture * t = new Texture("test-pattern.png",this->mSmokeEngine->mSceneManager->mSmokeEngine->mAssetManager); 
 	_testObject->mRenderObject->mShader->SetTexture("in_BaseImage",t,0);
 
 
@@ -55,6 +57,8 @@ TestScene::~TestScene(void)
 
 void TestScene::Update(float deltaT) 
 {
+
+
 	_testObject->mRenderObject->mShader->SetMatrix4x4("in_light",this->mMainCamera->GetTransformMatrixRelativeToNode(_lightNode));
 	Matrix4x4 t = this->mMainCamera->GetTransformMatrixRelativeToNode(_lightNode);
 	x += (deltaT*.002f);
