@@ -6,6 +6,7 @@
 #include "Audio/AudioManager.h"
 #include "Storage/AudioSourceStorage.h"
 
+
 SmokeEngine::SmokeEngine(AAssetManager * assetManager)
 {
 	
@@ -26,16 +27,17 @@ SmokeEngine::SmokeEngine(AAssetManager * assetManager)
 
 SmokeEngine::~SmokeEngine(void)
 {
+
 }
 
 void SmokeEngine::Step()
 {
+	
 	float ldiff = ((((double)( clock() - _time))/CLOCKS_PER_SEC) * 1000.0);
 	//updates the AudioManager
 	mAudioManager->Update();
 	mSceneManager->Update(ldiff);
 	mRenderer->Draw(mSceneManager->GetActiveSceneNode());
 	_time = clock();
-	
 
 }

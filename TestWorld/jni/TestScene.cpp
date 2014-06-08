@@ -46,6 +46,7 @@ TestScene::TestScene(SmokeEngine* smokeEngine,Camera * camera) : SceneNode(smoke
 	Texture * t = new Texture("test-pattern.png",this->mSmokeEngine->mSceneManager->mSmokeEngine->mAssetManager); 
 	_testObject->mRenderObject->mShader->SetTexture("in_BaseImage",t,0);
 
+	x = 0;
 
 }
 

@@ -1,18 +1,17 @@
-﻿Build started 6/8/2014 3:15:41 PM.
+﻿Build started 6/8/2014 4:18:02 PM.
      1>Project "C:\SmokeEngine\SmokeEngine\SmokeEngine.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Tegra-Android\Debug\SmokeEngine.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          C:\NVPACK\android-ndk-r9b\toolchains\arm-linux-androideabi-4.8\prebuilt\windows\bin\arm-linux-androideabi-g++.exe 
          SmokeEngine.cpp
-       Lib:
-         C:\NVPACK\android-ndk-r9b\toolchains\arm-linux-androideabi-4.8\prebuilt\windows\bin\arm-linux-androideabi-ar.exe rcs C:/SmokeEngine/Tegra-Android/Debug/libSmokeEngine.a Tegra-Android/Debug/AudioSourceStorage.o Tegra-Android/Debug/AudioPlayer.o Tegra-Android/Debug/AudioSource.o Tegra-Android/Debug/AudioManager.o Tegra-Android/Debug/SharedNodeInfo.o Tegra-Android/Debug/LightAttachmentNode.o Tegra-Android/Debug/AttachmentNode.o Tegra-Android/Debug/Model.o Tegra-Android/Debug/LodePNG.o Tegra-Android/Debug/BoundedBox.o Tegra-Android/Debug/Camera.o Tegra-Android/Debug/ShaderSourceStorage.o Tegra-Android/Debug/SmokeEngine.o Tegra-Android/Debug/Matrix4x4.o Tegra-Android/Debug/MatrixStack.o Tegra-Android/Debug/Node.o Tegra-Android/Debug/ObjectNode.o Tegra-Android/Debug/Quaternion.o Tegra-Android/Debug/Renderer.o Tegra-Android/Debug/RenderObject.o Tegra-Android/Debug/SceneManager.o Tegra-Android/Debug/SceneNode.o Tegra-Android/Debug/Shader.o Tegra-Android/Debug/Source.o Tegra-Android/Debug/S_Rectangle.o Tegra-Android/Debug/Texture.o Tegra-Android/Debug/TextureStorage.o Tegra-Android/Debug/Vector2.o Tegra-Android/Debug/Vector3.o Tegra-Android/Debug/Vector4.o Tegra-Android/Debug/VertexArrayObject.o Tegra-Android/Debug/VertexBufferObjectWithSubData.o Tegra-Android/Debug/VertexBufferStorage.o Tegra-Android/Debug/VertexObject.o Tegra-Android/Debug/ViewStorage.o Tegra-Android/Debug/WaveFrontLoad.o Tegra-Android/Debug/Sprite.o
-         SmokeEngine.vcxproj -> C:\SmokeEngine\Tegra-Android\Debug\libSmokeEngine.a
-       FinalizeBuildStatus:
-         Deleting file "Tegra-Android\Debug\SmokeEngine.unsuccessfulbuild".
-         Touching "Tegra-Android\Debug\SmokeEngine.lastbuildstate".
-     1>Done Building Project "C:\SmokeEngine\SmokeEngine\SmokeEngine.vcxproj" (build target(s)).
+         C:\NVPACK\android-ndk-r9b\sources\cxx-stl\gnu-libstdc++\4.8\include\chrono(35): includes this header: 0,
+         C:\SmokeEngine\SmokeEngine\from Source\SmokeEngine.cpp(9): 
+     1>C:\NVPACK\android-ndk-r9b\sources\cxx-stl\gnu-libstdc++\4.8\include\bits\c++0x_warning.h(32,2): error : #error This file requires compiler and library support for the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+          #error This file requires compiler and library support for the \
+           ^
+     1>Done Building Project "C:\SmokeEngine\SmokeEngine\SmokeEngine.vcxproj" (build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:00.94
+Time Elapsed 00:00:00.53
