@@ -32,6 +32,9 @@
     <None Include="assets\basic.vs" />
     <None Include="assets\phongshading.fs" />
     <None Include="assets\test-pattern.png" />
+    <None Include="assets\Lice Dig.wav" />
+    <None Include="assets\W1_Level_01.ogg" />
+    <None Include="assets\Squish-GTA3-7862_hifi.mp3" />
   </ItemGroup>
   <ItemGroup>
     <JCompile Include="src\com\example\Engine\GLRenderer.java" />

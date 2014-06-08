@@ -35,12 +35,15 @@
     <None Include="assets\bunny.wobj" />
     <None Include="assets\drag.wobj" />
     <None Include="assets\julianset.fs" />
+    <None Include="assets\Lice Dig.wav" />
     <None Include="assets\lice1.png" />
+    <None Include="assets\Squish-GTA3-7862_hifi.mp3" />
     <None Include="assets\test-pattern.png" />
     <None Include="assets\phongshading.fs" />
     <None Include="assets\Teapot.wobj" />
     <None Include="assets\red.fs" />
     <None Include="assets\test.vs" />
+    <None Include="assets\W1_Level_01.ogg" />
     <None Include="build.xml" />
     <JCompile Include="src\com\android\Engine\GLRenderer.java">
       <FileType>Document</FileType>

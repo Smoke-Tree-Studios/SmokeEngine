@@ -15,7 +15,7 @@ private:
 
 
 public:
-	AudioPlayer(SLEngineItf * EngineObject,AudioSource * src,SLObjectItf * _outputMixerObject);
+	AudioPlayer(SLEngineItf *EngineObject,AudioSource * src,SLObjectItf*  _outputMixerObject);
 	~AudioPlayer(void);
 
 	void SetLooped(bool state);

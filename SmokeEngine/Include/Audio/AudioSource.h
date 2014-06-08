@@ -8,9 +8,9 @@ class AudioSource
 {
 private:
 	
-	SLDataSource* _audioSource;
-	SLDataFormat_MIME* _formatMime;
-	SLDataLocator_AndroidFD* _locFd;
+	SLDataSource _audioSource;
+	SLDataFormat_MIME _formatMime;
+	SLDataLocator_AndroidFD _locFd;
 
 public:
 	AudioSource(void* data);

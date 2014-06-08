@@ -28,6 +28,8 @@ public:
 	**/
 	bool IsSourceUsed(std::string id,GLenum Type);
 
+	void DeleteSource(std::string id);
+
 	/** 
 	 * retrives the source with the id 
 	 *

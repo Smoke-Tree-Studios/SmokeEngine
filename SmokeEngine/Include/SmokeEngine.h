@@ -9,6 +9,8 @@ class SceneManager;
 class ShaderSourceStorage;
 class TextureStorage;
 class VertexBufferStorage;
+class AudioSourceStorage;
+class AudioManager;
 class SmokeEngine
 {
 private:
@@ -17,10 +19,12 @@ public:
 	int * Width;
 	int * Height;
 
+	AudioSourceStorage * mAudioSourceStorage;
 	ShaderSourceStorage * mShaderSourceStorage;
 	TextureStorage * mTextureStorage;
 	VertexBufferStorage * mVertexBufferStorage;
 
+	AudioManager * mAudioManager;
 	SceneManager * mSceneManager;
 	AAssetManager * mAssetManager;
 	Renderer* mRenderer;

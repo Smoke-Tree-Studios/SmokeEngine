@@ -23,9 +23,9 @@ void TextureStorage::AppendTexture(Texture* texture)
 
 void TextureStorage::DeleteTexture(std::string id)
 {
-	Texture * ltexture = _textures[id];
+	delete(_textures[id]);
 	_textures.erase(id);
-	delete(ltexture);
+	
 }
 
 Texture* TextureStorage::GetTexture(std::string id)

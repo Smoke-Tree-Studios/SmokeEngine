@@ -18,9 +18,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Include\Storage\AudioSourceStorage.h" />
     <ClInclude Include="Include\Audio\AudioPlayer.h" />
     <ClInclude Include="Include\Audio\AudioSource.h" />
-    <ClInclude Include="Include\Storage\AudioStorage.h" />
     <ClInclude Include="Include\Audio\AudioManager.h" />
     <ClInclude Include="Include\Node\AttachmentNode\AttachmentNode.h" />
     <ClInclude Include="Include\Render\Model.h" />
@@ -58,9 +58,9 @@
     <ClInclude Include="Include\Node\SharedNodeInfo.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\AudioSourceStorage.cpp" />
     <ClCompile Include="Source\AudioPlayer.cpp" />
     <ClCompile Include="Source\AudioSource.cpp" />
-    <ClCompile Include="Source\AudioStorage.cpp" />
     <ClCompile Include="Source\AudioManager.cpp" />
     <ClCompile Include="Source\SharedNodeInfo.cpp" />
     <ClCompile Include="Source\LightAttachmentNode.cpp" />

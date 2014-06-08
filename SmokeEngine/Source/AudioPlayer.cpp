@@ -2,20 +2,20 @@
 #include "Audio\AudioSource.h"
 #include "S_Debug.h";
 
-AudioPlayer::AudioPlayer(SLEngineItf * EngineObject,AudioSource * src,SLObjectItf * _outputMixerObject)
+AudioPlayer::AudioPlayer(SLEngineItf* EngineObject,AudioSource * src,SLObjectItf*  _outputMixerObject)
 {
 
-	SLDataSink* laudioSink = new SLDataSink();
+	SLDataSink laudioSink;
 
 	SLDataLocator_OutputMix loutPutMix = {SL_DATALOCATOR_OUTPUTMIX,*_outputMixerObject};
-	laudioSink->pLocator = &loutPutMix;
-	laudioSink->pFormat = NULL;
+	laudioSink.pLocator = &loutPutMix;
+	laudioSink.pFormat = NULL;
 
-	SLInterfaceID ids[3] = {SL_IID_SEEK, SL_IID_MUTESOLO, SL_IID_VOLUME};
-	SLboolean req[3] = {SL_BOOLEAN_TRUE, SL_BOOLEAN_TRUE,SL_BOOLEAN_TRUE};
+	SLInterfaceID ids[4] = {SL_IID_SEEK, SL_IID_MUTESOLO, SL_IID_VOLUME,SL_IID_PLAY};
+	SLboolean req[4] = {SL_BOOLEAN_TRUE, SL_BOOLEAN_TRUE,SL_BOOLEAN_TRUE,SL_BOOLEAN_TRUE};
+
 	SLEngineItf lengine = (*EngineObject);
-
-	SLresult lresult = (*lengine)->CreateAudioPlayer(lengine,&_playerObject,src->getAudioSource(),laudioSink,3,ids,req);
+	SLresult lresult = (*lengine)->CreateAudioPlayer(lengine,&_playerObject,src->getAudioSource(),&laudioSink,4,ids,req);
 	if(lresult != SL_RESULT_SUCCESS)
 		ERROR("can't create audio player");
 
@@ -38,6 +38,8 @@ AudioPlayer::AudioPlayer(SLEngineItf * EngineObject,AudioSource * src,SLObjectIt
 	lresult = (*_playerObject)->GetInterface(_playerObject,SL_IID_VOLUME,&_playerVolume);
 	if(lresult != SL_RESULT_SUCCESS)
 		ERROR("can't create player volume");
+
+	(*_playerPlay)->SetPlayState(_playerPlay,SL_PLAYSTATE_PLAYING);
 }
 
 void AudioPlayer::SetLooped(bool state)

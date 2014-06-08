@@ -3,6 +3,8 @@
 #include "Storage/ShaderSourceStorage.h"
 #include "Storage/TextureStorage.h"
 #include "Storage/VertexBufferStorage.h"
+#include "Audio/AudioManager.h"
+#include "Storage/AudioSourceStorage.h"
 
 SmokeEngine::SmokeEngine(AAssetManager * assetManager)
 {
@@ -10,7 +12,9 @@ SmokeEngine::SmokeEngine(AAssetManager * assetManager)
 	mShaderSourceStorage = new ShaderSourceStorage();
 	mTextureStorage = new TextureStorage();
 	mVertexBufferStorage = new VertexBufferStorage();
+	mAudioManager = new AudioManager();
 
+	mAudioSourceStorage = new AudioSourceStorage();
 	mRenderer = new Renderer();
 	mAssetManager = assetManager;
 	mSceneManager = new SceneManager(this);

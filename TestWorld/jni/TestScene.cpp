@@ -17,11 +17,16 @@
 #include "Utility\Camera.h"
 
 #include "Utility\Texture.h"
+#include "Audio\AudioSource.h"
+#include "Audio\AudioManager.h"
+#include "Audio\AudioPlayer.h"
 
 #include "math.h"
 
 TestScene::TestScene(SmokeEngine* smokeEngine,Camera * camera) : SceneNode(smokeEngine,camera)
 {
+		AudioPlayer* p = this->mSmokeEngine->mAudioManager->PlayTrack( new AudioSource("W1_Level_01.ogg",this->mSceneManager->mSmokeEngine->mAssetManager));
+
 	Source * frag = new Source("phongshading.fs",this->mSmokeEngine->mAssetManager);
 	Source * vertex = new Source("basic.vs",this->mSmokeEngine->mAssetManager);
 	VertexBufferObjectWithSubData * _subData = new VertexBufferObjectWithSubData();
@@ -38,6 +43,8 @@ TestScene::TestScene(SmokeEngine* smokeEngine,Camera * camera) : SceneNode(smoke
 
 	Texture * t = new Texture("test-pattern.png",this->mSceneManager->mSmokeEngine->mAssetManager); 
 	_testObject->mRenderObject->mShader->SetTexture("in_BaseImage",t,0);
+
+
 }
 
 

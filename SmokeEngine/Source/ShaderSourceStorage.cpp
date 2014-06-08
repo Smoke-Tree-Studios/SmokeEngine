@@ -37,6 +37,12 @@ Source* ShaderSourceStorage::GetSource(std::string id, GLenum Type)
 	return NULL;
 }
 
+void ShaderSourceStorage::DeleteSource(std::string id)
+{
+	delete(_shaderSource[id]);
+	_shaderSource.erase(id);
+}
+
 bool ShaderSourceStorage::IsSourceUsed(std::string id,GLenum Type)
 {
 	std::string lid = "";
