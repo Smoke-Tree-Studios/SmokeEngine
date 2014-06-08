@@ -2,6 +2,7 @@
 #include "Node\SceneNode.h"
 #include "SmokeEngine.h"
 
+
 SceneManager::SceneManager(SmokeEngine* smokeEngine)
 {
 	mSmokeEngine = smokeEngine;
@@ -21,7 +22,9 @@ void SceneManager::AppendScene(std::string id, SceneNode * node)
 
 void SceneManager::SetActiveScene(std::string id)
 {
+
 	_activeScene = _sceneNodes[id];
+
 }
 
 SceneNode* SceneManager::GetSceneNode(std::string id)

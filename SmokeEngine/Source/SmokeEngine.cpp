@@ -19,6 +19,7 @@ SmokeEngine::SmokeEngine(AAssetManager * assetManager)
 	mAssetManager = assetManager;
 	mSceneManager = new SceneManager(this);
 	_time = clock();
+
 }
 
 

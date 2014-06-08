@@ -1,4 +1,4 @@
-﻿Build started 6/7/2014 8:46:05 PM.
+﻿Build started 6/7/2014 9:32:43 PM.
      1>Project "C:\SmokeEngine\TestWorld\TestWorld.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Tegra-Android\Debug\TestWorld.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -133,4 +133,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:12.84
+Time Elapsed 00:00:13.63

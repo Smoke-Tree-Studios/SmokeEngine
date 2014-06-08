@@ -1,16 +1,47 @@
-﻿Build started 6/7/2014 8:46:04 PM.
+﻿Build started 6/7/2014 10:09:58 PM.
      1>Project "C:\SmokeEngine\SmokeEngine\SmokeEngine.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Tegra-Android\Debug\SmokeEngine.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         All outputs are up-to-date.
-       Lib:
-         All outputs are up-to-date.
-       FinalizeBuildStatus:
-         Deleting file "Tegra-Android\Debug\SmokeEngine.unsuccessfulbuild".
-         Touching "Tegra-Android\Debug\SmokeEngine.lastbuildstate".
-     1>Done Building Project "C:\SmokeEngine\SmokeEngine\SmokeEngine.vcxproj" (build target(s)).
+         C:\NVPACK\android-ndk-r9b\toolchains\arm-linux-androideabi-4.8\prebuilt\windows\bin\arm-linux-androideabi-g++.exe 
+         ObjectNode.cpp
+         Renderer.cpp
+         RenderObject.cpp
+         Model.cpp
+         C:\SmokeEngine\SmokeEngine\Source\ObjectNode.cpp(4): includes this header: 0:
+     1>C:\SmokeEngine\SmokeEngine\Include\Node\SceneNode.h(41,31): error : 'AInputEvent' was not declared in this scope
+           virtual void Input(std::list<AInputEvent*> events);
+                                        ^
+     1>C:\SmokeEngine\SmokeEngine\Include\Node\SceneNode.h(41,43): error : template argument 1 is invalid
+           virtual void Input(std::list<AInputEvent*> events);
+                                                    ^
+     1>C:\SmokeEngine\SmokeEngine\Include\Node\SceneNode.h(41,43): error : template argument 2 is invalid
+         C:\SmokeEngine\SmokeEngine\Source\Renderer.cpp(2): includes this header: 0:
+     1>C:\SmokeEngine\SmokeEngine\Include\Node\SceneNode.h(41,31): error : 'AInputEvent' was not declared in this scope
+           virtual void Input(std::list<AInputEvent*> events);
+                                        ^
+     1>C:\SmokeEngine\SmokeEngine\Include\Node\SceneNode.h(41,43): error : template argument 1 is invalid
+           virtual void Input(std::list<AInputEvent*> events);
+                                                    ^
+     1>C:\SmokeEngine\SmokeEngine\Include\Node\SceneNode.h(41,43): error : template argument 2 is invalid
+         C:\SmokeEngine\SmokeEngine\Source\RenderObject.cpp(3): includes this header: 0:
+     1>C:\SmokeEngine\SmokeEngine\Include\Node\SceneNode.h(41,31): error : 'AInputEvent' was not declared in this scope
+           virtual void Input(std::list<AInputEvent*> events);
+                                        ^
+     1>C:\SmokeEngine\SmokeEngine\Include\Node\SceneNode.h(41,43): error : template argument 1 is invalid
+           virtual void Input(std::list<AInputEvent*> events);
+                                                    ^
+     1>C:\SmokeEngine\SmokeEngine\Include\Node\SceneNode.h(41,43): error : template argument 2 is invalid
+         C:\SmokeEngine\SmokeEngine\Source\Model.cpp(6): includes this header: 0:
+     1>C:\SmokeEngine\SmokeEngine\Include\Node\SceneNode.h(41,31): error : 'AInputEvent' was not declared in this scope
+           virtual void Input(std::list<AInputEvent*> events);
+                                        ^
+     1>C:\SmokeEngine\SmokeEngine\Include\Node\SceneNode.h(41,43): error : template argument 1 is invalid
+           virtual void Input(std::list<AInputEvent*> events);
+                                                    ^
+     1>C:\SmokeEngine\SmokeEngine\Include\Node\SceneNode.h(41,43): error : template argument 2 is invalid
+     1>Done Building Project "C:\SmokeEngine\SmokeEngine\SmokeEngine.vcxproj" (build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:00.71
+Time Elapsed 00:00:01.14

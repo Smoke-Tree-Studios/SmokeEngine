@@ -39,16 +39,17 @@ AudioPlayer::AudioPlayer(SLEngineItf* EngineObject,AudioSource * src,SLObjectItf
 	if(lresult != SL_RESULT_SUCCESS)
 		ERROR("can't create player volume");
 
-	(*_playerPlay)->SetPlayState(_playerPlay,SL_PLAYSTATE_PLAYING);
+	this->SetPaused(false);
 }
 
 void AudioPlayer::SetLooped(bool state)
 {
+	(*_playerSeek)->SetLoop(_playerSeek,(SLboolean)state,0,SL_TIME_UNKNOWN);
 }
 
 void AudioPlayer::SetPaused(bool state)
 {
-	if(state)
+	if(!state)
 	{
 		(*_playerPlay)->SetPlayState(_playerPlay,SL_PLAYSTATE_PLAYING);
 	}
