@@ -22,6 +22,7 @@
 #include "Audio\AudioPlayer.h"
 
 #include "math.h"
+#include "android\input.h"
 
 
 
@@ -68,4 +69,9 @@ void TestScene::Update(float deltaT)
 	
 	_testObject->Rotation = Quaternion(x,3.14f,0);
 	 //__android_log_print(ANDROID_LOG_INFO,"SMOKE_ENGINE","DELTA: %f\n",deltaT);
+}
+
+void TestScene::Input(AInputQueue* queue,AInputEvent* Event)
+{
+
 }

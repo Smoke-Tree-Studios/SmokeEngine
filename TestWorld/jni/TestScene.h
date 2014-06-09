@@ -3,6 +3,7 @@
 
 class Node;
 class ObjectNode;
+class AInputQueue;
 class TestScene : public SceneNode
 {
 private:
@@ -16,5 +17,6 @@ public:
 	~TestScene(void);
 
 	virtual void Update(float deltaT);
+	virtual void Input(AInputQueue* queue,AInputEvent* Event);
 };
 

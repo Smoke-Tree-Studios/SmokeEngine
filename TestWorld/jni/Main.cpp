@@ -13,6 +13,7 @@
 #include "TestScene.h"
 #include "Utility\Camera.h"
 
+
 namespace boost
 {
 	void throw_exception(std::exception const&)

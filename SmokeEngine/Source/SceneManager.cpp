@@ -20,11 +20,20 @@ void SceneManager::AppendScene(std::string id, SceneNode * node)
 	_sceneNodes.insert(std::pair<std::string,SceneNode*>(id,node));
 }
 
+void  SceneManager::DeleteScene(std::string id)
+{
+	delete(_sceneNodes[id]);
+	_sceneNodes.erase(id);
+}
 
 void SceneManager::SetActiveScene(std::string id)
 {
 	_activeScene = _sceneNodes[id];
 
+}
+
+void SceneManager::Input(AInputQueue* queue,AInputEvent* Event)
+{
 }
 
 SceneNode* SceneManager::GetSceneNode(std::string id)

@@ -11,5 +11,7 @@ SharedNodeInfo::SharedNodeInfo(void)
 
 SharedNodeInfo::~SharedNodeInfo(void)
 {
+	delete(mNodes);
+	delete(mAttachmentNodes);
 
 }
