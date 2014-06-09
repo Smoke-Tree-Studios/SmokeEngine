@@ -11,7 +11,6 @@
 #include "SmokeEngine.h"
 #include "Node\SharedNodeInfo.h"
 
-#include "egl\egl.h"
 
 SceneNode::RootNode::RootNode(SceneNode * sceneNode,SharedNodeInfo* sharedNodeInfo, std::string ID) : Node(ID) 
 {
@@ -47,5 +46,5 @@ SceneNode::~SceneNode(void)
 {
 	delete(mRootSceneNode);
 	delete(mRootOverlayNode);
-
+	delete(_sharedNodeInfo);
 }

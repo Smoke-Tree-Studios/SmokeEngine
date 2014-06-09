@@ -6,6 +6,8 @@ class SmokeEngine;
 class SceneNode;
 class SmokeEngine;
 class AAssetManager;
+class AInputQueue;
+class AInputEvent;
 class SceneManager
 {
 	private:
@@ -33,6 +35,13 @@ class SceneManager
 		*updates the active scene and draws
 		**/
 		void Update(float DeltaT);
+
+		void Input(AInputQueue* queue,AInputEvent* Event);
+
+		/**
+		*delets the scene
+		**/
+		void DeleteScene(std::string id);
 
 		/**
 		*gets the scene node based on the given set id from append

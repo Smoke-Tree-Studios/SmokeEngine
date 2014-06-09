@@ -9,6 +9,7 @@ class SmokeEngine;
 class SceneManager;
 class AttachmentNode;
 class SharedNodeInfo;
+class AInputQueue;
 class SceneNode
 {
 private:
@@ -26,9 +27,6 @@ public:
 	Camera * mMainCamera;
 
 	ViewStorage * mViewStorage;
-
-
-
 	RootNode * mRootSceneNode;
 	RootNode * mRootOverlayNode;
 
@@ -38,7 +36,7 @@ public:
 	*updates the scene with the given deltaT value
 	**/
 	virtual void Update(float deltaT) =0;
-	//virtual void Input();
+	virtual void Input(AInputQueue* queue,AInputEvent* Event) = 0;
 
 	SceneNode( SmokeEngine* smokeEngine,Camera * camera);
 	~SceneNode(void);

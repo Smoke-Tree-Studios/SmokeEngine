@@ -29,7 +29,7 @@ Node::~Node(void)
 			_parentNode->_children->erase(literator);
 		}
 	}
-
+	delete(_children);
 }
 
 std::string Node::GetID()
@@ -80,7 +80,6 @@ void Node::AppendNode(Node * n)
 	n->_sharedNodeInfo = _sharedNodeInfo;
 	
 	(*_sharedNodeInfo->mNodes)[n->_id] = n;
-	//(*_nodes)[n->_id] = n;
 	
 	_children->push_back(n);
 
