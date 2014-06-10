@@ -1,10 +1,9 @@
-﻿Build started 6/8/2014 9:16:07 PM.
+﻿Build started 6/9/2014 7:02:48 PM.
      1>Project "C:\SmokeEngine\TestWorld\TestWorld.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Tegra-Android\Debug\TestWorld.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          C:\NVPACK\android-ndk-r9b\toolchains\arm-linux-androideabi-4.8\prebuilt\windows\bin\arm-linux-androideabi-g++.exe 
-         Main.cpp
          TestScene.cpp
        Link:
          C:\NVPACK\android-ndk-r9b\toolchains\arm-linux-androideabi-4.8\prebuilt\windows\bin\arm-linux-androideabi-g++.exe Tegra-Android/Debug/Main.o Tegra-Android/Debug/TestScene.o C:/SmokeEngine/Tegra-Android/Debug/libSmokeEngine.a  -oC:/SmokeEngine/Tegra-Android/Debug/libTestWorld.so "-landroid" "-lstdc++" "-lc" "-lm" "-llog" "-ldl" "-lz" "-lGLESv2" "-lEGL" "-lOpenSLES" -lc -lm -llog -lgcc -Wl,-soname,libSmokeEngine.a -Wl,--no-undefined -fuse-ld=bfd -L"C:/SmokeEngine//Tegra-Android/Debug" -LC:/SmokeEngine//Library/boost_1_55_0/libs/ -L"C:/NVPACK/android-ndk-r9b/platforms/android-15/arch-arm/usr/lib" -L"C:/NVPACK/android-ndk-r9b/sources/cxx-stl/gnu-libstdc++/4.8/libs/armeabi-v7a" -L"C:/NVPACK/android-ndk-r9b/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/lib/gcc/arm-linux-androideabi/4.8/armv7-a" -L"C:/NVPACK/android-ndk-r9b/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/lib/gcc/arm-linux-androideabi/4.8/armv7-a" -shared -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -Wl,-rpath-link=C:/NVPACK/android-ndk-r9b/platforms/android-15/arch-arm/usr/lib --sysroot=C:/NVPACK/android-ndk-r9b/platforms/android-15/arch-arm "-lsupc++" "-lgnustl_static" "-lgcc" 
@@ -135,4 +134,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:13.10
+Time Elapsed 00:00:13.13

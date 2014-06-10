@@ -56,8 +56,10 @@
     <ClInclude Include="Include\Render\Sprite.h" />
     <ClInclude Include="Include\Node\AttachmentNode\LightAttachmentNode.h" />
     <ClInclude Include="Include\Node\SharedNodeInfo.h" />
+    <ClInclude Include="Include\Input\InputEvent.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\InputEvent.cpp" />
     <ClCompile Include="Source\AudioSourceStorage.cpp" />
     <ClCompile Include="Source\AudioPlayer.cpp" />
     <ClCompile Include="Source\AudioSource.cpp" />

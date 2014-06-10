@@ -32,8 +32,9 @@ void SceneManager::SetActiveScene(std::string id)
 
 }
 
-void SceneManager::Input(AInputQueue* queue,AInputEvent* Event)
+void SceneManager::Input(InputEvent* Event)
 {
+	_activeScene->Input(Event);
 }
 
 SceneNode* SceneManager::GetSceneNode(std::string id)

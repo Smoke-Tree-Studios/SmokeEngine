@@ -6,7 +6,8 @@
 #include "Audio/AudioManager.h"
 #include "Storage/AudioSourceStorage.h"
 
-#include "android\input.h"
+#include "android/input.h"
+#include "Input/InputEvent.h"
 
 SmokeEngine::SmokeEngine(AAssetManager * assetManager)
 {
@@ -49,8 +50,11 @@ void SmokeEngine::Step()
 	while (AInputQueue_hasEvents(queue)) {
 		AInputQueue_getEvent(queue, events);
 		SingleEvent = events[0];
-		
-		mSceneManager->Input(queue,SingleEvent);
+
+		InputEvent * levent = new InputEvent(SingleEvent);
+		mSceneManager->Input(levent);
+		delete(levent);
+
 		AInputQueue_finishEvent(queue,SingleEvent,1);
 	}
 

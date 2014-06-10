@@ -17,6 +17,6 @@ public:
 	~TestScene(void);
 
 	virtual void Update(float deltaT);
-	virtual void Input(AInputQueue* queue,AInputEvent* Event);
+	virtual void Input(InputEvent* Event);
 };
 

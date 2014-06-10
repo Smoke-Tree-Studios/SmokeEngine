@@ -93,6 +93,7 @@
     <ClInclude Include="Include\Audio\AudioSource.h" />
     <ClInclude Include="Include\Audio\AudioPlayer.h" />
     <ClInclude Include="Include\Storage\AudioSourceStorage.h" />
+    <ClInclude Include="Include\Input\InputEvent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\BoundedBox.cpp">
@@ -193,6 +194,7 @@
     <ClCompile Include="Source\AudioSource.cpp" />
     <ClCompile Include="Source\AudioPlayer.cpp" />
     <ClCompile Include="Source\AudioSourceStorage.cpp" />
+    <ClCompile Include="Source\InputEvent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source">

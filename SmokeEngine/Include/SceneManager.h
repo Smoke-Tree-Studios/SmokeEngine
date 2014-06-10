@@ -8,6 +8,7 @@ class SmokeEngine;
 class AAssetManager;
 class AInputQueue;
 class AInputEvent;
+class InputEvent;
 class SceneManager
 {
 	private:
@@ -36,7 +37,7 @@ class SceneManager
 		**/
 		void Update(float DeltaT);
 
-		void Input(AInputQueue* queue,AInputEvent* Event);
+		void Input(InputEvent* Event);
 
 		/**
 		*delets the scene

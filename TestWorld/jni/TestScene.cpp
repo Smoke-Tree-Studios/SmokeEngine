@@ -23,7 +23,7 @@
 
 #include "math.h"
 #include "android\input.h"
-
+#include "Input\InputEvent.h"
 
 
 TestScene::TestScene(SmokeEngine* smokeEngine,Camera * camera) : SceneNode(smokeEngine,camera)
@@ -71,7 +71,7 @@ void TestScene::Update(float deltaT)
 	 //__android_log_print(ANDROID_LOG_INFO,"SMOKE_ENGINE","DELTA: %f\n",deltaT);
 }
 
-void TestScene::Input(AInputQueue* queue,AInputEvent* Event)
+void TestScene::Input(InputEvent* Event)
 {
 
 }

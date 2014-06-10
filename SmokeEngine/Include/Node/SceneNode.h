@@ -36,7 +36,7 @@ public:
 	*updates the scene with the given deltaT value
 	**/
 	virtual void Update(float deltaT) =0;
-	virtual void Input(AInputQueue* queue,AInputEvent* Event) = 0;
+	virtual void Input(InputEvent* Event) = 0;
 
 	SceneNode( SmokeEngine* smokeEngine,Camera * camera);
 	~SceneNode(void);
