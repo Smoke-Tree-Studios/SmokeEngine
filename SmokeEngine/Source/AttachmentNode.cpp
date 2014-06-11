@@ -1,6 +1,4 @@
 #include "Node\AttachmentNode\AttachmentNode.h"
-#include "BulletCollision\CollisionDispatch\btGhostObject.h"
-#include <btBulletDynamicsCommon.h>
 #include "SmokeEngine.h"
 #include "Node\SharedNodeInfo.h"
 #include <map>

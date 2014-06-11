@@ -3,6 +3,14 @@
 #include "SceneManager.h"
 #include "android\asset_manager.h"
 #include <time.h>
+
+#include <EGL/egl.h>
+#include <GLES/gl.h>
+
+#include <jni.h>
+#include <android/sensor.h>
+#include <android/log.h>
+#include <ctime>
 class btDiscreteDynamicsWorld;
 class AAssetManager;
 class SceneManager;
@@ -11,11 +19,16 @@ class TextureStorage;
 class VertexBufferStorage;
 class AudioSourceStorage;
 class AudioManager;
+
+
+
 class SmokeEngine
 {
 private:
-	 clock_t _time;
+	 double _time;
+
 public:
+
 	int * Width;
 	int * Height;
 
@@ -31,6 +44,7 @@ public:
 	
 
 	void Step();
+	void Draw();
 
 	SmokeEngine(AAssetManager * assetManager);
 	~SmokeEngine(void);

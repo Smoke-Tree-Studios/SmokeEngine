@@ -1,5 +1,4 @@
 #include "SmokeEngine.h"
-#include <btBulletDynamicsCommon.h>
 #include "Storage/ShaderSourceStorage.h"
 #include "Storage/TextureStorage.h"
 #include "Storage/VertexBufferStorage.h"
@@ -9,7 +8,15 @@
 #include "android/input.h"
 #include "Input/InputEvent.h"
 
-SmokeEngine::SmokeEngine(AAssetManager * assetManager)
+
+#include <EGL/egl.h>
+#include <GLES/gl.h>
+
+#include <jni.h>
+#include <android/sensor.h>
+#include <android/log.h>
+
+SmokeEngine::SmokeEngine(AAssetManager * AssetManager)
 {
 	
 	mAudioManager = new AudioManager();
@@ -19,7 +26,7 @@ SmokeEngine::SmokeEngine(AAssetManager * assetManager)
 
 	mAudioSourceStorage = new AudioSourceStorage();
 	mRenderer = new Renderer();
-	mAssetManager = assetManager;
+	mAssetManager =AssetManager;
 	mSceneManager = new SceneManager(this);
 	_time = clock();
 
@@ -32,30 +39,39 @@ SmokeEngine::~SmokeEngine(void)
 
 }
 
+
 void SmokeEngine::Step()
 {
 	
-	float ldiff = ((((double)( clock() - _time))/CLOCKS_PER_SEC) * 1000.0);
+	double ldiff = ((((double)( clock() - _time))/CLOCKS_PER_SEC) * 1000.0);
 	//updates the AudioManager
+	this->Draw();
 	mAudioManager->Update();
 	mSceneManager->Update(ldiff);
-	mRenderer->Draw(mSceneManager->GetActiveSceneNode());
 	_time = clock();
+	
 
-	//processes events
-	AInputQueue* queue;
-	AInputEvent** events;
+	/*AInputEvent** events;
 	AInputEvent* SingleEvent;
 	int numberOfEvents = 0;
-	while (AInputQueue_hasEvents(queue)) {
-		AInputQueue_getEvent(queue, events);
+	while (AInputQueue_hasEvents(_queue)) {
+		AInputQueue_getEvent(_queue, events);
 		SingleEvent = events[0];
 
 		InputEvent * levent = new InputEvent(SingleEvent);
 		mSceneManager->Input(levent);
 		delete(levent);
 
-		AInputQueue_finishEvent(queue,SingleEvent,1);
-	}
+		AInputQueue_finishEvent(_queue,SingleEvent,1);
+	}*/
 
 }
+
+void SmokeEngine::Draw()
+{
+	glEnable(GL_DEPTH_TEST);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glClearColor(0.0f,0.0f,0.0f,1.0f);
+	mRenderer->Draw(mSceneManager->GetActiveSceneNode());
+}
+

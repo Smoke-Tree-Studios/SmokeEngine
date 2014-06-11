@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SmokeEngine", "SmokeEngine\SmokeEngine.vcxproj", "{293D3ECB-3EA2-400C-9D37-EDF3FD59D4AA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestWorld", "TestWorld\TestWorld.vcxproj", "{B99564E7-7EDE-4E73-851F-B89AD4B0F7CE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AndroidTest", "AndroidTest\AndroidTest.vcxproj", "{D4376FBA-E1F4-42A5-8FE3-4F507B8EA445}"
 	ProjectSection(ProjectDependencies) = postProject
 		{293D3ECB-3EA2-400C-9D37-EDF3FD59D4AA} = {293D3ECB-3EA2-400C-9D37-EDF3FD59D4AA}
 	EndProjectSection
@@ -21,12 +21,12 @@ Global
 		{293D3ECB-3EA2-400C-9D37-EDF3FD59D4AA}.Profile|Tegra-Android.Build.0 = Profile|Tegra-Android
 		{293D3ECB-3EA2-400C-9D37-EDF3FD59D4AA}.Release|Tegra-Android.ActiveCfg = Release|Tegra-Android
 		{293D3ECB-3EA2-400C-9D37-EDF3FD59D4AA}.Release|Tegra-Android.Build.0 = Release|Tegra-Android
-		{B99564E7-7EDE-4E73-851F-B89AD4B0F7CE}.Debug|Tegra-Android.ActiveCfg = Debug|Tegra-Android
-		{B99564E7-7EDE-4E73-851F-B89AD4B0F7CE}.Debug|Tegra-Android.Build.0 = Debug|Tegra-Android
-		{B99564E7-7EDE-4E73-851F-B89AD4B0F7CE}.Profile|Tegra-Android.ActiveCfg = Profile|Tegra-Android
-		{B99564E7-7EDE-4E73-851F-B89AD4B0F7CE}.Profile|Tegra-Android.Build.0 = Profile|Tegra-Android
-		{B99564E7-7EDE-4E73-851F-B89AD4B0F7CE}.Release|Tegra-Android.ActiveCfg = Release|Tegra-Android
-		{B99564E7-7EDE-4E73-851F-B89AD4B0F7CE}.Release|Tegra-Android.Build.0 = Release|Tegra-Android
+		{D4376FBA-E1F4-42A5-8FE3-4F507B8EA445}.Debug|Tegra-Android.ActiveCfg = Debug|Tegra-Android
+		{D4376FBA-E1F4-42A5-8FE3-4F507B8EA445}.Debug|Tegra-Android.Build.0 = Debug|Tegra-Android
+		{D4376FBA-E1F4-42A5-8FE3-4F507B8EA445}.Profile|Tegra-Android.ActiveCfg = Profile|Tegra-Android
+		{D4376FBA-E1F4-42A5-8FE3-4F507B8EA445}.Profile|Tegra-Android.Build.0 = Profile|Tegra-Android
+		{D4376FBA-E1F4-42A5-8FE3-4F507B8EA445}.Release|Tegra-Android.ActiveCfg = Release|Tegra-Android
+		{D4376FBA-E1F4-42A5-8FE3-4F507B8EA445}.Release|Tegra-Android.Build.0 = Release|Tegra-Android
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

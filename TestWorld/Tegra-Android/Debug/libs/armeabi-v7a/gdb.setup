@@ -1,5 +1,0 @@
-# GENERATED FILE
-set solib-search-path C:/SmokeEngine/Tegra-Android/Debug;C:/NVPACK/android-ndk-r9b/platforms/android-15/arch-arm/usr/lib
-directory "C:/SmokeEngine/TestWorld/jni" "C:/NVPACK/android-ndk-r9b/sources/cxx-stl/system" "C:/NVPACK/android-ndk-r9b/platforms/android-15/arch-arm/usr/include"
-# BEGIN USER COMMANDS
-# END USER COMMANDS
