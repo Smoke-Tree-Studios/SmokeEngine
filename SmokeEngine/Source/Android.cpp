@@ -148,6 +148,7 @@ void Android::Start()
 		 {
 			this->smokeEngine->Step();
 			eglSwapBuffers(this->_display, this->_surface);
+	
 		 }
 	}
 }

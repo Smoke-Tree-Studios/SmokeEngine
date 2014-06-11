@@ -63,12 +63,16 @@ void TestScene::Update(float deltaT)
 
 	_testObject->mRenderObject->mShader->SetMatrix4x4("in_light",this->mMainCamera->GetTransformMatrixRelativeToNode(_lightNode));
 	Matrix4x4 t = this->mMainCamera->GetTransformMatrixRelativeToNode(_lightNode);
-	x += (deltaT*.002f);
+	x += (deltaT);
 	//this->mMainCamera->Position = Vector3(sin(x) * 5,0,0);
 	_lightNode->Position = Vector3( 100,0,0);
 	
 	_testObject->Rotation = Quaternion(x,3.14f,0);
-	 //__android_log_print(ANDROID_LOG_INFO,"SMOKE_ENGINE","DELTA: %f\n",deltaT);
+
+	
+
+
+	// __android_log_print(ANDROID_LOG_INFO,"SMOKE_ENGINE","DELTA: %f\n",((float)d.tv_nsec));
 }
 
 void TestScene::Input(InputEvent* Event)

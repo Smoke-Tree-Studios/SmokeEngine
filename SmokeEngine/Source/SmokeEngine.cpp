@@ -30,6 +30,10 @@ SmokeEngine::SmokeEngine(AAssetManager * AssetManager)
 	mSceneManager = new SceneManager(this);
 	_time = clock();
 
+	struct timespec d;
+    clock_gettime(CLOCK_MONOTONIC, &d);
+	_time = (double)( d.tv_sec+ (d.tv_nsec / 1000000000.0));
+
 }
 
 
@@ -43,13 +47,17 @@ SmokeEngine::~SmokeEngine(void)
 void SmokeEngine::Step()
 {
 	
-	double ldiff = ((((double)( clock() - _time))/CLOCKS_PER_SEC) * 1000.0);
+	struct timespec d;
+
+
+    clock_gettime(CLOCK_MONOTONIC, &d);
+	double ldiff = ((double)(( d.tv_sec + (d.tv_nsec / 1000000000.0)) - _time));
+	_time = (double)( d.tv_sec+ (d.tv_nsec / 1000000000.0));
 	//updates the AudioManager
-	this->Draw();
 	mAudioManager->Update();
 	mSceneManager->Update(ldiff);
-	_time = clock();
-	
+	Draw();
+
 
 	/*AInputEvent** events;
 	AInputEvent* SingleEvent;
@@ -66,7 +74,13 @@ void SmokeEngine::Step()
 	}*/
 
 }
-
+/*void SmokeEngine::EndStep()
+{
+	struct timespec d;
+	clock_gettime(CLOCK_MONOTONIC, &d);
+	_time = (double)( d.tv_sec+ (d.tv_nsec / 1000000000.0));
+	
+}*/
 void SmokeEngine::Draw()
 {
 	glEnable(GL_DEPTH_TEST);
