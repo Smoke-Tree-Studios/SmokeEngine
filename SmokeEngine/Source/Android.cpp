@@ -2,11 +2,11 @@
 #include "Android/android_native_app_glue.h"
 #include "SmokeEngine.h"
 #include "S_Debug.h"
+#include "Input\InputEvent.h"
 
 
 
-
-static void Intalize_Display(struct android_app* app,Android * container)
+static void IntalizemDisplay(struct android_app* app,Android * container)
 {
 	  EGLConfig lconfig;
 	  EGLint lnumConfigs;
@@ -21,41 +21,39 @@ static void Intalize_Display(struct android_app* app,Android * container)
         EGL_NONE
     };
 	 
-    container->_display = eglGetDisplay(EGL_DEFAULT_DISPLAY);
+    container->mDisplay = eglGetDisplay(EGL_DEFAULT_DISPLAY);
 
-    eglInitialize(container->_display, 0, 0);
+    eglInitialize(container->mDisplay, 0, 0);
 
     /* Here, the application chooses the configuration it desires. In this
      * sample, we have a very simplified selection process, where we pick
      * the first EGLConfig that matches our criteria */
-    eglChooseConfig(container->_display, attribs, &lconfig, 1, &lnumConfigs);
+    eglChooseConfig(container->mDisplay, attribs, &lconfig, 1, &lnumConfigs);
 
     /* EGL_NATIVE_VISUAL_ID is an attribute of the EGLConfig that is
      * guaranteed to be accepted by ANativeWindow_setBuffersGeometry().
      * As soon as we picked a EGLConfig, we can safely reconfigure the
      * ANativeWindow buffers to match, using EGL_NATIVE_VISUAL_ID. */
-    eglGetConfigAttrib(container->_display, lconfig, EGL_NATIVE_VISUAL_ID, &lformat);
-	
-   // ANativeWindow_setBuffersGeometry(engine->app->window, 0, 0, format);
-
-    container->_surface = eglCreateWindowSurface(container->_display, lconfig, app->window, NULL);
+    eglGetConfigAttrib(container->mDisplay, lconfig, EGL_NATIVE_VISUAL_ID, &lformat);
+    container->mSurface = eglCreateWindowSurface(container->mDisplay, lconfig, app->window, NULL);
 
 	EGLint contextAttrs[] = { EGL_CONTEXT_CLIENT_VERSION, 2, EGL_NONE };
 	
-    container->_context = eglCreateContext(container->_display, lconfig, NULL, contextAttrs);
+    container->mContext = eglCreateContext(container->mDisplay, lconfig, NULL, contextAttrs);
 	
-    if (eglMakeCurrent(container->_display, container->_surface, container->_surface, container->_context) == EGL_FALSE) {
+    if (eglMakeCurrent(container->mDisplay, container->mSurface, container->mSurface, container->mContext) == EGL_FALSE) {
         ERROR("Unable to eglMakeCurrent");
        // return -1;
     }
 	
-    eglQuerySurface(container->_display, container->_surface, EGL_WIDTH, &container->_width);
-    eglQuerySurface(container->_display, container->_surface, EGL_HEIGHT, &container->_height);
+    eglQuerySurface(container->mDisplay, container->mSurface, EGL_WIDTH, &container->mWidth);
+	eglQuerySurface(container->mDisplay, container->mSurface, EGL_HEIGHT, &container->mHeigh);
+
 }
 
 
-static void android_handle_cmd(struct android_app* app, int32_t cmd) {
-     Android* landroid = ((Android*)app->userData);
+static void Android_Handle_Cmd(struct android_app* app, int32_t cmd) {
+    Android* landroid = ((Android*)app->userData);
 	switch (cmd) {
         case APP_CMD_SAVE_STATE:
 
@@ -64,18 +62,22 @@ static void android_handle_cmd(struct android_app* app, int32_t cmd) {
             // The window is being shown, get it ready.
 			
             if (app->window != NULL) {
-				Intalize_Display(app,landroid);
+				IntalizemDisplay(app,landroid);
 
-				landroid->smokeEngine = new SmokeEngine(app->activity->assetManager);
+				landroid->mSmokeEngine = new SmokeEngine(app->activity->assetManager);
 				if(landroid->Initialize_Engine != NULL)
-				 landroid->Initialize_Engine(landroid->smokeEngine);
-				landroid->smokeEngine->Draw();
+				{
+					landroid->mSmokeEngine->Width = &landroid->mWidth;
+					landroid->mSmokeEngine->Height = &landroid->mHeigh;
+					landroid->Initialize_Engine(landroid->mSmokeEngine);
+				}
+				landroid->mSmokeEngine->Draw();
                 //engine_draw_frame(engine);
             }
             break;
         case APP_CMD_TERM_WINDOW:
             // The window is being hidden or closed, clean it up.
-           // engine_term_display(engine);
+           // engine_termmDisplay(engine);
             break;
         case APP_CMD_GAINED_FOCUS:
             // When our app gains focus, we start monitoring the accelerometer.
@@ -101,25 +103,38 @@ static void android_handle_cmd(struct android_app* app, int32_t cmd) {
     }
 }
 
+static int32_t Android_Handle_input(struct android_app* app, AInputEvent* event) {
+	Android* landroid = ((Android*)app->userData);  
+	if(landroid->mSmokeEngine != NULL)
+	{
+		InputEvent * levent = new InputEvent(event);
+		landroid->mSmokeEngine->mSceneManager->Input(levent);
+		delete(levent);
+	}
+    return 1;
+}
+
+
+
 /**
  * Tear down the EGL context currently associated with the display.
  */
-static void engine_term_display(Android * container) {
+static void engine_termmDisplay(Android * container) {
 
-	if (container->_display != EGL_NO_DISPLAY) {
-        eglMakeCurrent(container->_display, EGL_NO_SURFACE, EGL_NO_SURFACE, EGL_NO_CONTEXT);
+	if (container->mDisplay != EGL_NO_DISPLAY) {
+        eglMakeCurrent(container->mDisplay, EGL_NO_SURFACE, EGL_NO_SURFACE, EGL_NO_CONTEXT);
 		
-        if (container->_context != EGL_NO_CONTEXT) {
-			eglDestroyContext(container->_display, container->_context);
+        if (container->mContext != EGL_NO_CONTEXT) {
+			eglDestroyContext(container->mDisplay, container->mContext);
         }
-		if (container->_surface != EGL_NO_SURFACE) {
-            eglDestroySurface(container->_display, container->_surface);
+		if (container->mSurface != EGL_NO_SURFACE) {
+            eglDestroySurface(container->mDisplay, container->mSurface);
         }
-        eglTerminate(container->_display);
+        eglTerminate(container->mDisplay);
     }
-    container->_display = EGL_NO_DISPLAY;
-    container->_context = EGL_NO_CONTEXT;
-    container->_surface = EGL_NO_SURFACE;
+    container->mDisplay = EGL_NO_DISPLAY;
+    container->mContext = EGL_NO_CONTEXT;
+    container->mSurface = EGL_NO_SURFACE;
 }
 void Android::Start()
 {
@@ -133,21 +148,21 @@ void Android::Start()
 		 while ((ident=ALooper_pollAll(0, NULL, &events,(void**)&source)) >= 0) {
 			  // Process this event.
             if (source != NULL) {
-				source->process(this->_android, source);
+				source->process(this->mAndroid, source);
             }
 
 			  // Check if we are exiting.
-            if (this->_android->destroyRequested != 0) {
-                engine_term_display(this);
+            if (this->mAndroid->destroyRequested != 0) {
+                engine_termmDisplay(this);
                 return;
             }
 		 }
 
 
-		if(this->smokeEngine != NULL && this->_display != NULL)
+		if(this->mSmokeEngine != NULL && this->mDisplay != NULL)
 		 {
-			this->smokeEngine->Step();
-			eglSwapBuffers(this->_display, this->_surface);
+			this->mSmokeEngine->Step();
+			eglSwapBuffers(this->mDisplay, this->mSurface);
 	
 		 }
 	}
@@ -155,11 +170,12 @@ void Android::Start()
 
 Android::Android(struct android_app* android)
 {
-	_android = android;
+	mAndroid = android;
 	android->userData = this;
-	_android->onAppCmd = android_handle_cmd;
+	mAndroid->onAppCmd = Android_Handle_Cmd;
+	mAndroid->onInputEvent = Android_Handle_input;
 
-	this->smokeEngine = NULL;
+	this->mSmokeEngine = NULL;
 	this->Initialize_Engine = NULL;
 }
 

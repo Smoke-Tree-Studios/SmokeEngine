@@ -9,13 +9,13 @@ class Android
 {
 public:
 
-	EGLDisplay _display;
-	EGLSurface _surface;
-	EGLContext _context;
-	android_app* _android;
-	int _width;
-	int _height;
-	SmokeEngine * smokeEngine;
+	EGLDisplay mDisplay;
+	EGLSurface mSurface;
+	EGLContext mContext;
+	android_app* mAndroid;
+	int mWidth;
+	int mHeigh;
+	SmokeEngine * mSmokeEngine;
 
 	//function intalizer
 	void (*Initialize_Engine)(SmokeEngine * engine);

@@ -26,7 +26,7 @@ int InputEvent::GetIndex()
 
 int InputEvent::GetAction()
 {
-	return AKeyEvent_getAction(_event);
+	return AInputEvent_getType(_event);
 }
 
 float InputEvent::GetPressure()

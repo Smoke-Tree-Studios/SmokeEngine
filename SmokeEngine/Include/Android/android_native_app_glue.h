@@ -15,8 +15,8 @@
  *
  */
 
-#ifndef _ANDROID_NATIVE_APP_GLUE_H
-#define _ANDROID_NATIVE_APP_GLUE_H
+#ifndef mAndroid_NATIVE_APP_GLUE_H
+#define mAndroid_NATIVE_APP_GLUE_H
 
 #include <poll.h>
 #include <pthread.h>
@@ -346,4 +346,4 @@ extern void android_main(struct android_app* app);
 }
 #endif
 
-#endif /* _ANDROID_NATIVE_APP_GLUE_H */
+#endif /* mAndroid_NATIVE_APP_GLUE_H */

@@ -1,4 +1,4 @@
-﻿Build started 6/11/2014 3:53:54 PM.
+﻿Build started 6/11/2014 6:08:20 PM.
      1>Project "C:\SmokeEngine\AndroidTest\AndroidTest.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Tegra-Android\Debug\AndroidTest.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -103,7 +103,7 @@
          debug:
          
          BUILD SUCCESSFUL
-         Total time: 12 seconds
+         Total time: 8 seconds
          Picked up _JAVA_OPTIONS: -Xms256m -Xmx512m
          Copying file from "C:\SmokeEngine\AndroidTest\Tegra-Android\Debug\bin\AndroidTest-debug.apk" to "C:\SmokeEngine\Tegra-Android\Debug\\AndroidTest.apk".
        DeployAfterBuild:
@@ -115,4 +115,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:22.46
+Time Elapsed 00:00:11.00

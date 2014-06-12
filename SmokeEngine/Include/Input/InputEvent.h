@@ -24,9 +24,8 @@ public:
 
 	/**
 	*gets the action of the event
-	*AKEY_EVENT_ACTION_DOWN
-    *AKEY_EVENT_ACTION_UP
-    *AKEY_EVENT_ACTION_MULTIPLE
+    *AINPUT_EVENT_TYPE_KEY 
+    *AINPUT_EVENT_TYPE_MOTION
 	**/
 	int GetAction();
 

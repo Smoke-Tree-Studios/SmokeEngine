@@ -58,29 +58,8 @@ void SmokeEngine::Step()
 	mSceneManager->Update(ldiff);
 	Draw();
 
-
-	/*AInputEvent** events;
-	AInputEvent* SingleEvent;
-	int numberOfEvents = 0;
-	while (AInputQueue_hasEvents(_queue)) {
-		AInputQueue_getEvent(_queue, events);
-		SingleEvent = events[0];
-
-		InputEvent * levent = new InputEvent(SingleEvent);
-		mSceneManager->Input(levent);
-		delete(levent);
-
-		AInputQueue_finishEvent(_queue,SingleEvent,1);
-	}*/
-
 }
-/*void SmokeEngine::EndStep()
-{
-	struct timespec d;
-	clock_gettime(CLOCK_MONOTONIC, &d);
-	_time = (double)( d.tv_sec+ (d.tv_nsec / 1000000000.0));
-	
-}*/
+
 void SmokeEngine::Draw()
 {
 	glEnable(GL_DEPTH_TEST);
