@@ -1,0 +1,31 @@
+﻿Build started 6/11/2014 7:38:31 PM.
+     1>Project "C:\SmokeEngine\SmokeEngine\SmokeEngine.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Tegra-Android\Release\SmokeEngine.unsuccessfulbuild".
+       ClCompile:
+         C:\NVPACK\android-ndk-r9b\toolchains\arm-linux-androideabi-4.8\prebuilt\windows\bin\arm-linux-androideabi-g++.exe 
+         Model.cpp
+         Quaternion.cpp
+         Vector2.cpp
+         Android.cpp
+     1>C:\SmokeEngine\SmokeEngine\Source\Vector2.cpp(1,36): fatal error : Utility\Vector\Vector2.h: No such file or directory
+          #include "Utility\Vector\Vector2.h"
+                                             ^
+         compilation terminated.
+     1>C:\SmokeEngine\SmokeEngine\Source\Model.cpp(1,26): fatal error : Render\Model.h: No such file or directory
+          #include "Render\Model.h"
+                                   ^
+         compilation terminated.
+     1>C:\SmokeEngine\SmokeEngine\Source\Android.cpp(1,29): fatal error : Android/Android.h: No such file or directory
+          #include "Android/Android.h"
+                                      ^
+         compilation terminated.
+     1>C:\SmokeEngine\SmokeEngine\Source\Quaternion.cpp(1,32): fatal error : Utility\Quaternion.h: No such file or directory
+          #include "Utility\Quaternion.h"
+                                         ^
+         compilation terminated.
+     1>Done Building Project "C:\SmokeEngine\SmokeEngine\SmokeEngine.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.14

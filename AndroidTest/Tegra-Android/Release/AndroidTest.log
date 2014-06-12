@@ -1,0 +1,22 @@
+﻿Build started 6/11/2014 7:38:31 PM.
+     1>Project "C:\SmokeEngine\AndroidTest\AndroidTest.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Tegra-Android\Release\AndroidTest.unsuccessfulbuild".
+       ClCompile:
+         C:\NVPACK\android-ndk-r9b\toolchains\arm-linux-androideabi-4.8\prebuilt\windows\bin\arm-linux-androideabi-g++.exe 
+         TestScene.cpp
+         main.cpp
+         C:\SmokeEngine\AndroidTest\jni\TestScene.cpp(1): includes this header: 0:
+     1>C:\SmokeEngine\AndroidTest\jni\TestScene.h(2,28): fatal error : Node\SceneNode.h: No such file or directory
+          #include "Node\SceneNode.h"
+                                     ^
+         compilation terminated.
+     1>C:\SmokeEngine\AndroidTest\jni\main.cpp(27,45): fatal error : Android/android_native_app_glue.h: No such file or directory
+          #include "Android/android_native_app_glue.h"
+                                                      ^
+         compilation terminated.
+     1>Done Building Project "C:\SmokeEngine\AndroidTest\AndroidTest.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.14

@@ -72,7 +72,7 @@ void TestScene::Update(float deltaT)
 	
 
 
-	// __android_log_print(ANDROID_LOG_INFO,"SMOKE_ENGINE","DELTA: %f\n",((float)d.tv_nsec));
+	 //__android_log_print(ANDROID_LOG_INFO,"SMOKE_ENGINE","DELTA: \n");
 }
 
 void TestScene::Input(InputEvent* Event)

@@ -13,11 +13,14 @@ static void IntalizemDisplay(struct android_app* app,Android * container)
 	  EGLint lformat;
 
 	 const EGLint attribs[] = {
-	    EGL_SURFACE_TYPE, EGL_WINDOW_BIT,
+	    EGL_SURFACE_TYPE, EGL_WINDOW_BIT ,
+		EGL_RENDERABLE_TYPE, EGL_OPENGL_ES2_BIT,
         EGL_BLUE_SIZE, 8,
         EGL_GREEN_SIZE, 8,
         EGL_RED_SIZE, 8,
-		EGL_DEPTH_SIZE,8,
+		EGL_ALPHA_SIZE, 8,
+		EGL_BUFFER_SIZE, 32,
+		EGL_DEPTH_SIZE,24,
         EGL_NONE
     };
 	 
@@ -35,10 +38,12 @@ static void IntalizemDisplay(struct android_app* app,Android * container)
      * As soon as we picked a EGLConfig, we can safely reconfigure the
      * ANativeWindow buffers to match, using EGL_NATIVE_VISUAL_ID. */
     eglGetConfigAttrib(container->mDisplay, lconfig, EGL_NATIVE_VISUAL_ID, &lformat);
-    container->mSurface = eglCreateWindowSurface(container->mDisplay, lconfig, app->window, NULL);
+
+	ANativeWindow_setBuffersGeometry(app->window, 0, 0, lformat);
 
 	EGLint contextAttrs[] = { EGL_CONTEXT_CLIENT_VERSION, 2, EGL_NONE };
 	
+	container->mSurface = eglCreateWindowSurface(container->mDisplay, lconfig, app->window, NULL);
     container->mContext = eglCreateContext(container->mDisplay, lconfig, NULL, contextAttrs);
 	
     if (eglMakeCurrent(container->mDisplay, container->mSurface, container->mSurface, container->mContext) == EGL_FALSE) {
@@ -109,7 +114,7 @@ static int32_t Android_Handle_input(struct android_app* app, AInputEvent* event)
 	{
 		InputEvent * levent = new InputEvent(event);
 		landroid->mSmokeEngine->mSceneManager->Input(levent);
-		delete(levent);
+		delete(levent); 
 	}
     return 1;
 }
@@ -163,7 +168,8 @@ void Android::Start()
 		 {
 			this->mSmokeEngine->Step();
 			eglSwapBuffers(this->mDisplay, this->mSurface);
-	
+
+
 		 }
 	}
 }
