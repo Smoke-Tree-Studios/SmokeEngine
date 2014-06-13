@@ -26,6 +26,7 @@
     <ClInclude Include="Include\Audio\AudioManager.h" />
     <ClInclude Include="Include\Node\AttachmentNode\AttachmentNode.h" />
     <ClInclude Include="Include\Render\Model.h" />
+    <ClInclude Include="Include\Storage\Storage.h" />
     <ClInclude Include="Include\S_Debug.h" />
     <ClInclude Include="Include\Utility\BoundedBox.h" />
     <ClInclude Include="Include\Utility\Camera.h" />

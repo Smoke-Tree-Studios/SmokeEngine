@@ -61,9 +61,8 @@ static void Initialize_Engine(SmokeEngine * engine)
  */
 void android_main(struct android_app* state) {
    
-	app_dummy();
 	_android = new Android(state);
-	_android->Initialize_Engine = Initialize_Engine;
+	_android->_userData->Initialize_Engine = Initialize_Engine;
 	_android->Start();
 
 }

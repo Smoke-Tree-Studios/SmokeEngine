@@ -25,6 +25,7 @@ std::string SceneNode::RootNode::GetType()
 
 SceneNode::SceneNode(SmokeEngine* smokeEngine,Camera * camera)
 {
+	_isLoaded = false;
 
 	_sharedNodeInfo = new SharedNodeInfo();
 
@@ -38,9 +39,22 @@ SceneNode::SceneNode(SmokeEngine* smokeEngine,Camera * camera)
 	mMainCamera = camera;
 
 	mViewStorage->AddCamera("MAIN_CAMERA",mMainCamera);
-
+}
+void SceneNode::Load()
+{
+	_isLoaded = true;
 }
 
+void SceneNode::UnLoad()
+{
+	_isLoaded = false;
+}
+
+
+bool SceneNode::IsLoad()
+{
+	return _isLoaded;
+}
 
 SceneNode::~SceneNode(void)
 {

@@ -37,6 +37,10 @@ class SceneManager
 		**/
 		void Update(float DeltaT);
 
+
+		/**
+		*handles input
+		**/
 		void Input(InputEvent* Event);
 
 		/**

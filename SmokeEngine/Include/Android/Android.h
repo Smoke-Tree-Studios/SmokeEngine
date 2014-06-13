@@ -5,20 +5,32 @@
 class android_app;
 class SmokeEngine;
 
-class Android
+struct SavedData
 {
-public:
+	SmokeEngine * mSmokeEngine;
+};
 
+
+struct UserData
+{
 	EGLDisplay mDisplay;
 	EGLSurface mSurface;
 	EGLContext mContext;
-	android_app* mAndroid;
 	int mWidth;
 	int mHeigh;
-	SmokeEngine * mSmokeEngine;
-
 	//function intalizer
 	void (*Initialize_Engine)(SmokeEngine * engine);
+	SavedData mSavedData;
+};
+
+class Android
+{
+private:
+public:
+	UserData * _userData;
+	
+	android_app* mAndroid;
+
 	Android(struct android_app* android);
 	void Start();
 	~Android(void);

@@ -93,9 +93,10 @@
     <ClInclude Include="Include\Audio\AudioSource.h" />
     <ClInclude Include="Include\Audio\AudioPlayer.h" />
     <ClInclude Include="Include\Storage\AudioSourceStorage.h" />
-    <ClInclude Include="Include\Input\InputEvent.h" />
     <ClInclude Include="Include\Android\android_native_app_glue.h" />
     <ClInclude Include="Include\Android\Android.h" />
+    <ClInclude Include="Include\Storage\Storage.h" />
+    <ClInclude Include="Include\Input\InputEvent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\BoundedBox.cpp">

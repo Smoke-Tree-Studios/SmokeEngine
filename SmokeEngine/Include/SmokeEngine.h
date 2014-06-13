@@ -42,9 +42,9 @@ public:
 	AAssetManager * mAssetManager;
 	Renderer* mRenderer;
 	
-
 	void Step();
 	void Draw();
+	
 
 	SmokeEngine(AAssetManager * assetManager);
 	~SmokeEngine(void);

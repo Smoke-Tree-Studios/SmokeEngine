@@ -17,6 +17,10 @@ SceneManager::~SceneManager(void)
 
 void SceneManager::AppendScene(std::string id, SceneNode * node)
 {
+	if(!node->IsLoad())
+		node->Load();
+	node->Initialize();
+
 	_sceneNodes.insert(std::pair<std::string,SceneNode*>(id,node));
 }
 

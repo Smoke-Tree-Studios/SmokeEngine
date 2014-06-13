@@ -13,6 +13,7 @@ class AInputQueue;
 class SceneNode
 {
 private:
+	bool _isLoaded;
 	//node information that is shared between all the nodes
 	SharedNodeInfo* _sharedNodeInfo;
 protected:
@@ -37,6 +38,12 @@ public:
 	**/
 	virtual void Update(float deltaT) =0;
 	virtual void Input(InputEvent* Event) = 0;
+
+	virtual void Load();
+	virtual void UnLoad();
+	virtual void Initialize() = 0;
+
+	bool IsLoad();
 
 	SceneNode( SmokeEngine* smokeEngine,Camera * camera);
 	~SceneNode(void);

@@ -3,10 +3,10 @@
 #include "SmokeEngine.h"
 #include "S_Debug.h"
 #include "Input\InputEvent.h"
+#include "S_Debug.h"
 
 
-
-static void IntalizemDisplay(struct android_app* app,Android * container)
+static void IntalizeDisplay(struct android_app* app,UserData * container)
 {
 	  EGLConfig lconfig;
 	  EGLint lnumConfigs;
@@ -14,13 +14,11 @@ static void IntalizemDisplay(struct android_app* app,Android * container)
 
 	 const EGLint attribs[] = {
 	    EGL_SURFACE_TYPE, EGL_WINDOW_BIT ,
-		EGL_RENDERABLE_TYPE, EGL_OPENGL_ES2_BIT,
         EGL_BLUE_SIZE, 8,
         EGL_GREEN_SIZE, 8,
         EGL_RED_SIZE, 8,
 		EGL_ALPHA_SIZE, 8,
-		EGL_BUFFER_SIZE, 32,
-		EGL_DEPTH_SIZE,24,
+		EGL_DEPTH_SIZE,12,
         EGL_NONE
     };
 	 
@@ -58,27 +56,35 @@ static void IntalizemDisplay(struct android_app* app,Android * container)
 
 
 static void Android_Handle_Cmd(struct android_app* app, int32_t cmd) {
-    Android* landroid = ((Android*)app->userData);
+	//SavedData* lSavedData = ((SavedData*)app->savedState);
+	UserData* lUserData = ((UserData*)app->userData);
+	
 	switch (cmd) {
         case APP_CMD_SAVE_STATE:
+
+			app->savedStateSize = sizeof( lUserData->mSavedData);
+			app->savedState = &lUserData->mSavedData;
 
             break;
         case APP_CMD_INIT_WINDOW:
             // The window is being shown, get it ready.
 			
-            if (app->window != NULL) {
-				IntalizemDisplay(app,landroid);
+            if (app->window != NULL)
+				IntalizeDisplay(app,lUserData);
 
-				landroid->mSmokeEngine = new SmokeEngine(app->activity->assetManager);
-				if(landroid->Initialize_Engine != NULL)
+	
+
+				(*lUserData).mSavedData.mSmokeEngine->Width = &lUserData->mWidth;
+				(*lUserData).mSavedData.mSmokeEngine->Height = &lUserData->mHeigh;
+					
+				if(lUserData->Initialize_Engine != NULL)
 				{
-					landroid->mSmokeEngine->Width = &landroid->mWidth;
-					landroid->mSmokeEngine->Height = &landroid->mHeigh;
-					landroid->Initialize_Engine(landroid->mSmokeEngine);
+					lUserData->Initialize_Engine((*lUserData).mSavedData.mSmokeEngine);
 				}
-				landroid->mSmokeEngine->Draw();
+				
+				(*lUserData).mSavedData.mSmokeEngine->Draw();
                 //engine_draw_frame(engine);
-            }
+           
             break;
         case APP_CMD_TERM_WINDOW:
             // The window is being hidden or closed, clean it up.
@@ -109,11 +115,12 @@ static void Android_Handle_Cmd(struct android_app* app, int32_t cmd) {
 }
 
 static int32_t Android_Handle_input(struct android_app* app, AInputEvent* event) {
-	Android* landroid = ((Android*)app->userData);  
-	if(landroid->mSmokeEngine != NULL)
+	//SavedData* lSavedData = ((SavedData*)app->savedState);
+	UserData* lUserData = ((UserData*)app->userData);
+	if((*lUserData).mSavedData.mSmokeEngine != NULL)
 	{
 		InputEvent * levent = new InputEvent(event);
-		landroid->mSmokeEngine->mSceneManager->Input(levent);
+		(*lUserData).mSavedData.mSmokeEngine->mSceneManager->Input(levent);
 		delete(levent); 
 	}
     return 1;
@@ -124,7 +131,7 @@ static int32_t Android_Handle_input(struct android_app* app, AInputEvent* event)
 /**
  * Tear down the EGL context currently associated with the display.
  */
-static void engine_termmDisplay(Android * container) {
+static void engine_term_Display(UserData* container) {
 
 	if (container->mDisplay != EGL_NO_DISPLAY) {
         eglMakeCurrent(container->mDisplay, EGL_NO_SURFACE, EGL_NO_SURFACE, EGL_NO_CONTEXT);
@@ -158,16 +165,16 @@ void Android::Start()
 
 			  // Check if we are exiting.
             if (this->mAndroid->destroyRequested != 0) {
-                engine_termmDisplay(this);
+				engine_term_Display(this->_userData);
                 return;
             }
 		 }
 
 
-		if(this->mSmokeEngine != NULL && this->mDisplay != NULL)
+		 if(this->_userData->mSavedData.mSmokeEngine != NULL && this->_userData->mDisplay != NULL)
 		 {
-			this->mSmokeEngine->Step();
-			eglSwapBuffers(this->mDisplay, this->mSurface);
+			this->_userData->mSavedData.mSmokeEngine->Step();
+			eglSwapBuffers(this->_userData->mDisplay, this->_userData->mSurface);
 
 
 		 }
@@ -176,13 +183,28 @@ void Android::Start()
 
 Android::Android(struct android_app* android)
 {
+	this->_userData = new UserData();
+	android->userData = this->_userData;
+
+	android->savedStateSize = sizeof(android->savedState);
+	
+	ERROR("bing");
+	 if (android->savedState != NULL) {
+		 ERROR("userData");
+        // We are starting with a previous saved state; restore from it.
+		 this->_userData->mSavedData = *(struct SavedData*)android->savedState;
+    }
+	else
+	{
+		ERROR("new");
+		this->_userData->mSavedData.mSmokeEngine = new SmokeEngine(android->activity->assetManager);
+	}
+
+	this->_userData->Initialize_Engine = NULL;
+
 	mAndroid = android;
-	android->userData = this;
 	mAndroid->onAppCmd = Android_Handle_Cmd;
 	mAndroid->onInputEvent = Android_Handle_input;
-
-	this->mSmokeEngine = NULL;
-	this->Initialize_Engine = NULL;
 }
 
 
