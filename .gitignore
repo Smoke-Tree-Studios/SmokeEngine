@@ -21,3 +21,7 @@
 *.app
 
 *.apk
+
+#Debug Folder
+Debug/
+Release/
