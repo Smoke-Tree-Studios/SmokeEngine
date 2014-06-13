@@ -22,6 +22,5 @@
 
 *.apk
 
-#Debug Folder
-Debug/
-Release/
+
+Tegra-Android/
