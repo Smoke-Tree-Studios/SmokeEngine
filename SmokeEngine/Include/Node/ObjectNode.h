@@ -13,12 +13,17 @@ class ObjectNode : public Node
 {
 private:
 	std::map<std::string, AttachmentNodeCallback *> _attachmentNodeSet;
+	RenderObject * _RenderObject;
 public:
-	RenderObject * mRenderObject;
 	//the origin of the object for the given item
 	Vector3 Origin;
 
-	ObjectNode(std::string ID, RenderObject * renderObject);
+	ObjectNode(std::string ID);
+
+	void SetRenderObject(RenderObject * renderObject);
+
+	RenderObject * GetRenderObject();
+
 	virtual ~ObjectNode(void);
 
 	/**

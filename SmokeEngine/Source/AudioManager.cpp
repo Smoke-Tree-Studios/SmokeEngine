@@ -59,10 +59,22 @@ void AudioManager::Update()
 		if((*it)->GetPlayerState() == SL_PLAYEVENT_HEADATEND)
 		{
 			it=_audio.erase(it);
+			_audio.erase(it++);
+			
 		}
 	}
 }
 
+
+void AudioManager::ClearAudioBuffer()
+{
+	for (std::list<AudioPlayer*>::iterator it=_audio.begin(); it != _audio.end(); ++it)
+	{
+		it=_audio.erase(it);
+		_audio.erase(it++);
+		
+	}
+}
 
 AudioManager::~AudioManager(void)
 {

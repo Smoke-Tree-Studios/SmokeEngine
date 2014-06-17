@@ -1,4 +1,4 @@
-#include "Storage\VertexBufferStorage.h"
+ #include "Storage\VertexBufferStorage.h"
 
 VertexBufferStorage::VertexBufferStorage(void)
 {
@@ -11,6 +11,7 @@ VertexBufferStorage::~VertexBufferStorage(void)
 	{
 		delete(iter->second);
 	}
+
 }
 
 void VertexBufferStorage::AppendVertexObject(std::string id,VertexBufferObjectWithSubData* vertexObject)
@@ -67,12 +68,12 @@ bool VertexBufferStorage::IsVertexObjectWithSubDataExist(std::string id)
 void VertexBufferStorage::DeleteVertexObjectWithSubData(std::string id)
 {
 	delete(_vertexObjects[id+VERTEX_BUFFER_OBJECT_WITH_SUBDATA]);
-	_vertexObjects.erase(id);
+	_vertexObjects.erase(id+VERTEX_BUFFER_OBJECT_WITH_SUBDATA);
 }
 
 void VertexBufferStorage::DeleteVertexArryObject(std::string id)
 {
 	delete(_vertexObjects[id+VERTEX_ARRAY_OBJECT]);
-	_vertexObjects.erase(id);
+	_vertexObjects.erase(id+VERTEX_ARRAY_OBJECT);
 
 }

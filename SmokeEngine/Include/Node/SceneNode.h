@@ -41,7 +41,8 @@ public:
 
 	virtual void Load();
 	virtual void UnLoad();
-	virtual void Initialize() = 0;
+	virtual void Inintalize() = 0;
+	virtual void InintalizeScene() = 0;
 
 	bool IsLoad();
 

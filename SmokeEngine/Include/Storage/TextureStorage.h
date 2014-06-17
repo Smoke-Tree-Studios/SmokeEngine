@@ -1,6 +1,7 @@
 #pragma once
 #include "Utility\Texture.h"
 #include <map>
+#include <string>
 class TextureStorage
 {
 private:
@@ -18,6 +19,11 @@ public:
 	*removes the texture from the set 
 	**/
 	void DeleteTexture(std::string id);
+
+	/**
+	*tells if the texture is used
+	**/
+	bool IsTextureUsed(std::string id);
 
 	/**
 	*retrieves the texture from storage 

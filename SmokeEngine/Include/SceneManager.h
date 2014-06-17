@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <map>
-
+#include <list>
 class SmokeEngine;
 class SceneNode;
 class SmokeEngine;
@@ -17,11 +17,17 @@ class SceneManager
 	protected:
 
 	public:
+		std::list<std::string> GetSceneIds();
+
 		SmokeEngine* mSmokeEngine;
 		/**
 		*appends a scene to the manager that can be accessed later
 		**/
 		void AppendScene(std::string id, SceneNode * node);
+
+		void UnloadAllScenes();
+
+		void UnloadScene(std::string id);
 
 		/**
 		*sets the scene as the active view to be updated and rendered

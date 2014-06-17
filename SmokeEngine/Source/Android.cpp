@@ -4,7 +4,29 @@
 #include "S_Debug.h"
 #include "Input\InputEvent.h"
 #include "S_Debug.h"
+#include "Node/SceneNode.h"
+#include "Audio\AudioManager.h"
 
+/**
+ * Tear down the EGL context currently associated with the display.
+ */
+static void TerminateDisplay(UserData* container) {
+
+	if (container->mDisplay != EGL_NO_DISPLAY) {
+        eglMakeCurrent(container->mDisplay, EGL_NO_SURFACE, EGL_NO_SURFACE, EGL_NO_CONTEXT);
+		
+        if (container->mContext != EGL_NO_CONTEXT) {
+			eglDestroyContext(container->mDisplay, container->mContext);
+        }
+		if (container->mSurface != EGL_NO_SURFACE) {
+            eglDestroySurface(container->mDisplay, container->mSurface);
+        }
+        eglTerminate(container->mDisplay);
+    }
+    container->mDisplay = EGL_NO_DISPLAY;
+    container->mContext = EGL_NO_CONTEXT;
+    container->mSurface = EGL_NO_SURFACE;
+}
 
 static void IntalizeDisplay(struct android_app* app,UserData * container)
 {
@@ -56,39 +78,67 @@ static void IntalizeDisplay(struct android_app* app,UserData * container)
 
 
 static void Android_Handle_Cmd(struct android_app* app, int32_t cmd) {
-	//SavedData* lSavedData = ((SavedData*)app->savedState);
 	UserData* lUserData = ((UserData*)app->userData);
 	
 	switch (cmd) {
         case APP_CMD_SAVE_STATE:
+			{
+		
+				//unloads all the scenes
+				std::list<std::string> lSceneIds = lUserData->mSavedData.mSmokeEngine->mSceneManager->GetSceneIds();
+				for (std::list<std::string>::const_iterator iterator = lSceneIds.begin(); iterator != lSceneIds.end(); ++iterator) {
+					lUserData->mSavedData.mSmokeEngine->mSceneManager->GetSceneNode(*iterator)->UnLoad();
+				}
+				lUserData->mSavedData.mSmokeEngine->mAudioManager->ClearAudioBuffer();
 
-			app->savedStateSize = sizeof( lUserData->mSavedData);
-			app->savedState = &lUserData->mSavedData;
+				
+				app->savedState = malloc(sizeof(struct SavedData));
+				*((struct SavedData*)app->savedState) = lUserData->mSavedData;
+				app->savedStateSize = sizeof(struct SavedData);
+			}
 
             break;
+
+		case APP_CMD_RESUME:
+   			 ERROR("Loading From UserData");
+			 if(app->savedState != NULL)
+			 {
+				lUserData->mSavedData = *((struct SavedData*)app->savedState);
+			 }
+
+         break;
         case APP_CMD_INIT_WINDOW:
             // The window is being shown, get it ready.
 			
             if (app->window != NULL)
 				IntalizeDisplay(app,lUserData);
 
+				lUserData->mSavedData.mSmokeEngine->Width = &lUserData->mWidth;
+				lUserData->mSavedData.mSmokeEngine->Height = &lUserData->mHeigh;
 	
 
-				(*lUserData).mSavedData.mSmokeEngine->Width = &lUserData->mWidth;
-				(*lUserData).mSavedData.mSmokeEngine->Height = &lUserData->mHeigh;
-					
-				if(lUserData->Initialize_Engine != NULL)
+				if(lUserData->Initialize_Engine != NULL )
 				{
-					lUserData->Initialize_Engine((*lUserData).mSavedData.mSmokeEngine);
+					lUserData->Initialize_Engine(lUserData->mSavedData.mSmokeEngine);
+					lUserData->mSavedData.mSmokeEngine->Draw();
 				}
-				
-				(*lUserData).mSavedData.mSmokeEngine->Draw();
-                //engine_draw_frame(engine);
+				else
+				{
+					 if(lUserData->mSavedData.mSmokeEngine->mSceneManager->GetActiveSceneNode() != NULL)
+					 {
+						lUserData->mSavedData.mSmokeEngine->mSceneManager->GetActiveSceneNode()->Load();
+						lUserData->mSavedData.mSmokeEngine->mSceneManager->GetActiveSceneNode()->InintalizeScene();
+					 }
+				}
+				lUserData->Initialize_Engine =NULL;
            
             break;
         case APP_CMD_TERM_WINDOW:
+			
             // The window is being hidden or closed, clean it up.
-           // engine_termmDisplay(engine);
+            TerminateDisplay(lUserData);
+		
+			
             break;
         case APP_CMD_GAINED_FOCUS:
             // When our app gains focus, we start monitoring the accelerometer.
@@ -116,38 +166,19 @@ static void Android_Handle_Cmd(struct android_app* app, int32_t cmd) {
 
 static int32_t Android_Handle_input(struct android_app* app, AInputEvent* event) {
 	//SavedData* lSavedData = ((SavedData*)app->savedState);
-	UserData* lUserData = ((UserData*)app->userData);
-	if((*lUserData).mSavedData.mSmokeEngine != NULL)
-	{
-		InputEvent * levent = new InputEvent(event);
-		(*lUserData).mSavedData.mSmokeEngine->mSceneManager->Input(levent);
-		delete(levent); 
-	}
+	UserData lUserData = *((UserData*)app->userData);
+
+	InputEvent * levent = new InputEvent(event);
+	lUserData.mSavedData.mSmokeEngine->mSceneManager->Input(levent);
+	delete(levent); 
+
     return 1;
 }
 
 
 
-/**
- * Tear down the EGL context currently associated with the display.
- */
-static void engine_term_Display(UserData* container) {
 
-	if (container->mDisplay != EGL_NO_DISPLAY) {
-        eglMakeCurrent(container->mDisplay, EGL_NO_SURFACE, EGL_NO_SURFACE, EGL_NO_CONTEXT);
-		
-        if (container->mContext != EGL_NO_CONTEXT) {
-			eglDestroyContext(container->mDisplay, container->mContext);
-        }
-		if (container->mSurface != EGL_NO_SURFACE) {
-            eglDestroySurface(container->mDisplay, container->mSurface);
-        }
-        eglTerminate(container->mDisplay);
-    }
-    container->mDisplay = EGL_NO_DISPLAY;
-    container->mContext = EGL_NO_CONTEXT;
-    container->mSurface = EGL_NO_SURFACE;
-}
+
 void Android::Start()
 {
 	// Read all pending events.
@@ -157,6 +188,7 @@ void Android::Start()
 
 	while(1)
 	{
+
 		 while ((ident=ALooper_pollAll(0, NULL, &events,(void**)&source)) >= 0) {
 			  // Process this event.
             if (source != NULL) {
@@ -164,20 +196,18 @@ void Android::Start()
             }
 
 			  // Check if we are exiting.
-            if (this->mAndroid->destroyRequested != 0) {
-				engine_term_Display(this->_userData);
+            if (this->mAndroid->destroyRequested) {
+				TerminateDisplay(this->_userData);
                 return;
             }
 		 }
-
-
-		 if(this->_userData->mSavedData.mSmokeEngine != NULL && this->_userData->mDisplay != NULL)
-		 {
+		if( this->_userData->mDisplay != NULL)
+		{
 			this->_userData->mSavedData.mSmokeEngine->Step();
 			eglSwapBuffers(this->_userData->mDisplay, this->_userData->mSurface);
 
+		}
 
-		 }
 	}
 }
 
@@ -185,19 +215,20 @@ Android::Android(struct android_app* android)
 {
 	this->_userData = new UserData();
 	android->userData = this->_userData;
-
-	android->savedStateSize = sizeof(android->savedState);
 	
-	ERROR("bing");
 	 if (android->savedState != NULL) {
-		 ERROR("userData");
+		 ERROR("Loading From UserData");
         // We are starting with a previous saved state; restore from it.
-		 this->_userData->mSavedData = *(struct SavedData*)android->savedState;
+		 this->_userData->mSavedData = *((struct SavedData*)android->savedState);
+		 this->_userData->mSavedData.mSmokeEngine->mSceneManager->GetActiveSceneNode()->Load();
+		 this->_userData->mSavedData.mSmokeEngine->mSceneManager->GetActiveSceneNode()->InintalizeScene();
+		 
     }
 	else
 	{
 		ERROR("new");
-		this->_userData->mSavedData.mSmokeEngine = new SmokeEngine(android->activity->assetManager);
+		 this->_userData->mSavedData.mSmokeEngine = new SmokeEngine(android->activity->assetManager);
+
 	}
 
 	this->_userData->Initialize_Engine = NULL;

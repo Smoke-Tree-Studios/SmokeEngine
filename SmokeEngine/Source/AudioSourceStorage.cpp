@@ -10,6 +10,11 @@ AudioSourceStorage::AudioSourceStorage(void)
 
 AudioSourceStorage::~AudioSourceStorage(void)
 {
+	for(std::map<std::string,AudioSource*>::iterator iter = _audioSource.begin(); iter != _audioSource.end(); iter++)
+	{
+		delete(iter->second);
+	}
+
 }
 
 void AudioSourceStorage::AppendAudioSource(std::string id,AudioSource * src )
@@ -21,6 +26,18 @@ void AudioSourceStorage::RemoveAudioSource(std::string id)
 {
 	delete(_audioSource[id]);
 	_audioSource.erase(id);
+}
+
+bool AudioSourceStorage::IsAudioSourceUsed(std::string id)
+{
+	if(_audioSource.count(id))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 AudioSource*  AudioSourceStorage::GetSource(std::string id)

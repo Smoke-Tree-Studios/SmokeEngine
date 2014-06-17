@@ -8,6 +8,7 @@ SceneManager::SceneManager(SmokeEngine* smokeEngine)
 {
 	mSmokeEngine = smokeEngine;
 	_sceneNodes = std::map<std::string,SceneNode*>();
+	_activeScene = NULL;
 }
 
 SceneManager::~SceneManager(void)
@@ -17,11 +18,32 @@ SceneManager::~SceneManager(void)
 
 void SceneManager::AppendScene(std::string id, SceneNode * node)
 {
-	if(!node->IsLoad())
-		node->Load();
-	node->Initialize();
-
+	node->Inintalize();
 	_sceneNodes.insert(std::pair<std::string,SceneNode*>(id,node));
+}
+
+std::list<std::string> SceneManager::GetSceneIds()
+{
+	std::list<std::string> lids = std::list<std::string>();
+	for(std::map<std::string,SceneNode*>::iterator iter = _sceneNodes.begin(); iter != _sceneNodes.end(); iter++)
+	{
+	lids.push_back(iter->first);
+	}
+	return lids;
+}
+
+void SceneManager::UnloadAllScenes()
+{
+	for(std::map<std::string,SceneNode*>::iterator iter = _sceneNodes.begin(); iter != _sceneNodes.end(); iter++)
+	{
+		iter->second->UnLoad();
+	}
+
+}
+
+void SceneManager::UnloadScene(std::string id)
+{
+	_sceneNodes[id]->UnLoad();
 }
 
 void  SceneManager::DeleteScene(std::string id)
@@ -32,6 +54,10 @@ void  SceneManager::DeleteScene(std::string id)
 
 void SceneManager::SetActiveScene(std::string id)
 {
+	if(!_sceneNodes[id]->IsLoad())
+		_sceneNodes[id]->Load();
+	_sceneNodes[id]->InintalizeScene();
+
 	_activeScene = _sceneNodes[id];
 
 }

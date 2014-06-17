@@ -40,18 +40,23 @@ void TestScene::Load()
 {
 	SceneNode::Load();
 
-	this->mSmokeEngine->mShaderSourceStorage->AppendSource("PhongShading",new Source("phongshading.fs",this->mSmokeEngine->mAssetManager));
-	this->mSmokeEngine->mShaderSourceStorage->AppendSource("BasicVertex",new Source("basic.vs",this->mSmokeEngine->mAssetManager));
+	if(!this->mSmokeEngine->mShaderSourceStorage->IsSourceUsed("PhongShading",GL_FRAGMENT_SHADER))
+		this->mSmokeEngine->mShaderSourceStorage->AppendSource("PhongShading",new Source("phongshading.fs",this->mSmokeEngine->mAssetManager));
+	if(!this->mSmokeEngine->mShaderSourceStorage->IsSourceUsed("BasicVertex",GL_VERTEX_SHADER))
+		this->mSmokeEngine->mShaderSourceStorage->AppendSource("BasicVertex",new Source("basic.vs",this->mSmokeEngine->mAssetManager));
 	
-	VertexBufferObjectWithSubData * lsubData = new VertexBufferObjectWithSubData();
-	VertexArrayObject * lVertexArray = WaveFrontLoad::Load("Teapot.wobj",this->mSmokeEngine->mAssetManager,lsubData);
-	
-	this->mSmokeEngine->mVertexBufferStorage->AppendVertexObject("Teapot",lsubData);
-	this->mSmokeEngine->mVertexBufferStorage->AppendVertexObject("Teapot",lVertexArray);
-
+	if(!this->mSmokeEngine->mVertexBufferStorage->IsVertexArrayObjectExist("Teapot") || !this->mSmokeEngine->mVertexBufferStorage->IsVertexObjectWithSubDataExist("Teapot"))
+	{
+		VertexBufferObjectWithSubData * lsubData = new VertexBufferObjectWithSubData();
+		VertexArrayObject * lVertexArray = WaveFrontLoad::Load("Teapot.wobj",this->mSmokeEngine->mAssetManager,lsubData);
+		this->mSmokeEngine->mVertexBufferStorage->AppendVertexObject("Teapot",lsubData);
+		this->mSmokeEngine->mVertexBufferStorage->AppendVertexObject("Teapot",lVertexArray);
+	}
+	if(!this->mSmokeEngine->mTextureStorage->IsTextureUsed("test-pattern.png"))
 	this->mSmokeEngine->mTextureStorage->AppendTexture( new Texture("test-pattern.png",this->mSmokeEngine->mSceneManager->mSmokeEngine->mAssetManager));
 
-	this->mSmokeEngine->mAudioSourceStorage->AppendAudioSource("TestAudio",new AudioSource("W1_Level_01.ogg",this->mSmokeEngine->mAssetManager));
+	//if(!this->mSmokeEngine->mAudioSourceStorage->IsAudioSourceUsed("TestAudio"))
+	//this->mSmokeEngine->mAudioSourceStorage->AppendAudioSource("TestAudio",new AudioSource("W1_Level_01.ogg",this->mSmokeEngine->mAssetManager));
 	
 }
 
@@ -67,36 +72,38 @@ void TestScene::UnLoad()
 
 	this->mSmokeEngine->mTextureStorage->DeleteTexture("test-pattern.png");
 
-	this->mSmokeEngine->mAudioSourceStorage->RemoveAudioSource("TestAudio");
+	//this->mSmokeEngine->mAudioSourceStorage->RemoveAudioSource("TestAudio");
 }
 
-void TestScene::Initialize()
+void TestScene::InintalizeScene()
 {
-	this->mSmokeEngine->mAudioManager->PlayTrack( this->mSmokeEngine->mAudioSourceStorage->GetSource("TestAudio"));
-	 
-	_lightNode = new Node("Light");
-	
-	Model* m =new Model(this,
+	Model* lmodel = new Model(this,
 		this->mSmokeEngine->mVertexBufferStorage->GetVertexObjectWithSubData("Teapot"),
 		this->mSmokeEngine->mVertexBufferStorage->GetVertexArryObject("Teapot"),
 		this->mSmokeEngine->mShaderSourceStorage->GetSource("BasicVertex",GL_VERTEX_SHADER) ,
 		this->mSmokeEngine->mShaderSourceStorage->GetSource("PhongShading",GL_FRAGMENT_SHADER));
-	
-	_testObject = new ObjectNode("test",m);
+	lmodel->mShader->SetTexture("in_BaseImage",this->mSmokeEngine->mTextureStorage->GetTexture("test-pattern.png"),0);
+	_testObject->SetRenderObject(lmodel);
 
+	//this->mSmokeEngine->mAudioManager->PlayTrack( this->mSmokeEngine->mAudioSourceStorage->GetSource("TestAudio"));
+}
+
+void TestScene::Inintalize()
+{	 
+	_lightNode = new Node("Light");
+
+	_testObject = new ObjectNode("test");
 	this->mRootSceneNode->AppendNode(_testObject);
 	this->mRootSceneNode->AppendNode(_lightNode);
 	_testObject->Position = Vector3(0,-3,-30);
-
-	_testObject->mRenderObject->mShader->SetTexture("in_BaseImage",
-	this->mSmokeEngine->mTextureStorage->GetTexture("test-pattern.png"),0);
 
 	x = 0;
 }
 
 void TestScene::Update(float deltaT) 
 {
-	_testObject->mRenderObject->mShader->SetMatrix4x4("in_light",this->mMainCamera->GetTransformMatrixRelativeToNode(_lightNode));
+	_testObject->GetRenderObject()->mShader->SetMatrix4x4("in_light",this->mMainCamera->GetTransformMatrixRelativeToNode(_lightNode));
+	
 	Matrix4x4 t = this->mMainCamera->GetTransformMatrixRelativeToNode(_lightNode);
 	x += (deltaT);
 	//this->mMainCamera->Position = Vector3(sin(x) * 5,0,0);

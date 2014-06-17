@@ -10,6 +10,10 @@ ShaderSourceStorage::ShaderSourceStorage(void)
 
 ShaderSourceStorage::~ShaderSourceStorage(void)
 {
+	for(std::map<std::string,Source*>::iterator iter = _shaderSource.begin(); iter != _shaderSource.end(); iter++)
+	{
+		delete(iter->second);
+	}
 }
 
 void ShaderSourceStorage::AppendSource(std::string id, Source* source)

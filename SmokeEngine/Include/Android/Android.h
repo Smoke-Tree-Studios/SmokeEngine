@@ -2,12 +2,13 @@
 #include "stdint.h"
 #include <EGL/egl.h>
 #include <gles2/gl2.h>
+#include "SmokeEngine.h"
 class android_app;
 class SmokeEngine;
 
 struct SavedData
 {
-	SmokeEngine * mSmokeEngine;
+	SmokeEngine* mSmokeEngine;
 };
 
 
@@ -20,7 +21,7 @@ struct UserData
 	int mHeigh;
 	//function intalizer
 	void (*Initialize_Engine)(SmokeEngine * engine);
-	SavedData mSavedData;
+	struct SavedData mSavedData;
 };
 
 class Android

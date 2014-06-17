@@ -28,6 +28,8 @@ public:
 	**/
 	void PlaySound(AudioSource * src);
 
+	void ClearAudioBuffer();
+
 	void Update();
 };
 

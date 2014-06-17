@@ -44,7 +44,6 @@ public:
 	
 	void Step();
 	void Draw();
-	
 
 	SmokeEngine(AAssetManager * assetManager);
 	~SmokeEngine(void);

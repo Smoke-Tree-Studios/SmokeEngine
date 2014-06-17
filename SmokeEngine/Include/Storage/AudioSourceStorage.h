@@ -10,7 +10,7 @@ public:
 	void AppendAudioSource(std::string id,AudioSource * src );
 	void RemoveAudioSource(std::string id);
 	AudioSource *  GetSource(std::string id);
-
+	bool IsAudioSourceUsed(std::string id);
 
 	AudioSourceStorage(void);
 	~AudioSourceStorage(void);

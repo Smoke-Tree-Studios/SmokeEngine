@@ -17,10 +17,11 @@ public:
 	~TestScene(void);
 
 	virtual void Update(float deltaT);
-	virtual void Input(InputEvent* Event);
+	virtual void Input(InputEvent* Event) ;
 
 	virtual void Load();
 	virtual void UnLoad();
-	virtual void Initialize();
+	virtual void Inintalize();
+	virtual void InintalizeScene();
 };
 

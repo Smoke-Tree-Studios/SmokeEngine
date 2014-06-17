@@ -21,6 +21,18 @@ void TextureStorage::AppendTexture(Texture* texture)
 	_textures.insert(std::pair<std::string,Texture*>(texture->GetFilename(),texture));
 }
 
+bool TextureStorage::IsTextureUsed(std::string id)
+{
+	if(_textures.count(id))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 void TextureStorage::DeleteTexture(std::string id)
 {
 	delete(_textures[id]);

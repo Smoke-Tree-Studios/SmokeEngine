@@ -1,13 +1,13 @@
 #include "Node/ObjectNode.h"
 #include "Utility/Matrix/Matrix4x4.h"
-#include "Render/RenderObject.h"
 #include "Node/SceneNode.h"
 #include "Node/AttachmentNode/AttachmentNode.h"
+#include "Render\RenderObject.h"
 
-ObjectNode::ObjectNode(std::string ID, RenderObject * renderObject) : Node::Node(ID)
+ObjectNode::ObjectNode(std::string ID) : Node::Node(ID)
 {
-	mRenderObject = renderObject;
 	Origin = Vector3(0,0,0);
+	_RenderObject = NULL;
 }
 
 Matrix4x4 ObjectNode::GetMatrix()
@@ -22,8 +22,20 @@ ObjectNode::~ObjectNode(void)
 {
 }
 
+void ObjectNode::SetRenderObject(RenderObject * renderObject)
+{
+	if(_RenderObject != NULL)
+		delete(_RenderObject);
+	_RenderObject = renderObject;
+}
+
 void ObjectNode::Update()
 {
+}
+
+RenderObject * ObjectNode::GetRenderObject()
+{
+	return _RenderObject;
 }
 
 void ObjectNode::AddAttchmentNodeCallback(std::string nodeType,AttachmentNodeCallback* attachmentNodeCallback)
@@ -48,5 +60,5 @@ std::string ObjectNode::GetType()
 void ObjectNode::Draw(Matrix4x4 transform, Matrix4x4 view)
 {
 	//draws the render object
-	mRenderObject->Draw(transform,view);
+	_RenderObject->Draw(transform,view);
 }
