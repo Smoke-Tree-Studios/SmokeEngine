@@ -19,9 +19,6 @@ GLSL documentation - http://www.khronos.org/opengles/sdk/docs/man3/index.php
 
 Planned Features
 =====================
-Input System
-
-Particles
 
 optimizations to attachment system
 
