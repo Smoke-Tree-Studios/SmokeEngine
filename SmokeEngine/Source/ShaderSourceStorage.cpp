@@ -14,6 +14,7 @@ ShaderSourceStorage::~ShaderSourceStorage(void)
 	{
 		delete(iter->second);
 	}
+	_shaderSource.clear();
 }
 
 void ShaderSourceStorage::AppendSource(std::string id, Source* source)

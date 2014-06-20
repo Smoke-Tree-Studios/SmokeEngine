@@ -1,19 +1,20 @@
-#include "Render\Sprite.h"
-#include "Utility\Matrix\Matrix4x4.h"
-#include "Utility\Shader.h"
-#include "Utility\Source.h"
-#include <gles2\gl2.h>
-#include "Node\SceneNode.h"
-#include "Utility\Matrix\Matrix4x4.h"
-#include "Utility\Vector\Vector2.h"
-#include "VertexObject\VertexArrayObject.h"
-#include "VertexObject\VertexBufferObjectWithSubData.h"
-#include "Storage\VertexBufferStorage.h"
-#include "Storage\ShaderSourceStorage.h"
+#include "Render/Sprite.h"
+#include "Utility/Matrix/Matrix4x4.h"
+#include "Utility/Shader.h"
+#include "Utility/Source.h"
+#include <gles2/gl2.h>
+#include "Node/SceneNode.h"
+#include "Utility/Matrix/Matrix4x4.h"
+#include "Utility/Vector/Vector2.h"
+#include "VertexObject/VertexArrayObject.h"
+#include "VertexObject/VertexBufferObjectWithSubData.h"
+#include "Storage/VertexBufferStorage.h"
+#include "Storage/ShaderSourceStorage.h"
 #include "VertexObject/VertexBufferObjectWithSubData.h"
 
 Sprite::Sprite(SceneNode * sceneNode,Source * fragmentShader) : RenderObject(sceneNode)
 {
+	_sceneNode = sceneNode;
 
 	if(!sceneNode->mSmokeEngine->mShaderSourceStorage->IsSourceUsed(SPRITE,GL_VERTEX_SHADER))
 		sceneNode->mSmokeEngine->mShaderSourceStorage->AppendSource(SPRITE,new Source(SPRITE_VERTEX_SHADER,GL_VERTEX_SHADER));
@@ -25,8 +26,9 @@ Sprite::Sprite(SceneNode * sceneNode,Source * fragmentShader) : RenderObject(sce
 	_initialize(sceneNode);
 }
 
-Sprite::Sprite(SceneNode * sceneNode) :  RenderObject(sceneNode)
+Sprite::Sprite(SceneNode * sceneNode,Texture * texture) :  RenderObject(sceneNode)
 {
+	_sceneNode = sceneNode;
 
 	if(!sceneNode->mSmokeEngine->mShaderSourceStorage->IsSourceUsed(SPRITE,GL_VERTEX_SHADER))
 		sceneNode->mSmokeEngine->mShaderSourceStorage->AppendSource(SPRITE,new Source(SPRITE_VERTEX_SHADER,GL_VERTEX_SHADER));
@@ -36,7 +38,8 @@ Sprite::Sprite(SceneNode * sceneNode) :  RenderObject(sceneNode)
 	this->mShader->AttachSource(sceneNode->mSmokeEngine->mShaderSourceStorage->GetSource(SPRITE,GL_VERTEX_SHADER));
 	this->mShader->AttachSource(sceneNode->mSmokeEngine->mShaderSourceStorage->GetSource(SPRITE,GL_FRAGMENT_SHADER));
 	
-	//this->mShader->IntalizeShader();
+	//set the base image of the sprite
+	this->mShader->SetTexture("in_BaseImage",texture,0);
 
 	//set up the other fixed variables for the sprite
 	_initialize(sceneNode);
@@ -91,10 +94,15 @@ void Sprite::SetClippingRectangle(Vector2 pos, Vector2 size)
 
 Sprite::~Sprite(void)
 {
+
 }
 
 void Sprite::Draw(Matrix4x4 transform, Matrix4x4 view)
 {
+
+	glEnable(GL_BLEND);
+	glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
 	this->mShader->BindShader();
 
 	this->mVertexSubData->Bind();
@@ -104,6 +112,7 @@ void Sprite::Draw(Matrix4x4 transform, Matrix4x4 view)
 	this->mShader->SetMatrix4x4("in_View",view);
 
 	glDrawElements(GL_TRIANGLES,mVertexArrayObject->GetNumberOfIndecies(),GL_UNSIGNED_SHORT,NULL);
+	glDisable(GL_BLEND);
 }
 
 void Sprite::DepthDraw(Matrix4x4 transform, Matrix4x4 view)

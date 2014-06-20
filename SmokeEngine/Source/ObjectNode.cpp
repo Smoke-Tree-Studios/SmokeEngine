@@ -22,10 +22,10 @@ ObjectNode::~ObjectNode(void)
 {
 }
 
-void ObjectNode::SetRenderObject(RenderObject * renderObject)
+void ObjectNode::SetRenderObject(RenderObject * renderObject, bool DeletePreviousRenderObject)
 {
-	if(_RenderObject != NULL)
-		delete(_RenderObject);
+	if(DeletePreviousRenderObject && _RenderObject != NULL)
+	delete(_RenderObject);
 	_RenderObject = renderObject;
 }
 

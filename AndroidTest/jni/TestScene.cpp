@@ -71,7 +71,6 @@ void TestScene::UnLoad()
 	this->mSmokeEngine->mVertexBufferStorage->DeleteVertexObjectWithSubData("Teapot");
 
 	this->mSmokeEngine->mTextureStorage->DeleteTexture("test-pattern.png");
-
 	//this->mSmokeEngine->mAudioSourceStorage->RemoveAudioSource("TestAudio");
 }
 
@@ -83,7 +82,8 @@ void TestScene::InintalizeScene()
 		this->mSmokeEngine->mShaderSourceStorage->GetSource("BasicVertex",GL_VERTEX_SHADER) ,
 		this->mSmokeEngine->mShaderSourceStorage->GetSource("PhongShading",GL_FRAGMENT_SHADER));
 	lmodel->mShader->SetTexture("in_BaseImage",this->mSmokeEngine->mTextureStorage->GetTexture("test-pattern.png"),0);
-	_testObject->SetRenderObject(lmodel);
+
+	_testObject->SetRenderObject(lmodel,true);
 
 	//this->mSmokeEngine->mAudioManager->PlayTrack( this->mSmokeEngine->mAudioSourceStorage->GetSource("TestAudio"));
 }

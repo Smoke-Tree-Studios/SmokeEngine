@@ -11,6 +11,7 @@ VertexBufferStorage::~VertexBufferStorage(void)
 	{
 		delete(iter->second);
 	}
+	_vertexObjects.clear();
 
 }
 

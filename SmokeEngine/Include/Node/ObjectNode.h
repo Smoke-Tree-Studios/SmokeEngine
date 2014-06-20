@@ -20,7 +20,7 @@ public:
 
 	ObjectNode(std::string ID);
 
-	void SetRenderObject(RenderObject * renderObject);
+	void SetRenderObject(RenderObject * renderObject, bool DeletePreviousRenderObject);
 
 	RenderObject * GetRenderObject();
 

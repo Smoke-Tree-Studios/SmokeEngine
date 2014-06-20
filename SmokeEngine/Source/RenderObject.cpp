@@ -29,6 +29,5 @@ RenderObject::RenderObject(SceneNode * sceneNode)
 
 RenderObject::~RenderObject(void)
 {
-	delete(mShader);
-	delete(_depthShader);
+
 }

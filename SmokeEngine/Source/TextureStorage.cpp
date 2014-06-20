@@ -13,6 +13,7 @@ TextureStorage::~TextureStorage(void)
 	{
 		delete(iter->second);
 	}
+	_textures.clear();
 
 }
 

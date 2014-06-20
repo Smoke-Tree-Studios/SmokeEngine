@@ -2,11 +2,11 @@
 #include "Android/android_native_app_glue.h"
 #include "SmokeEngine.h"
 #include "S_Debug.h"
-#include "Input\InputEvent.h"
+#include "Input/InputEvent.h"
 #include "S_Debug.h"
 #include "Node/SceneNode.h"
-#include "Audio\AudioManager.h"
-
+#include "Audio/AudioManager.h"
+#include "Storage/Storage.h"
 /**
  * Tear down the EGL context currently associated with the display.
  */
@@ -89,6 +89,11 @@ static void Android_Handle_Cmd(struct android_app* app, int32_t cmd) {
 				for (std::list<std::string>::const_iterator iterator = lSceneIds.begin(); iterator != lSceneIds.end(); ++iterator) {
 					lUserData->mSavedData.mSmokeEngine->mSceneManager->GetSceneNode(*iterator)->UnLoad();
 				}
+				lUserData->mSavedData.mSmokeEngine->mTextureStorage->~TextureStorage();
+				lUserData->mSavedData.mSmokeEngine->mShaderSourceStorage->~ShaderSourceStorage();
+				lUserData->mSavedData.mSmokeEngine->mAudioSourceStorage->~AudioSourceStorage();
+				lUserData->mSavedData.mSmokeEngine->mVertexBufferStorage->~VertexBufferStorage();
+
 				lUserData->mSavedData.mSmokeEngine->mAudioManager->ClearAudioBuffer();
 
 				

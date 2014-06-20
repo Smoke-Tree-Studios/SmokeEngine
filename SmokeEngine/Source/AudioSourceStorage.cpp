@@ -14,6 +14,7 @@ AudioSourceStorage::~AudioSourceStorage(void)
 	{
 		delete(iter->second);
 	}
+	_audioSource.clear();
 
 }
 

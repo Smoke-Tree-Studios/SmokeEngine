@@ -34,7 +34,14 @@ void main(void)\
 		p_TexCoords = vec2(in_Clipping_Position.x+ in_Clipping_Size.x,in_Clipping_Position.y); \
 	} \
 }"
-#define SPRITE_FRAGMENT_SHADER ""
+#define SPRITE_FRAGMENT_SHADER "\
+varying mediump vec2 p_TexCoords; \
+uniform sampler2D in_BaseImage\
+\
+void main()\
+{\
+gl_gragColor = texture2d(in_BaseImage,p_TexCoords);\
+}"
 #define SPRITE "SMOKE_SPRITE"
 class Vector2;
 class Matrix4x4;
@@ -42,20 +49,25 @@ class SceneNode;
 class VertexBufferObjectWithSubData;
 class VertexArrayObject;
 class Source;
+class Texture;
 class Sprite : public RenderObject
 {
 private:
 	VertexArrayObject * mVertexArrayObject;
-
+	SceneNode * _sceneNode;
 	//sprite intalization
 	void _initialize(SceneNode * sceneNode);
 public:
 	VertexBufferObjectWithSubData * mVertexSubData;
 	/**
-	*create a spirte object
+	*create a spirte object with custom fragment shader
+	*textures will have to be done manually in shader
 	**/
 	Sprite(SceneNode * sceneNode,Source * fragmentShader);
-	Sprite(SceneNode * sceneNode);
+	/**
+	*
+	**/
+	Sprite(SceneNode * sceneNode,Texture * texture);
 	~Sprite(void);
 
 	/**

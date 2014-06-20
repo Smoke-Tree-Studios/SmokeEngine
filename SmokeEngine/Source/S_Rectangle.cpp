@@ -1,5 +1,9 @@
 #include "Utility\S_Rectangle.h"
 
+S_Rectangle::S_Rectangle()
+{
+}
+
 
 S_Rectangle::S_Rectangle(Vector2 position, Vector2 size)
 {

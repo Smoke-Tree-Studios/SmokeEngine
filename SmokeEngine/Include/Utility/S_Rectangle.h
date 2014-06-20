@@ -6,6 +6,7 @@ public:
 	Vector2 Position;
 	Vector2 Size;
 
+	S_Rectangle();
 	S_Rectangle(Vector2 position, Vector2 size);
 	~S_Rectangle(void);
 	/**

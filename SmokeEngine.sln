@@ -8,8 +8,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AndroidTest", "AndroidTest\
 		{293D3ECB-3EA2-400C-9D37-EDF3FD59D4AA} = {293D3ECB-3EA2-400C-9D37-EDF3FD59D4AA}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Android1", "Android1\Android1.vcxproj", "{62F41725-FB99-4640-A543-9147A90BB853}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Tegra-Android = Debug|Tegra-Android
@@ -29,12 +27,6 @@ Global
 		{D4376FBA-E1F4-42A5-8FE3-4F507B8EA445}.Profile|Tegra-Android.Build.0 = Profile|Tegra-Android
 		{D4376FBA-E1F4-42A5-8FE3-4F507B8EA445}.Release|Tegra-Android.ActiveCfg = Release|Tegra-Android
 		{D4376FBA-E1F4-42A5-8FE3-4F507B8EA445}.Release|Tegra-Android.Build.0 = Release|Tegra-Android
-		{62F41725-FB99-4640-A543-9147A90BB853}.Debug|Tegra-Android.ActiveCfg = Debug|Tegra-Android
-		{62F41725-FB99-4640-A543-9147A90BB853}.Debug|Tegra-Android.Build.0 = Debug|Tegra-Android
-		{62F41725-FB99-4640-A543-9147A90BB853}.Profile|Tegra-Android.ActiveCfg = Profile|Tegra-Android
-		{62F41725-FB99-4640-A543-9147A90BB853}.Profile|Tegra-Android.Build.0 = Profile|Tegra-Android
-		{62F41725-FB99-4640-A543-9147A90BB853}.Release|Tegra-Android.ActiveCfg = Release|Tegra-Android
-		{62F41725-FB99-4640-A543-9147A90BB853}.Release|Tegra-Android.Build.0 = Release|Tegra-Android
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

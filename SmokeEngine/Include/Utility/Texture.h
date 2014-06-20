@@ -9,6 +9,7 @@ class AAssetManager;
 class Texture
 {
 private:
+
 	GLuint _textureID;
 	int _width;
 	int _height;
@@ -30,7 +31,7 @@ public:
 	GLint GetResourceID();
 
 	/** 
-	*returns the texcoords width 
+	*returns the texcoords value minus the buffer area outside of the texture area
 	**/
 	float GetWidthScale();
 
